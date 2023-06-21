@@ -37,7 +37,7 @@ Within WP1 and WP3 we have been working to transform an existing tool called the
 :::
 
 ::: {.g-col-12 .g-col-lg-8 .top-story-img}
-![](case-studies/prototype_dgz.jpg){width="669"}
+![](images/prototype_dgz.jpg){width="669"}
 :::
 :::
 
