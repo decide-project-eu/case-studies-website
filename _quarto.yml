@@ -2,35 +2,36 @@ project:
   type: website
 
 website:
-  title: "Real World Data Science"
-  image: images/rwds-logo-150px.png
-  favicon: images/rwds-favicon.png
+  title: "DECIDE Case Studies"
+  image: images/DECIDE_logo_RGB-1.png
+  favicon: images/favicon.png
   twitter-card:
-    site: "@rwdatasci"
+    site: "@decide_h2020"
   open-graph: true
-  site-url: https://realworlddatascience.net/
-  repo-url: https://github.com/realworlddatascience/realworlddatascience.github.io
+  site-url: https://https://decideproject.eu/
+  repo-url: https://github.com/decide-project-eu/case-studies-website
   repo-actions: [edit, issue]
-  google-analytics: "G-1TTWB7YTR6"
+  google-analytics: "G-2804FN9QRK"
   navbar:
     background: "#f0eeeb"
-    logo: images/rwds-logo-150px.png
-    logo-alt: "Real World Data Science brand"
+    logo: images/DECIDE_logo_RGB-1.png
+    logo-alt: "Decide brand"
     title: false
     collapse-below: lg
     right:
       - case-studies/index.qmd
-      - ideas/index.qmd
-      - careers/index.qmd
-      - viewpoints/index.qmd
-      - text: "About RWDS"
+      - text: "Tutorials"
         menu: 
-        - text: "Who we are"
-          href: about-rwds.qmd
-        - text: "How to contribute"
-          href: contributor-docs/call-for-contributions.qmd
+          - text: "Cattle barometer"
+            href: https://public.tableau.com/views/Version4_16871894441320/Positivesamplerate?:language=en-US&:display_count=n&:origin=viz_share_link
+      - text: "Network"
+        menu: 
+        - text: "overview"
+          href: https://decideproject.eu/network/
+        - text: "Partners"
+          href: https://decideproject.eu/partners/
         - text: "Contact us"
-          href: contact.qmd
+          href: https://decideproject.eu/contact/
   sidebar: 
     - title: "About us"
       contents:
@@ -70,35 +71,27 @@ website:
 
   page-navigation: true
 
-  back-to-top-navigation: false
-
   page-footer:
     background: "#000000"
     left: |
-      Copyright &copy; 2023 [Royal Statistical Society](https://rss.org.uk/)
+      Copyright &copy; 2023 [DECIDE PROJECT](https://https://decideproject.eu/)
     center:  
-      - href: https://github.com/realworlddatascience
+      - href: https://github.com/decide-project-eu/
         icon: github
         aria-label: GitHub
-      - href: https://twitter.com/rwdatasci
+      - href: https://twitter.com/decide_h2020
         icon: twitter
         aria-label: Twitter
-      - href: https://fosstodon.org/@rwdatasci
-        icon: mastodon
-        aria-label: Mastodon
-      - href: https://www.linkedin.com/showcase/rss-real-world-data-science
+      - href: https://www.linkedin.com/company/decide-h2020/
         icon: linkedin
         aria-label: LinkedIn
-      - href: feeds.html
-        icon: rss
-        aria-label: RWDS rss
     right: |
       [Terms & Conditions](/ts-and-cs.qmd)
 
 format:
   html:
-    theme: [lux, rwds.scss]
-    css: rwds.css
+    theme: [lux, decide.scss]
+    css: decide.css
     toc: true
     grid:
       sidebar-width: 0px
