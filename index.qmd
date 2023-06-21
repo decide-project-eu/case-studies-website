@@ -1,20 +1,17 @@
 ---
-pagetitle: "Real World Data Science"
+pagetitle: "Decide species cases"
 page-layout: custom
 section-divs: false
 editor: source
 sidebar: false
 search: false
 description: | 
-  A showcase for data science in action, brought to you by the Royal Statistical Society
+  Animal data science in action, brought to you by the Decide project
 image: images/rwds-logo-150px.png
 listing:
   - id: latest-content
     contents: 
-    - /case-studies
-    - /ideas
-    - /careers
-    - /viewpoints
+    - /tutorials
     - "!index.qmd"
     - "!chatgpt-data-science-pt1.qmd"
     sort: "date desc"
@@ -25,241 +22,87 @@ listing:
     max-items: 3
     feed: false
 
-  # - id: case-studies
-  #   contents: 
-  #   - /case-studies
-  #   - "!index.qmd"
-  #   sort: "date desc"
-  #   type: grid
-  #   categories: false
-  #   sort-ui: false
-  #   filter-ui: false
-  #   max-items: 3
-  #   feed: false
-
-  # - id: ideas
-  #   contents: 
-  #   - /ideas
-  #   - "!index.qmd"
-  #   sort: "date desc"
-  #   type: grid
-  #   categories: false
-  #   sort-ui: false
-  #   filter-ui: false
-  #   max-items: 3
-  #   feed: false
-
-  # - id: careers
-  #   contents: 
-  #   - /careers
-  #   - "!index.qmd"
-  #   sort: "date desc"
-  #   type: grid
-  #   categories: false
-  #   sort-ui: false
-  #   filter-ui: false
-  #   max-items: 3
-  #   feed: false
-
-  # - id: viewpoints
-  #   contents: 
-  #   - /viewpoints
-  #   sort: "date desc"
-  #   type: grid
-  #   categories: false
-  #   sort-ui: false
-  #   filter-ui: false
-  #   max-items: 3
-  #   feed: false
-
-  - id: editors-blog
-    contents: 
-    - /viewpoints/editors-blog
-    - "!index.qmd"
-    sort: "date desc"
-    type: grid
-    categories: false
-    sort-ui: false
-    filter-ui: false
-    max-items: 3
-    feed: false
-
-  - id: datasciencebites
-    contents: 
-    - /ideas/datasciencebites
-    - "!index.qmd"
-    sort: "date desc"
-    type: grid
-    categories: false
-    sort-ui: false
-    filter-ui: false
-    max-items: 3
-    feed: false
-
-  - id: interviews
-    contents: 
-    - /viewpoints/interviews
-    - "!index.qmd"
-    sort: "date desc"
-    type: grid
-    categories: false
-    sort-ui: false
-    filter-ui: false
-    max-items: 3
-    feed: false
 toc: false
 ---
-::: {.content-container}
+
+::: content-container
 ::: {.top-story .purple-background}
 <a href="/careers/posts/2023/05/11/chatgpt-data-science-pt1.qmd">
 
 ::: grid
 ::: {.g-col-12 .g-col-lg-4 .top-story-text}
-## How is ChatGPT changing data science?
-We sit down with the Royal Statistical Society’s Data Science and AI Section to hear how large language models are becoming part of the data science toolkit, and to consider what this new development means for data science teams and skillsets.
+## How the cattle barometer was transformed to fit multiple labs across Europe in the DECIDE project!
+
+Within WP1 and WP3 we have been working to transform an existing tool called the Griepbarometer developed in Flanders, Belgium into a international tool applicable across Europe, fit to several diagnostic laboratories.
 :::
+
 ::: {.g-col-12 .g-col-lg-8 .top-story-img}
-![](careers/posts/2023/05/11/images/chatgpt-homescreen.png)
+![](case-studies/prototype_dgz.jpg){width="669"}
 :::
 :::
 
 </a>
-
 :::
 :::
 
+```{=html}
 <!-- ::: {.header-banner .header-image}
 ![](images/nasa-Q1p7bh3SHj8-unsplash-crop.png)
 ::: -->
-
-::: {.header-text} 
-::: {.content-container}
-::: {.header-block}
-Welcome to the home of **Real World Data Science**, a new project from the [Royal Statistical Society](https://rss.org.uk/). This site and its content are being created and curated by data science practitioners and leaders with a single goal in mind: to help you deliver high quality, ethical, impactful data science in your workplace.
+```
+::: header-text
+::: content-container
+::: header-block
+Welcome to the website of the **Decide Project use cases**, a [Horizon 2020](https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-2020_en) project from the [European Commission](https://commission.europa.eu/index_en). This site and its content are being created and curated by the work package leaders and data leaders.
 :::
 :::
 :::
 
-::: {.content-container}
-::: {.listing-block}
+::: content-container
+::: listing-block
 <a href="latest-content.qmd">
 
-## Latest content 
+## Tutorials
+
 </a>
 
 ::: {#latest-content}
 :::
-
 :::
 :::
 
-::: {.pullout-text}
-::: {.pullout-container}
-::: {.pullout-block .black-background}
-![](images/quote-purple.png){width="100px"}
-
-## Quetelet’s emphasis on discovering the universal laws he believed govern social and biological phenomenon has not endured. But data scientists continue to appropriate laws from one area of science to study another.
-Jonathan Auerbach on the law of the flowering plants
-
-::: {.button .button1}
-[Try the tutorial](ideas/tutorials/posts/2023/04/13/flowers.qmd)
-:::
-
-:::
-:::
-:::
-
-::: {.content-container}
-::: {.listing-block}
-<a href="viewpoints/editors-blog/index.qmd">
-
-## Editors' Blog
-</a> 
-
-::: {#editors-blog}
-:::
-
-:::
-:::
-
-::: {.content-container}
-::: {.listing-block}
-<a href="ideas/datasciencebites/index.qmd">
-
-## Data Science Bites 
-</a>
-
-::: {#datasciencebites}
-:::
-
-:::
-:::
-
-::: {.pullout-text}
-::: {.pullout-container}
-::: {.pullout-block .black-background}
-![](images/quote-purple.png){width="100px"}
-
-## This is a story of making opportunity out of crisis, of the interaction between not just theory of change and technical implementation, but the 'political' process of negotiating these changes with stakeholders in a manner that led to better decisions. 
-Noah Wright on 'The politics of performance measurement'
-
-::: {.button .button1}
-[Read the article](careers/posts/2023/04/18/politics-of-performance-measurement.qmd)
-:::
-
-:::
-:::
-:::
-
-::: {.content-container}
-::: {.listing-block}
-<a href="viewpoints/interviews/index.qmd">
-
-## Interviews
-</a> 
-
-::: {#interviews}
-:::
-
-:::
-:::
-
-::: {.footer-text}
+::: footer-text
 ::: {.footer-container .black-background}
-::: {.footer-block}
+::: footer-block
 ::: grid
-
-
 ::: {.g-col-12 .g-col-md-6}
 ### Published by
-[![](images/rss-logo-footer.png)](https://rss.org.uk/)
-:::
-::: {.g-col-12 .g-col-md-2}
-### About us
-[Our aims](about-rwds.qmd)\
-[Our team](/viewpoints/editors-blog/posts/2022/10/18/meet-the-team.qmd)\
-[Partners and funders](rwds-partners.qmd)\
-[Contact us](contact.qmd)
-:::
-::: {.g-col-12 .g-col-md-2}
-### Contribute
-[Call for contributions](/contributor-docs/call-for-contributions.qmd)\
-[Contributor guidelines](/contributor-docs/contributor-guidelines.qmd)\
-[Style guide](/contributor-docs/style-guide.qmd)
-:::
-::: {.g-col-12 .g-col-md-2}
-### Follow us
-[GitHub](https://github.com/realworlddatascience)\
-[Twitter](https://twitter.com/rwdatasci)\
-[LinkedIn](https://www.linkedin.com/showcase/rss-real-world-data-science)\
-[Mastodon](https://fosstodon.org/@rwdatasci)\
+
+[![](images/DECIDE_logo_RGB-1.webp){width="400"}](https://rss.org.uk/)
 :::
 
+::: {.g-col-12 .g-col-md-2}
+### About us
+
+[The project](https://decideproject.eu/)\
+[Partners and funders](https://decideproject.eu/partners/)\
+[Contact us](https://decideproject.eu/contact/)
+:::
+
+::: {.g-col-12 .g-col-md-2}
+### Follow us
+
+[GitHub](https://github.com/decide-project-eu/)\
+[Twitter](https://twitter.com/decide_h2020)\
+[LinkedIn](https://www.linkedin.com/company/decide-h2020/)\
+:::
+
+```{=html}
 <!-- ::: {.g-col-12 .g-col-md-12}
 ### Our partners
 logos to go here
 ::: -->
-
+```
 :::
 :::
 :::
