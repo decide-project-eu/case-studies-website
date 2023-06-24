@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>DECIDE Case Studies</title>
+<link>https://https://decideproject.eu/latest-content.html</link>
+<atom:link href="https://https://decideproject.eu/latest-content.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<image>
+<url>https://https://decideproject.eu/images/DECIDE_logo_RGB-1.png</url>
+<title>DECIDE Case Studies</title>
+<link>https://https://decideproject.eu/latest-content.html</link>
+<height>44</height>
+<width>144</width>
+</image>
+<generator>quarto-1.3.353</generator>
+<lastBuildDate>Fri, 06 Sep 2024 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Cattle barometer</title>
+  <dc:creator>Saba Noor, Jade Bokma, Bart Pardon, Miel Hostens, et al.</dc:creator>
+  <link>https://https://decideproject.eu/tutorials/cattle-barometer.html</link>
+  <description><![CDATA[ 
+
+
+
+<p><strong>The cattle barometer case study</strong> is a core feature of the Real World Data Science platform. Our case studies are designed to show how data science is used to solve real-world problems in business, public policy and beyond.</p>
+<p>A good case study will be a source of information, insight and inspiration for each of our target audiences:</p>
+<ul>
+<li><em>Practitioners</em> will learn from their peers – whether by seeing new techniques applied to common problems, or familiar techniques adapted to unique challenges.</li>
+<li><em>Leaders</em> will see how different data science teams work, the mix of skills and experience in play, and how the components of the data science process fit together.</li>
+<li><em>Students</em> will enrich their understanding of how data science is applied, how data scientists operate, and what skills they need to hone to succeed in the workplace.</li>
+</ul>
+<section id="structure" class="level2">
+<h2 class="anchored" data-anchor-id="structure">Structure</h2>
+<p>Case studies should follow the structure below. It is not necessary to use the section headings we have provided – creativity and variety are encouraged. However, the areas outlined under each section heading should be covered in all submissions.</p>
+<ul>
+<li><dl>
+<dt>The problem/challenge</dt>
+<dd>
+<p>Summarise the project and its relevance to your organisation’s needs, aims and ambitions.</p>
+</dd>
+</dl></li>
+<li><dl>
+<dt>Goals</dt>
+<dd>
+<p>Specify what exactly you sought to achieve with this project.</p>
+</dd>
+</dl></li>
+<li><dl>
+<dt>Background</dt>
+<dd>
+<p>An opportunity to explain more about your organisation, your team’s work leading up to this project, and to introduce audiences more generally to the type of problem/challenge you faced, particularly if it is a problem/challenge that may be experienced by organisations working in different sectors and industries.</p>
+</dd>
+</dl></li>
+<li><dl>
+<dt>Approach</dt>
+<dd>
+<p>Describe how you turned the organisational problem/challenge into a task that could be addressed by data science. Explain how you proposed to tackle the problem, including an introduction, explanation and (possibly) a demonstration of the method, model or algorithm used. (NB: If you have a particular interest and expertise in the method, model or algorithm employed, including the history and development of the approach, please consider writing an <a href="explainers.qmd">Explainer</a> article for us.) Discuss the pros and cons, strengths and limitations of the approach.</p>
+</dd>
+</dl></li>
+<li><dl>
+<dt>Implementation</dt>
+<dd>
+<p>Walk audiences through the implementation process. Discuss any challenges you faced, the ethical questions you needed to ask and answer, and how you tested the approach to ensure that outcomes would be robust, unbiased, good quality, and aligned with the goals you set out to achieve.</p>
+</dd>
+</dl></li>
+<li><dl>
+<dt>Impact</dt>
+<dd>
+<p>How successful was the project? Did you achieve your goals? How has the project benefited your organisation? How has the project benefited your team? Does it inform or pave the way for future projects?</p>
+</dd>
+</dl></li>
+<li><dl>
+<dt>Learnings</dt>
+<dd>
+<p>What are your key takeaways from the project? Are there lessons that you can apply to future projects, or are there learnings for other data scientists working on similar problems/challenges?</p>
+</dd>
+</dl></li>
+</ul>
+</section>
+<section id="advice-and-recommendations" class="level2">
+<h2 class="anchored" data-anchor-id="advice-and-recommendations">Advice and recommendations</h2>
+<p><em>You do not need to divulge the detailed inner workings of your organisation.</em> Audiences are mostly interested in understanding the general use case and the problem-solving process you went through, to see how they might apply the same approach within their own organisations.</p>
+<p><em>Goals can be defined quite broadly.</em> There’s no expectation that you set out your organisation’s short- or long-term targets. Instead, audiences need to know enough about what you want to do so they can understand what motivates your choice of approach.</p>
+<p><em>Use toy examples and synthetic data to good effect.</em> We understand that – whether for commercial, legal or ethical reasons – it can be difficult or impossible to share real data in your case studies, or to describe the actual outputs of your work. However, there are many ways to share learnings and insights without divulging sensitive information. <a href="https://eng.lyft.com/causal-forecasting-at-lyft-part-1-14cca6ff3d6d">This blog post from Lyft</a> uses hypotheticals, mathematical notation and synthetic data to explain the company’s approach to causal forecasting without revealing actual KPIs or data.</p>
+<p><em>People like to experiment, so encourage them to do so.</em> Our platform allows you to embed code and to link that code to interactive coding environments like <a href="https://colab.research.google.com/">Google Colab</a>. So if, for example, you want to explain a technique like <a href="https://rss.onlinelibrary.wiley.com/doi/10.1111/j.1740-9713.2019.01225.x">bootstrapping</a>, why not provide a code block so that audiences can run a bootstrapping simulation themselves.</p>
+<p><em>Leverage links.</em> You can’t be expected to explain or cover every detail in one case study, so feel free to point audiences to other sources of information that can enrich their understanding: blogs, videos, journal articles, conference papers, etc.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>Cattle</category>
+  <category>Work Package 1</category>
+  <category>Use case</category>
+  <guid>https://https://decideproject.eu/tutorials/cattle-barometer.html</guid>
+  <pubDate>Fri, 06 Sep 2024 04:00:00 GMT</pubDate>
+  <media:content url="https://https://decideproject.eu/tutorials/cattle-barometer-tutorial.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>Anonymisation</title>
+  <dc:creator>Saba Noor, Miel Hostens, et al.</dc:creator>
+  <link>https://https://decideproject.eu/tutorials/anonymisation.html</link>
+  <description><![CDATA[ 
+
+
+
+<section id="anonymization" class="level2">
+<h2 class="anchored" data-anchor-id="anonymization">Anonymization</h2>
+<p>For privacy and confidentiality of sensitive information, we explain the anonymization technique for both R and Python code. For this, the SHA256 algorithm is used because it does not allow reverse engineering, and the sensitive information could not be linked back to the specific entity or individual. Function to apply SHA-256 hashing</p>
+</section>
+<section id="function-to-apply-sha-256-hashing-in-r" class="level1">
+<h1>Function to apply SHA-256 hashing in R</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">require</span>(openssl)</span>
+<span id="cb1-2"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Function to apply SHA-256 hashing</span></span>
+<span id="cb1-3">sha256_hash <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">function</span>(data) {</span>
+<span id="cb1-4">  openssl<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sha256</span>(data)</span>
+<span id="cb1-5">}</span>
+<span id="cb1-6"></span>
+<span id="cb1-7">dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(</span>
+<span id="cb1-8">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Filenumber=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sha256_hash</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.character</span>(Filenumber)),</span>
+<span id="cb1-9">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Samplenumber=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sha256_hash</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.character</span>(Samplenumber))</span>
+<span id="cb1-10">)</span></code></pre></div>
+</div>
+</section>
+<section id="function-to-apply-sha-256-hashing-in-r-1" class="level1">
+<h1>Function to apply SHA-256 hashing in R</h1>
+<div class="cell" data-python.reticulate="false">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!</span> pip install openpyxl</span>
+<span id="cb2-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> hashlib</span>
+<span id="cb2-3"></span>
+<span id="cb2-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Generate anonymized values for file number and sample number</span></span>
+<span id="cb2-5">FileNumber <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> hashlib.sha256(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">str</span>(FileNumber).encode()).hexdigest()</span>
+<span id="cb2-6">SampleNumber <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> hashlib.sha256(SampleNumber).encode()).hexdigest()</span>
+<span id="cb2-7"></span>
+<span id="cb2-8"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Add anonymized values to the RDF graph</span></span>
+<span id="cb2-9">g.add((Sample, onto.hasFileNumber, Literal(FileNumber, datatype<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>XSD.string)))</span>
+<span id="cb2-10">g.add((Sample, onto.hasSampleNumber, Literal(SampleNumber, datatype<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>XSD.string)))</span></code></pre></div>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <category>Work Package 1</category>
+  <category>Tutorial</category>
+  <guid>https://https://decideproject.eu/tutorials/anonymisation.html</guid>
+  <pubDate>Wed, 06 Mar 2024 05:00:00 GMT</pubDate>
+  <media:content url="https://https://decideproject.eu/tutorials/anonymisation.webp" medium="image" type="image/webp"/>
+</item>
+<item>
+  <title>Ontology</title>
+  <dc:creator>Saba Noor, Miel Hostens, et al.</dc:creator>
+  <link>https://https://decideproject.eu/tutorials/ontologies.html</link>
+  <description><![CDATA[ 
+
+
+
+<section id="system-model" class="level1">
+<h1>System Model</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://https://decideproject.eu/tutorials/ontologies-figure-1.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 1: Non-Ontology Based (Traditional One) generic framework of Farm Animal Data Management</figcaption>
+</figure>
+</div>
+<p>Non-ontology-based systems require rewriting the cleaning code each time new data arrives, making it time-consuming and tedious. These systems lack interoperability, flexibility, reusability, and accessibility, posing limitations in data integration, handling, and adaptability.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://https://decideproject.eu/tutorials/ontologies-figure-2.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 2: Ontology-Driven Knowledge-based framework of Farm Animal Data Management (ODKFADM)</figcaption>
+</figure>
+</div>
+<p>In this use case, we utilize the ODKFADM framework to evaluate cattle-related data (DGZ), It involves collecting raw data from different data sources i.e.&nbsp;DGZ, and including information about farm identification, geo-location, infectious diseases, PCR, and bacterial culture results. This framework enables effective analysis of the data, leading to insights into cattle health</p>
+<section id="step-1-data-acquisition-and-rdf-conversions" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-data-acquisition-and-rdf-conversions">Step 1: Data Acquisition and RDF conversions</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://https://decideproject.eu/tutorials/ontologies-figure-3.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 3: Data Acquisition and RDF Conversions</figcaption>
+</figure>
+</div>
+<p>In Figure 3, we read heterogeneous raw data using pandas, and R data frames, and then convert them into RDF format.</p>
+</section>
+<section id="step-2-species-specific-ontology-lho" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-species-specific-ontology-lho">Step 2: Species-Specific Ontology (LHO)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://https://decideproject.eu/tutorials/ontologies-figure-4.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 4: Graphical Representation of LHO</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-3-rdf-data-and-ontology-integration-mapping" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-rdf-data-and-ontology-integration-mapping">Step 3: RDF Data and Ontology Integration (Mapping)</h2>
+<p>In this step we map the RDF data with LHO which enhances the reasoning and query capabilites</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://https://decideproject.eu/tutorials/ontologies-figure-5.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 5: RDF and Ontology Integration (Mapping)</figcaption>
+</figure>
+</div>
+<pre><code></code></pre>
+</section>
+<section id="step-4-knowledge-graph-ontology-update" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-knowledge-graph-ontology-update">Step 4: Knowledge graph (Ontology Update)</h2>
+<p>Resulted into a knowledge graph</p>
+</section>
+<section id="step-5-reasoning-and-query" class="level2">
+<h2 class="anchored" data-anchor-id="step-5-reasoning-and-query">Step 5: Reasoning and Query</h2>
+<p>Figure 6 and 7 shows Query and query results that Filtering positive PathogenResults and MycoplasmaResults associated with CattleSample</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://https://decideproject.eu/tutorials/ontologies-figure-6.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 6: Filtering positive PathogenResults and MycoplasmaResults associated with CattleSample</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://https://decideproject.eu/tutorials/ontologies-figure-7.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 7: Query result</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-6-visualization-and-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="step-6-visualization-and-analysis">Step 6: Visualization and Analysis</h2>
+<p>We choose Tableau for the visualization method. It provides meaningful insights to explore the knowledge graph. For this, we need a working ODBC connection to a Virtuoso Instance and ODBC or JDBC Compliant version of Tableau or Tableau Server. For ODBC connection to virtuoso, the link is: <a href="https://medium.com/virtuoso-blog/virtuoso-tableau-sparql-f9411852a87d">Visualizing SPARQL Results in Tableau | by Daniel Heward-Mills | OpenLink Virtuoso Weblog | Medium</a></p>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>Work package 1</category>
+  <category>Ontology building</category>
+  <category>Tutorial</category>
+  <guid>https://https://decideproject.eu/tutorials/ontologies.html</guid>
+  <pubDate>Wed, 06 Mar 2024 05:00:00 GMT</pubDate>
+  <media:content url="https://https://decideproject.eu/tutorials/ontologies.webp" medium="image" type="image/webp"/>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,18 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/tutorials/cattle-barometer.html",
+      "/tutorials/anonymisation.html",
+      "/tutorials/ontologies.html"
+    ]
+  },
+  {
+    "listing": "/latest-content.html",
+    "items": [
+      "/tutorials/cattle-barometer.html",
+      "/tutorials/anonymisation.html",
+      "/tutorials/ontologies.html"
+    ]
+  }
+]

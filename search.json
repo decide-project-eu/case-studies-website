@@ -1,0 +1,107 @@
+[
+  {
+    "objectID": "feeds.html",
+    "href": "feeds.html",
+    "title": "RSS feeds",
+    "section": "",
+    "text": "Latest content\nrealworlddatascience.net/latest-content.xml\n\n\n\nIdeas\nrealworlddatascience.net/ideas/index.xml\n\n\n\nViewpoints\nrealworlddatascience.net/viewpoints/index.xml"
+  },
+  {
+    "objectID": "latest-content.html",
+    "href": "latest-content.html",
+    "title": "Latest tutorials",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nCattle barometer\n\n\n\nCattle\n\n\nWork Package 1\n\n\nUse case\n\n\n\n\n\n\n\nSaba Noor, Jade Bokma, Bart Pardon, Miel Hostens, et al.\n\n\nSep 6, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAnonymisation\n\n\n\nWork Package 1\n\n\nTutorial\n\n\n\n\n\n\n\nSaba Noor, Miel Hostens, et al.\n\n\nMar 6, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOntology\n\n\n\nWork package 1\n\n\nOntology building\n\n\nTutorial\n\n\n\n\n\n\n\nSaba Noor, Miel Hostens, et al.\n\n\nMar 6, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "ts-and-cs.html",
+    "href": "ts-and-cs.html",
+    "title": "Terms and conditions",
+    "section": "",
+    "text": "Coming soon"
+  },
+  {
+    "objectID": "tutorials/anonymisation.html",
+    "href": "tutorials/anonymisation.html",
+    "title": "Anonymisation",
+    "section": "",
+    "text": "For privacy and confidentiality of sensitive information, we explain the anonymization technique for both R and Python code. For this, the SHA256 algorithm is used because it does not allow reverse engineering, and the sensitive information could not be linked back to the specific entity or individual. Function to apply SHA-256 hashing"
+  },
+  {
+    "objectID": "tutorials/anonymisation.html#anonymization",
+    "href": "tutorials/anonymisation.html#anonymization",
+    "title": "Anonymisation",
+    "section": "",
+    "text": "For privacy and confidentiality of sensitive information, we explain the anonymization technique for both R and Python code. For this, the SHA256 algorithm is used because it does not allow reverse engineering, and the sensitive information could not be linked back to the specific entity or individual. Function to apply SHA-256 hashing"
+  },
+  {
+    "objectID": "tutorials/cattle-barometer.html",
+    "href": "tutorials/cattle-barometer.html",
+    "title": "Cattle barometer",
+    "section": "",
+    "text": "The cattle barometer case study is a core feature of the Real World Data Science platform. Our case studies are designed to show how data science is used to solve real-world problems in business, public policy and beyond.\nA good case study will be a source of information, insight and inspiration for each of our target audiences:"
+  },
+  {
+    "objectID": "tutorials/cattle-barometer.html#structure",
+    "href": "tutorials/cattle-barometer.html#structure",
+    "title": "Cattle barometer",
+    "section": "Structure",
+    "text": "Structure\nCase studies should follow the structure below. It is not necessary to use the section headings we have provided – creativity and variety are encouraged. However, the areas outlined under each section heading should be covered in all submissions.\n\n\nThe problem/challenge\n\nSummarise the project and its relevance to your organisation’s needs, aims and ambitions.\n\n\n\nGoals\n\nSpecify what exactly you sought to achieve with this project.\n\n\n\nBackground\n\nAn opportunity to explain more about your organisation, your team’s work leading up to this project, and to introduce audiences more generally to the type of problem/challenge you faced, particularly if it is a problem/challenge that may be experienced by organisations working in different sectors and industries.\n\n\n\nApproach\n\nDescribe how you turned the organisational problem/challenge into a task that could be addressed by data science. Explain how you proposed to tackle the problem, including an introduction, explanation and (possibly) a demonstration of the method, model or algorithm used. (NB: If you have a particular interest and expertise in the method, model or algorithm employed, including the history and development of the approach, please consider writing an Explainer article for us.) Discuss the pros and cons, strengths and limitations of the approach.\n\n\n\nImplementation\n\nWalk audiences through the implementation process. Discuss any challenges you faced, the ethical questions you needed to ask and answer, and how you tested the approach to ensure that outcomes would be robust, unbiased, good quality, and aligned with the goals you set out to achieve.\n\n\n\nImpact\n\nHow successful was the project? Did you achieve your goals? How has the project benefited your organisation? How has the project benefited your team? Does it inform or pave the way for future projects?\n\n\n\nLearnings\n\nWhat are your key takeaways from the project? Are there lessons that you can apply to future projects, or are there learnings for other data scientists working on similar problems/challenges?"
+  },
+  {
+    "objectID": "tutorials/cattle-barometer.html#advice-and-recommendations",
+    "href": "tutorials/cattle-barometer.html#advice-and-recommendations",
+    "title": "Cattle barometer",
+    "section": "Advice and recommendations",
+    "text": "Advice and recommendations\nYou do not need to divulge the detailed inner workings of your organisation. Audiences are mostly interested in understanding the general use case and the problem-solving process you went through, to see how they might apply the same approach within their own organisations.\nGoals can be defined quite broadly. There’s no expectation that you set out your organisation’s short- or long-term targets. Instead, audiences need to know enough about what you want to do so they can understand what motivates your choice of approach.\nUse toy examples and synthetic data to good effect. We understand that – whether for commercial, legal or ethical reasons – it can be difficult or impossible to share real data in your case studies, or to describe the actual outputs of your work. However, there are many ways to share learnings and insights without divulging sensitive information. This blog post from Lyft uses hypotheticals, mathematical notation and synthetic data to explain the company’s approach to causal forecasting without revealing actual KPIs or data.\nPeople like to experiment, so encourage them to do so. Our platform allows you to embed code and to link that code to interactive coding environments like Google Colab. So if, for example, you want to explain a technique like bootstrapping, why not provide a code block so that audiences can run a bootstrapping simulation themselves.\nLeverage links. You can’t be expected to explain or cover every detail in one case study, so feel free to point audiences to other sources of information that can enrich their understanding: blogs, videos, journal articles, conference papers, etc."
+  },
+  {
+    "objectID": "tutorials/ontologies.html",
+    "href": "tutorials/ontologies.html",
+    "title": "Ontology",
+    "section": "",
+    "text": "Figure 1: Non-Ontology Based (Traditional One) generic framework of Farm Animal Data Management\n\n\nNon-ontology-based systems require rewriting the cleaning code each time new data arrives, making it time-consuming and tedious. These systems lack interoperability, flexibility, reusability, and accessibility, posing limitations in data integration, handling, and adaptability.\n\n\n\nFigure 2: Ontology-Driven Knowledge-based framework of Farm Animal Data Management (ODKFADM)\n\n\nIn this use case, we utilize the ODKFADM framework to evaluate cattle-related data (DGZ), It involves collecting raw data from different data sources i.e. DGZ, and including information about farm identification, geo-location, infectious diseases, PCR, and bacterial culture results. This framework enables effective analysis of the data, leading to insights into cattle health\n\n\n\n\n\nFigure 3: Data Acquisition and RDF Conversions\n\n\nIn Figure 3, we read heterogeneous raw data using pandas, and R data frames, and then convert them into RDF format.\n\n\n\n\n\n\nFigure 4: Graphical Representation of LHO\n\n\n\n\n\nIn this step we map the RDF data with LHO which enhances the reasoning and query capabilites\n\n\n\nFigure 5: RDF and Ontology Integration (Mapping)\n\n\n\n\n\n\nResulted into a knowledge graph\n\n\n\nFigure 6 and 7 shows Query and query results that Filtering positive PathogenResults and MycoplasmaResults associated with CattleSample\n\n\n\nFigure 6: Filtering positive PathogenResults and MycoplasmaResults associated with CattleSample\n\n\n\n\n\nFigure 7: Query result\n\n\n\n\n\nWe choose Tableau for the visualization method. It provides meaningful insights to explore the knowledge graph. For this, we need a working ODBC connection to a Virtuoso Instance and ODBC or JDBC Compliant version of Tableau or Tableau Server. For ODBC connection to virtuoso, the link is: Visualizing SPARQL Results in Tableau | by Daniel Heward-Mills | OpenLink Virtuoso Weblog | Medium"
+  },
+  {
+    "objectID": "tutorials/ontologies.html#step-1-data-acquisition-and-rdf-conversions",
+    "href": "tutorials/ontologies.html#step-1-data-acquisition-and-rdf-conversions",
+    "title": "Ontology",
+    "section": "",
+    "text": "Figure 3: Data Acquisition and RDF Conversions\n\n\nIn Figure 3, we read heterogeneous raw data using pandas, and R data frames, and then convert them into RDF format."
+  },
+  {
+    "objectID": "tutorials/ontologies.html#step-2-species-specific-ontology-lho",
+    "href": "tutorials/ontologies.html#step-2-species-specific-ontology-lho",
+    "title": "Ontology",
+    "section": "",
+    "text": "Figure 4: Graphical Representation of LHO"
+  },
+  {
+    "objectID": "tutorials/ontologies.html#step-3-rdf-data-and-ontology-integration-mapping",
+    "href": "tutorials/ontologies.html#step-3-rdf-data-and-ontology-integration-mapping",
+    "title": "Ontology",
+    "section": "",
+    "text": "In this step we map the RDF data with LHO which enhances the reasoning and query capabilites\n\n\n\nFigure 5: RDF and Ontology Integration (Mapping)"
+  },
+  {
+    "objectID": "tutorials/ontologies.html#step-4-knowledge-graph-ontology-update",
+    "href": "tutorials/ontologies.html#step-4-knowledge-graph-ontology-update",
+    "title": "Ontology",
+    "section": "",
+    "text": "Resulted into a knowledge graph"
+  },
+  {
+    "objectID": "tutorials/ontologies.html#step-5-reasoning-and-query",
+    "href": "tutorials/ontologies.html#step-5-reasoning-and-query",
+    "title": "Ontology",
+    "section": "",
+    "text": "Figure 6 and 7 shows Query and query results that Filtering positive PathogenResults and MycoplasmaResults associated with CattleSample\n\n\n\nFigure 6: Filtering positive PathogenResults and MycoplasmaResults associated with CattleSample\n\n\n\n\n\nFigure 7: Query result"
+  },
+  {
+    "objectID": "tutorials/ontologies.html#step-6-visualization-and-analysis",
+    "href": "tutorials/ontologies.html#step-6-visualization-and-analysis",
+    "title": "Ontology",
+    "section": "",
+    "text": "We choose Tableau for the visualization method. It provides meaningful insights to explore the knowledge graph. For this, we need a working ODBC connection to a Virtuoso Instance and ODBC or JDBC Compliant version of Tableau or Tableau Server. For ODBC connection to virtuoso, the link is: Visualizing SPARQL Results in Tableau | by Daniel Heward-Mills | OpenLink Virtuoso Weblog | Medium"
+  }
+]
