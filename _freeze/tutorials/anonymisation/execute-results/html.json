@@ -1,0 +1,16 @@
+{
+  "hash": "a94f40dfe3ffac4483dadb7027fe482d",
+  "result": {
+    "markdown": "---\ntitle: \"Anonymisation\"\nexecute:\n  eval: false\nsubtitle: \"How to implement anonymisation across animal records\"\ncategories:\n  - Work Package 1\n  - Tutorial\nauthor: Saba Noor, Miel Hostens, et al.\ndate: 15/06/2023\ntoc: true\nimage: anonymisation.webp\nimage-alt: Anonymisation tuturial\nlanguage: \n    section-title-footnotes: References\n---\n\n\n## Anonymization\n\nFor privacy and confidentiality of sensitive information, we explain the anonymization technique for both R and Python code. For this, the SHA256 algorithm is used because it does not allow reverse engineering, and the sensitive information could not be linked back to the specific entity or individual. Function to apply SHA-256 hashing\n\n# Function to apply SHA-256 hashing in R\n\n\n::: {.cell}\n\n```{.r .cell-code}\nrequire(openssl)\n# Function to apply SHA-256 hashing\nsha256_hash <- function(data) {\n  openssl::sha256(data)\n}\n\ndplyr::mutate(\n    Filenumber= sha256_hash(as.character(Filenumber)),\n    Samplenumber= sha256_hash(as.character(Samplenumber))\n)\n```\n:::\n\n\n# Function to apply SHA-256 hashing in R\n\n\n::: {.cell python.reticulate='false'}\n\n```{.python .cell-code}\n! pip install openpyxl\nimport hashlib\n\n# Generate anonymized values for file number and sample number\nFileNumber = hashlib.sha256(str(FileNumber).encode()).hexdigest()\nSampleNumber = hashlib.sha256(SampleNumber).encode()).hexdigest()\n\n# Add anonymized values to the RDF graph\ng.add((Sample, onto.hasFileNumber, Literal(FileNumber, datatype=XSD.string)))\ng.add((Sample, onto.hasSampleNumber, Literal(SampleNumber, datatype=XSD.string)))\n\n```\n:::\n",
+    "supporting": [
+      "anonymisation_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,60 @@
+---
+title: "Ontology"
+subtitle: "How to implement ontologies within your data pipeline"
+categories:
+  - Work package 1
+  - Ontology building
+  - Tutorial
+author: Saba Noor, Miel Hostens, et al.
+date: 15/06/2023
+toc: true
+image: ontologies.webp
+image-alt: Ontology tutorial
+language: 
+    section-title-footnotes: References
+---
+
+# System Model
+
+![Figure 1: Non-Ontology Based (Traditional One) generic framework of Farm Animal Data Management](ontologies-figure-1.png){fig-align="center"}
+
+Non-ontology-based systems require rewriting the cleaning code each time new data arrives, making it time-consuming and tedious. These systems lack interoperability, flexibility, reusability, and accessibility, posing limitations in data integration, handling, and adaptability.
+
+![Figure 2: Ontology-Driven Knowledge-based framework of Farm Animal Data Management (ODKFADM)](ontologies-figure-2.png){fig-align="center"}
+
+In this use case, we utilize the ODKFADM framework to evaluate cattle-related data (DGZ), It involves collecting raw data from different data sources i.e. DGZ, and including information about farm identification, geo-location, infectious diseases, PCR, and bacterial culture results. This framework enables effective analysis of the data, leading to insights into cattle health
+
+## Step 1: Data Acquisition and RDF conversions
+
+![Figure 3: Data Acquisition and RDF Conversions](ontologies-figure-3.png)
+
+In Figure 3, we read heterogeneous raw data using pandas, and R data frames, and then convert them into RDF format.
+
+## Step 2: Species-Specific Ontology (LHO)
+
+![Figure 4: Graphical Representation of LHO](ontologies-figure-4.jpg)
+
+## Step 3: RDF Data and Ontology Integration (Mapping)
+
+In this step we map the RDF data with LHO which enhances the reasoning and query capabilites
+
+![Figure 5: RDF and Ontology Integration (Mapping)](ontologies-figure-5.png)
+
+```         
+```
+
+## Step 4: Knowledge graph (Ontology Update) 
+
+Resulted into a knowledge graph
+
+## Step 5: Reasoning and Query 
+
+Figure 6 and 7 shows Query and query results that Filtering positive PathogenResults and MycoplasmaResults associated with CattleSample
+
+![Figure 6: Filtering positive PathogenResults and MycoplasmaResults associated with CattleSample](ontologies-figure-6.png)
+
+![Figure 7: Query result](ontologies-figure-7.png)
+
+## Step 6: Visualization and Analysis 
+
+We choose Tableau for the visualization method. It provides meaningful insights to explore the knowledge graph. For this, we need a working ODBC connection to a Virtuoso Instance and ODBC or JDBC Compliant version of Tableau or Tableau Server. For ODBC connection to virtuoso, the link is: [Visualizing SPARQL Results in Tableau \| by Daniel Heward-Mills \| OpenLink Virtuoso Weblog \| Medium](https://medium.com/virtuoso-blog/virtuoso-tableau-sparql-f9411852a87d)

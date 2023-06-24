@@ -1,9 +1,20 @@
 ---
-title: "Barometer tutorial"
-subtitle: "Notes for contributors"
+title: "Cattle barometer"
+subtitle: "THE ROAD TO A REPRODUCIBLE CATTLE BAROMETER: HAZARDS TO AVOID AND TOOLS TO GET YOU THERE SAFELY"
+categories:
+  - Cattle
+  - Work Package 1
+  - Use case
+author: Saba Noor, Jade Bokma, Bart Pardon, Miel Hostens, et al.
+date: 21/06/2023
+toc: true
+image: cattle-barometer-tutorial.png
+image-alt: Barometer tuturial
+language: 
+    section-title-footnotes: References
 ---
 
-**Case studies** are a core feature of the Real World Data Science platform. Our case studies are designed to show how data science is used to solve real-world problems in business, public policy and beyond.
+**The cattle barometer case study** is a core feature of the Real World Data Science platform. Our case studies are designed to show how data science is used to solve real-world problems in business, public policy and beyond.
 
 A good case study will be a source of information, insight and inspiration for each of our target audiences:
 

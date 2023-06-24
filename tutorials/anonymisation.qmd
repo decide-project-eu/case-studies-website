@@ -1,0 +1,52 @@
+---
+title: "Anonymisation"
+execute:
+  eval: false
+subtitle: "How to implement anonymisation across animal records"
+categories:
+  - Work Package 1
+  - Tutorial
+author: Saba Noor, Miel Hostens, et al.
+date: 15/06/2023
+toc: true
+image: anonymisation.webp
+image-alt: Anonymisation tuturial
+language: 
+    section-title-footnotes: References
+---
+
+## Anonymization
+
+For privacy and confidentiality of sensitive information, we explain the anonymization technique for both R and Python code. For this, the SHA256 algorithm is used because it does not allow reverse engineering, and the sensitive information could not be linked back to the specific entity or individual. Function to apply SHA-256 hashing
+
+# Function to apply SHA-256 hashing in R
+
+```{r message=FALSE, warning=FALSE}
+require(openssl)
+# Function to apply SHA-256 hashing
+sha256_hash <- function(data) {
+  openssl::sha256(data)
+}
+
+dplyr::mutate(
+    Filenumber= sha256_hash(as.character(Filenumber)),
+    Samplenumber= sha256_hash(as.character(Samplenumber))
+)
+
+```
+
+# Function to apply SHA-256 hashing in R
+
+```{python python.reticulate = FALSE}
+! pip install openpyxl
+import hashlib
+
+# Generate anonymized values for file number and sample number
+FileNumber = hashlib.sha256(str(FileNumber).encode()).hexdigest()
+SampleNumber = hashlib.sha256(SampleNumber).encode()).hexdigest()
+
+# Add anonymized values to the RDF graph
+g.add((Sample, onto.hasFileNumber, Literal(FileNumber, datatype=XSD.string)))
+g.add((Sample, onto.hasSampleNumber, Literal(SampleNumber, datatype=XSD.string)))
+
+```
