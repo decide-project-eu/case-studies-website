@@ -8,7 +8,7 @@ website:
   twitter-card:
     site: "@decide_h2020"
   open-graph: true
-  site-url: https://https://decideproject.eu/
+  site-url: https://github.com/decide-project-eu/case-studies-website
   repo-url: https://github.com/decide-project-eu/case-studies-website
   repo-actions: [edit, issue]
   google-analytics: "G-2804FN9QRK"

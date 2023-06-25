@@ -14,68 +14,179 @@ language:
     section-title-footnotes: References
 ---
 
-**The cattle barometer case study** is a core feature of the Real World Data Science platform. Our case studies are designed to show how data science is used to solve real-world problems in business, public policy and beyond.
+# Pasteurella multocida
 
-A good case study will be a source of information, insight and inspiration for each of our target audiences:
+**Clinical relevance:** P. multocida is an opportunistic bacterium and part of the common respiratory tract flora.¹ᐧ² Problems can occur during co-infection with viruses/Mycoplasma bovis or after extensive antimicrobial treatment.
 
--   *Practitioners* will learn from their peers -- whether by seeing new techniques applied to common problems, or familiar techniques adapted to unique challenges.
--   *Leaders* will see how different data science teams work, the mix of skills and experience in play, and how the components of the data science process fit together.
--   *Students* will enrich their understanding of how data science is applied, how data scientists operate, and what skills they need to hone to succeed in the workplace.
+**Clinical signs:** respiratory disease (coughing, nasal discharge, dyspnea, fever), septicemia
 
-## Structure
+**Diagnostic sample:** respiratory tract (bronchoalveolair lavage, transtracheal wash), blood culture, peritoneal fluid, necropsy
 
-Case studies should follow the structure below. It is not necessary to use the section headings we have provided -- creativity and variety are encouraged. However, the areas outlined under each section heading should be covered in all submissions.
+**Diagnostic test**\*: culture and antimicrobial susceptibility testing, PCR\*\* Carriers: yes
 
--   
+**Infection route:** direct contact (nasal secretions), potentially close distance aerosol spread, potentially fomites
 
-    The problem/challenge
+**Vaccines:** Inactivated divalent vaccine (with Salmonella typhimurium) available in some EU countries
 
-    :   Summarise the project and its relevance to your organisation's needs, aims and ambitions.
+1.  Lima S.F., Teixeria A.G.V., Higgins C.H., Lima S.F., Bicalho R.C. 2016. The upper respiratory tract microbiome and its potential role in bovine respiratory disease and otitis media. Sci Rep 6.\
+2.  Gaeta N.C., Lima S.F., Teixeria A.G., Ganda E.K., Oikonomou G., Gregory L., Bicalho R.C. 2017. Deciphering upper respiratory tract microbiota complexity in healthy calves and calves that develop respiratory disease using shotgun metagenomics. J Dairy Sci 100, 1445-1458.
 
--   
+\*\* Detection of an opportunistic pathogen by PCR confirms it present in the animal/herd, but does not evidence involvement in disease. P. multocida is that prevalent that PCR analysis is virtually useless.
 
-    Goals
+# Bovine parainfluenza-3 virus
 
-    :   Specify what exactly you sought to achieve with this project.
+**Pathogen:** Bovine parainfluenza-3 virus (bPI-3, also bovine respirovirus 3, 3 genotypes (A, B, C) genus: Respirovirus, family: Paramyxoviridae)
 
--   
+**Incubation period**: 2-6 days
 
-    Background
+**Clinical relevance:** primary pathogen involved in bovine respiratory disease, predisposing for secondary bacterial infections
 
-    :   An opportunity to explain more about your organisation, your team's work leading up to this project, and to introduce audiences more generally to the type of problem/challenge you faced, particularly if it is a problem/challenge that may be experienced by organisations working in different sectors and industries.
+**Clinical signs**: respiratory disease (coughing, nasal discharge, dyspnea, fever), presumably mild as single infection
 
--   
+**Diagnostic sample**: respiratory tract (nasopharyngeal swab, bronchoalveolair lavage, transtracheal wash), necropsy
 
-    Approach
+**Carriers:** presumably not, subclinical infections likely most important for infection maintenance in the population
 
-    :   Describe how you turned the organisational problem/challenge into a task that could be addressed by data science. Explain how you proposed to tackle the problem, including an introduction, explanation and (possibly) a demonstration of the method, model or algorithm used. (NB: If you have a particular interest and expertise in the method, model or algorithm employed, including the history and development of the approach, please consider writing an [Explainer](explainers.qmd) article for us.) Discuss the pros and cons, strengths and limitations of the approach.
+**Diagnostic test**\*: Direct: PCR, nanopore sequencing, antigen ELISA. Indirect: paired serum samples for antibody ELISA1 (interpretation may be hampered by maternal immunity)
 
--   
+**Infection route**: aerosols, nasal secretion (direct contact), fomites
 
-    Implementation
+**Vaccines:** Several multivalent vaccines (BRSV, BVD, M. haemolytica), inactivated or live-attenuated, parenteral or intranasal are available in Europe
 
-    :   Walk audiences through the implementation process. Discuss any challenges you faced, the ethical questions you needed to ask and answer, and how you tested the approach to ensure that outcomes would be robust, unbiased, good quality, and aligned with the goals you set out to achieve.
+**Eradication programs:** no
 
--   
+\* List incomplete, availability of commercial tests can differ between countries
 
-    Impact
+# Mannheimia haemolytica
 
-    :   How successful was the project? Did you achieve your goals? How has the project benefited your organisation? How has the project benefited your team? Does it inform or pave the way for future projects?
+**Pathogen:** Mannheimia haemolytica (member of the Pasteurellaceae family, two major genotypes (1 and 2))
 
--   
+**Clinical relevance:** M. haemolytica is an opportunistic bacterium and part of the common respiratory tract flora.¹ᐧ² Problems can occur during co-infection with viruses/Mycoplasma bovis and potentially also after breaches in the innate immunity of the respiratory tract by other factors. Outbreaks of virulent M. haemolytica strains in adult dairy cattle with acute mortality are described.³ᐧ⁴  
 
-    Learnings
+**Clinical signs**: respiratory disease (coughing, nasal discharge, dyspnea, fever), septicemia
 
-    :   What are your key takeaways from the project? Are there lessons that you can apply to future projects, or are there learnings for other data scientists working on similar problems/challenges?
+**Diagnostic sample**: respiratory tract (bronchoalveolair lavage, transtracheal wash), peritoneal fluid, necropsy
 
-## Advice and recommendations
+**Diagnostic test**\*: culture and antimicrobial susceptibility testing; PCR\*\*
 
-*You do not need to divulge the detailed inner workings of your organisation.* Audiences are mostly interested in understanding the general use case and the problem-solving process you went through, to see how they might apply the same approach within their own organisations.
+**Carriers:** yes
 
-*Goals can be defined quite broadly.* There's no expectation that you set out your organisation's short- or long-term targets. Instead, audiences need to know enough about what you want to do so they can understand what motivates your choice of approach.
+**Infection route:** direct contact (nasal secretions), potentially close distance aerosol spread, potentially fomites
 
-*Use toy examples and synthetic data to good effect.* We understand that -- whether for commercial, legal or ethical reasons -- it can be difficult or impossible to share real data in your case studies, or to describe the actual outputs of your work. However, there are many ways to share learnings and insights without divulging sensitive information. [This blog post from Lyft](https://eng.lyft.com/causal-forecasting-at-lyft-part-1-14cca6ff3d6d) uses hypotheticals, mathematical notation and synthetic data to explain the company's approach to causal forecasting without revealing actual KPIs or data.
+**Vaccines**: both inactivated monovalent and multivalent vaccines (with H. somni, PI-3 or BRSV) are available in Europe.
 
-*People like to experiment, so encourage them to do so.* Our platform allows you to embed code and to link that code to interactive coding environments like [Google Colab](https://colab.research.google.com/). So if, for example, you want to explain a technique like [bootstrapping](https://rss.onlinelibrary.wiley.com/doi/10.1111/j.1740-9713.2019.01225.x), why not provide a code block so that audiences can run a bootstrapping simulation themselves.
+1\. Lima S.F., Teixeria A.G.V., Higgins C.H., Lima S.F., Bicalho R.C. 2016. The upper respiratory tract microbiome and its potential role in bovine respiratory disease and otitis media. Sci Rep 6.   
 
-*Leverage links.* You can't be expected to explain or cover every detail in one case study, so feel free to point audiences to other sources of information that can enrich their understanding: blogs, videos, journal articles, conference papers, etc.
+2\. Gaeta N.C., Lima S.F., Teixeria A.G., Ganda E.K., Oikonomou G., Gregory L., Bicalho R.C. 2017. Deciphering upper respiratory tract microbiota complexity in healthy calves and calves that develop respiratory disease using shotgun metagenomics. J Dairy Sci 100, 1445-1458.
+
+3\. Dorso L., Rouault M., Barbotin C., Chartier C., Assié S. 2021. Infectious bovine respiratory disease in adult cattle: an extensive necropsic and etiological study. Animals (Basel) 11, 2280.
+
+4\. Mahu M., Valgaeren B., Pardon B., Deprez P., Haesebrouck F., Boyen F. 2015. Non-haemolytic Mannheimia haemolytica as a cause of pleuropneumonia and septicemia in a calf. Vet Microbiol 180, 157-160.
+
+\*\* Detection of an opportunistic pathogen by PCR confirms it present in the animal/herd, but does not evidence involvement in disease
+
+# Mycoplasma bovis
+
+**Pathogen:** Mycoplasma bovis
+
+**Incubation period**: 2-10 days
+
+**Clinical relevance:** primary pathogen involved in bovine respiratory disease, mastitis, otitis and arthritis, often reported in co-infection with other viral or bacterial pathogens
+
+**Clinical signs**: respiratory disease (coughing, nasal discharge, dyspnea, fever), ear drop, swollen joints, mastitis, seromas and rarer presentations¹
+
+**Diagnostic sample**: respiratory tract (nasopharyngeal swab, bronchoalveolair lavage, transtracheal wash), milk, synovial fluid, necropsy
+
+**Carriers:** yes
+
+**Diagnostic test**\*: Direct: culture (special media and CO2 rich incubation needed), PCR, MALDI-TOF MS, nanopore sequencing. Indirect: paired serum samples for antibody ELISA (interpretation may be hampered by maternal immunity)
+
+**Infection route**: nasal secretions (direct contact), colostrum, milk, semen, fomites¹ᐧ² 
+
+**Vaccines:** Restrictedavailability of a monovalent registered vaccine and in some European countries autovaccines are allowed
+
+**Eradication programs:** voluntary program in Finland
+
+1\. Maunsell FP., Donovan G.A. 2009. Mycoplasma bovis infections in young calves. Vet Clin North Am Food Anim Pract 25, 139-177.
+
+2\. Haapala V., Pohjanvirta T., Vähänikkilä N., Halkilahti J., Simonen H., Pelkonen S., Soveri T., Simojoki H., Autio T. 2018. Semen as a source of Mycoplasma bovis mastitis in dairy herds. Vet Microbiol 216, 60-66.
+
+# Histophilus somni
+
+**Pathogen:** Histophilus somni  (member of the Pasteurellaceae family)
+
+**Clinical relevance:** opportunistic pathogen involved in respiratory disease, septicemia, otitis, polyserositis and thrombotic meningoencephalitis-myelitis
+
+**Clinical signs**: respiratory disease (coughing, nasal discharge, dyspnea, fever), central nervous signs (sleeper syndrome), swollen joints, ear drop and sudden death
+
+**Diagnostic sample**: respiratory tract (bronchoalveolair lavage, transtracheal wash)¹, blood culture, necropsy
+
+**Diagnostic test**\*: PCR\*\*, culture (CO2 rich incubation needed) and antimicrobial susceptibility testing
+
+**Carriers:** yes
+
+**Infection route:** direct contact (nasal secretions), urine, potentially fomites
+
+**Vaccines:** divalent inactivated vaccines (M. haemolytica, H. somni) are available in Europe
+
+1\. Van Driessche L., Valgaeren B.R., Gille L., Boyen F., Ducatelle R., Haesebrouck F., Deprez P., Pardon B. A deep nasopharyngeal swab versus nonendoscopic bronchoalveolar lavage for isolation of bacterial pathogens from preweaned calves with respiratory disease. J Vet Intern Med 31, 946-953.
+
+# Bovine respiratory syncytial virus
+
+**Pathogen:** Bovine respiratory syncytial virus (BRSV, also Bovine orthopneumovirus, multiple subtypes, genus: Orthopneumovirus, family: Pneumoviridae)
+
+**Incubation period:** 2-5 days
+
+**Clinical relevance:** primary pathogen involved in bovine respiratory disease, predisposing for secondary bacterial infections
+
+**Clinical signs**: respiratory disease (coughing, nasal discharge, dyspnea, fever), potentially lethal as single agent
+
+**Diagnostic sample**: respiratory tract (nasopharyngeal swab, bronchoalveolair lavage, transtracheal wash)¹ᐧ², necropsy
+
+**Diagnostic test**\*: Direct: PCR, nanopore sequencing, antigen ELISA. Indirect: paired serum samples for antibody ELISA (interpretation may be hampered by maternal immunity)
+
+**Carriers:** persistent infection suggested but not evidenced, subclinical infections likely most important for infection maintenance in the population
+
+**Infection route**: airborne³, aerosol, nasal secretions (direct contact), fomites
+
+**Vaccines:** both monovalent vaccines and multivalent vaccines (combined with bPI-3, BVDV, M. haemolytica), inactivated or live attenuated, parenteral or intranasal are available in Europe
+
+**Eradication programs:** voluntary program in Norway
+
+\* List incomplete, availability of commercial tests can differ between countries
+
+1\. Doyle D., Credille B., Lehenbauer T.W., Berghaus R., Aly S.S., Champagne J., Blanchard P., Crossley B., Berghaus L., Cochran S., Woolums A. 2017. Agreement among 4 sampling methods to identify respiratory pathogens in dairy calves with acute bovine respiratory disease. J Vet Intern Med 31, 954-959.
+
+2\. Makoschey B., Berge A.C. 2021. Review on bovine respiratory syncytial virus and bovine parainfluenza -- usual suspects in bovine respiratory disease -- a narrative review. BMC Veterinary Research 17, 261.
+
+3\. Mars M.H., Bruschke C.J.M., Van Oirschot J.T. 1999. Airborne transmission of BHV1, BRSV, and BVDV among cattle is possible under experimental conditions. Vet Microbiol 66, 197-207.
+
+# Bovine coronavirus
+
+**Pathogen:** Bovine coronavirus (BCoV, genus: Betacoronavirus, family: Coronaviridae)
+
+**Incubation period:** 1-7 days
+
+**Clinical relevance**: primary pathogen involved in bovine respiratory disease¹, calf diarrhea and winter dysentery², predisposing for secondary bacterial infections
+
+**Clinical signs**: respiratory disease (coughing, nasal discharge, dyspnea, fever), calf diarrhea, winter dysentery (cows)
+
+**Diagnostic sample**: respiratory tract (nasopharyngeal swab, bronchoalveolar lavage, transtracheal wash)³, necropsy, feces
+
+**Diagnostic test**\*: Direct: PCR, nanopore sequencing, antigen ELISA. Indirect: paired serum samples for antibody ELISA4 (interpretation may be hampered by maternal immunity)
+
+**Infection route**: aerosols, nasal secretions (direct contact), feces, fomites
+
+**Carriers:** limited evidence, differentiation from prolonged shedding difficult, subclinical infections likely most important for infection maintenance in the population
+
+**Vaccines**: multivalent vaccines containing inactivated bovine coronavirus (combined with bovine rotavirus and Enterotoxic Escherichia coli) next to other intestinal pathogens intended for dams are registered for neonatal calf diarrhea in Europe.
+
+**Eradication programs:** voluntary program in Norway
+
+\* List incomplete, availability of commercial tests can differ between countries
+
+¹   Decaro N., Campolo M., Desario C., Cirone F., D\'abramo M., Lorusso E., Greco G., Mari V., Colaianni M.L., Elia G., Martella V., Buonavoglia C. 2008. Respiratory disease associated with bovine coronavirus infection in cattle herds in Southern Italy. J Vet Diagn Invest 20, 28-32.
+
+²    Boileau M.J., Kapil S.2010. Bovine coronavirus associated syndromes. Vet Clin north Am Food Anim Pract 26, 123-146.
+
+³    Doyle D., Credille B., Lehenbauer T.W., Berghaus R., Aly S.S., Champagne J., Blanchard P., Crossley B., Berghaus L., Cochran S., Woolums A. 2017. Agreement among 4 sampling methods to identify respiratory pathogens in dairy calves with acute bovine respiratory disease. J Vet Intern Med 31, 954-959
