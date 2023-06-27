@@ -43,11 +43,11 @@ In this step we map the RDF data with LHO which enhances the reasoning and query
 ```         
 ```
 
-## Step 4: Knowledge graph (Ontology Update) 
+## Step 4: Knowledge graph (Ontology Update)
 
 Resulted into a knowledge graph
 
-## Step 5: Reasoning and Query 
+## Step 5: Reasoning and Query
 
 Figure 6 and 7 shows Query and query results that Filtering positive PathogenResults and MycoplasmaResults associated with CattleSample
 
@@ -55,6 +55,6 @@ Figure 6 and 7 shows Query and query results that Filtering positive PathogenRes
 
 ![Figure 7: Query result](ontologies-figure-7.png)
 
-## Step 6: Visualization and Analysis 
+## Step 6: Visualization and Analysis
 
 We choose Tableau for the visualization method. It provides meaningful insights to explore the knowledge graph. For this, we need a working ODBC connection to a Virtuoso Instance and ODBC or JDBC Compliant version of Tableau or Tableau Server. For ODBC connection to virtuoso, the link is: [Visualizing SPARQL Results in Tableau \| by Daniel Heward-Mills \| OpenLink Virtuoso Weblog \| Medium](https://medium.com/virtuoso-blog/virtuoso-tableau-sparql-f9411852a87d)

@@ -185,7 +185,7 @@ language:
 
 \* List incomplete, availability of commercial tests can differ between countries
 
-¹   Decaro N., Campolo M., Desario C., Cirone F., D\'abramo M., Lorusso E., Greco G., Mari V., Colaianni M.L., Elia G., Martella V., Buonavoglia C. 2008. Respiratory disease associated with bovine coronavirus infection in cattle herds in Southern Italy. J Vet Diagn Invest 20, 28-32.
+¹   Decaro N., Campolo M., Desario C., Cirone F., D'abramo M., Lorusso E., Greco G., Mari V., Colaianni M.L., Elia G., Martella V., Buonavoglia C. 2008. Respiratory disease associated with bovine coronavirus infection in cattle herds in Southern Italy. J Vet Diagn Invest 20, 28-32.
 
 ²    Boileau M.J., Kapil S.2010. Bovine coronavirus associated syndromes. Vet Clin north Am Food Anim Pract 26, 123-146.
 
