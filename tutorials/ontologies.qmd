@@ -6,7 +6,7 @@ categories:
   - Ontology building
   - Tutorial
 author: Saba Noor, Miel Hostens, et al.
-date: 15/06/2023
+date: 06/21/23
 toc: true
 image: ontologies.webp
 image-alt: Ontology tutorial

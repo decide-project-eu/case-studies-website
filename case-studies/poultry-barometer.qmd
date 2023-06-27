@@ -1,5 +1,5 @@
 ---
-title: Cattle barometer
+title: Poultry barometer
 search: false
 sidebar: false
 toc: false

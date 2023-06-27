@@ -7,7 +7,7 @@ categories:
   - Work Package 1
   - Tutorial
 author: Saba Noor, Miel Hostens, et al.
-date: 15/06/2023
+date: 06/21/23
 toc: true
 image: anonymisation.webp
 image-alt: Anonymisation tuturial
@@ -17,7 +17,7 @@ language:
 
 ## Anonymization
 
-For privacy and confidentiality of sensitive information, we explain the anonymization technique for both R and Python code. For this, the SHA256 algorithm is used because it does not allow reverse engineering, and the sensitive information could not be linked back to the specific entity or individual. Function to apply SHA-256 hashing
+For privacy and confidentiality of sensitive information, we explain the anonymization technique for both R and Python code. For this, the SHA256 algorithm is used because it does not allow reverse engineering, and the sensitive information could not be linked back to the specific entity or individual.
 
 # Function to apply SHA-256 hashing in R
 

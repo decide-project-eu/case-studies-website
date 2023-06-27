@@ -22,11 +22,13 @@ website:
       - text: "Case studies"
         menu:
           - case-studies/cattle-barometer.qmd
+          - case-studies/poultry-barometer.qmd
       - text: "Tutorials"
         menu:
           - tutorials/cattle-barometer.qmd
           - tutorials/anonymisation.qmd
           - tutorials/ontologies.qmd
+          - tutorials/poultry-barometer.qmd
       - text: "Network"
         menu: 
         - text: "overview"
