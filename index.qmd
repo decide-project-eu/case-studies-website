@@ -26,8 +26,6 @@ toc: false
 
 ::: content-container
 ::: {.top-story .purple-background}
-<a href="/careers/posts/2023/05/11/chatgpt-data-science-pt1.qmd">
-
 ::: grid
 ::: {.g-col-12 .g-col-lg-4 .top-story-text}
 ## How the cattle barometer was transformed to fit multiple labs across Europe in the DECIDE project!
