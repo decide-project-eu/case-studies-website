@@ -17,89 +17,7 @@
 <width>144</width>
 </image>
 <generator>quarto-1.3.353</generator>
-<lastBuildDate>Fri, 06 Sep 2024 04:00:00 GMT</lastBuildDate>
-<item>
-  <title>Cattle barometer</title>
-  <dc:creator>Saba Noor, Jade Bokma, Bart Pardon, Miel Hostens, et al.</dc:creator>
-  <link>https://github.com/decide-project-eu/case-studies-website/tutorials/cattle-barometer.html</link>
-  <description><![CDATA[ 
-
-
-
-<p><strong>The cattle barometer case study</strong> is a core feature of the Real World Data Science platform. Our case studies are designed to show how data science is used to solve real-world problems in business, public policy and beyond.</p>
-<p>A good case study will be a source of information, insight and inspiration for each of our target audiences:</p>
-<ul>
-<li><em>Practitioners</em> will learn from their peers – whether by seeing new techniques applied to common problems, or familiar techniques adapted to unique challenges.</li>
-<li><em>Leaders</em> will see how different data science teams work, the mix of skills and experience in play, and how the components of the data science process fit together.</li>
-<li><em>Students</em> will enrich their understanding of how data science is applied, how data scientists operate, and what skills they need to hone to succeed in the workplace.</li>
-</ul>
-<section id="structure" class="level2">
-<h2 class="anchored" data-anchor-id="structure">Structure</h2>
-<p>Case studies should follow the structure below. It is not necessary to use the section headings we have provided – creativity and variety are encouraged. However, the areas outlined under each section heading should be covered in all submissions.</p>
-<ul>
-<li><dl>
-<dt>The problem/challenge</dt>
-<dd>
-<p>Summarise the project and its relevance to your organisation’s needs, aims and ambitions.</p>
-</dd>
-</dl></li>
-<li><dl>
-<dt>Goals</dt>
-<dd>
-<p>Specify what exactly you sought to achieve with this project.</p>
-</dd>
-</dl></li>
-<li><dl>
-<dt>Background</dt>
-<dd>
-<p>An opportunity to explain more about your organisation, your team’s work leading up to this project, and to introduce audiences more generally to the type of problem/challenge you faced, particularly if it is a problem/challenge that may be experienced by organisations working in different sectors and industries.</p>
-</dd>
-</dl></li>
-<li><dl>
-<dt>Approach</dt>
-<dd>
-<p>Describe how you turned the organisational problem/challenge into a task that could be addressed by data science. Explain how you proposed to tackle the problem, including an introduction, explanation and (possibly) a demonstration of the method, model or algorithm used. (NB: If you have a particular interest and expertise in the method, model or algorithm employed, including the history and development of the approach, please consider writing an <a href="explainers.qmd">Explainer</a> article for us.) Discuss the pros and cons, strengths and limitations of the approach.</p>
-</dd>
-</dl></li>
-<li><dl>
-<dt>Implementation</dt>
-<dd>
-<p>Walk audiences through the implementation process. Discuss any challenges you faced, the ethical questions you needed to ask and answer, and how you tested the approach to ensure that outcomes would be robust, unbiased, good quality, and aligned with the goals you set out to achieve.</p>
-</dd>
-</dl></li>
-<li><dl>
-<dt>Impact</dt>
-<dd>
-<p>How successful was the project? Did you achieve your goals? How has the project benefited your organisation? How has the project benefited your team? Does it inform or pave the way for future projects?</p>
-</dd>
-</dl></li>
-<li><dl>
-<dt>Learnings</dt>
-<dd>
-<p>What are your key takeaways from the project? Are there lessons that you can apply to future projects, or are there learnings for other data scientists working on similar problems/challenges?</p>
-</dd>
-</dl></li>
-</ul>
-</section>
-<section id="advice-and-recommendations" class="level2">
-<h2 class="anchored" data-anchor-id="advice-and-recommendations">Advice and recommendations</h2>
-<p><em>You do not need to divulge the detailed inner workings of your organisation.</em> Audiences are mostly interested in understanding the general use case and the problem-solving process you went through, to see how they might apply the same approach within their own organisations.</p>
-<p><em>Goals can be defined quite broadly.</em> There’s no expectation that you set out your organisation’s short- or long-term targets. Instead, audiences need to know enough about what you want to do so they can understand what motivates your choice of approach.</p>
-<p><em>Use toy examples and synthetic data to good effect.</em> We understand that – whether for commercial, legal or ethical reasons – it can be difficult or impossible to share real data in your case studies, or to describe the actual outputs of your work. However, there are many ways to share learnings and insights without divulging sensitive information. <a href="https://eng.lyft.com/causal-forecasting-at-lyft-part-1-14cca6ff3d6d">This blog post from Lyft</a> uses hypotheticals, mathematical notation and synthetic data to explain the company’s approach to causal forecasting without revealing actual KPIs or data.</p>
-<p><em>People like to experiment, so encourage them to do so.</em> Our platform allows you to embed code and to link that code to interactive coding environments like <a href="https://colab.research.google.com/">Google Colab</a>. So if, for example, you want to explain a technique like <a href="https://rss.onlinelibrary.wiley.com/doi/10.1111/j.1740-9713.2019.01225.x">bootstrapping</a>, why not provide a code block so that audiences can run a bootstrapping simulation themselves.</p>
-<p><em>Leverage links.</em> You can’t be expected to explain or cover every detail in one case study, so feel free to point audiences to other sources of information that can enrich their understanding: blogs, videos, journal articles, conference papers, etc.</p>
-
-
-</section>
-
- ]]></description>
-  <category>Cattle</category>
-  <category>Work Package 1</category>
-  <category>Use case</category>
-  <guid>https://github.com/decide-project-eu/case-studies-website/tutorials/cattle-barometer.html</guid>
-  <pubDate>Fri, 06 Sep 2024 04:00:00 GMT</pubDate>
-  <media:content url="https://github.com/decide-project-eu/case-studies-website/tutorials/cattle-barometer-tutorial.png" medium="image" type="image/png" height="144" width="144"/>
-</item>
+<lastBuildDate>Wed, 21 Jun 2023 04:00:00 GMT</lastBuildDate>
 <item>
   <title>Anonymisation</title>
   <dc:creator>Saba Noor, Miel Hostens, et al.</dc:creator>
@@ -110,7 +28,7 @@
 
 <section id="anonymization" class="level2">
 <h2 class="anchored" data-anchor-id="anonymization">Anonymization</h2>
-<p>For privacy and confidentiality of sensitive information, we explain the anonymization technique for both R and Python code. For this, the SHA256 algorithm is used because it does not allow reverse engineering, and the sensitive information could not be linked back to the specific entity or individual. Function to apply SHA-256 hashing</p>
+<p>For privacy and confidentiality of sensitive information, we explain the anonymization technique for both R and Python code. For this, the SHA256 algorithm is used because it does not allow reverse engineering, and the sensitive information could not be linked back to the specific entity or individual.</p>
 </section>
 <section id="function-to-apply-sha-256-hashing-in-r" class="level1">
 <h1>Function to apply SHA-256 hashing in R</h1>
@@ -195,8 +113,133 @@ font-style: inherit;">=</span>XSD.string)))</span></code></pre></div>
   <category>Work Package 1</category>
   <category>Tutorial</category>
   <guid>https://github.com/decide-project-eu/case-studies-website/tutorials/anonymisation.html</guid>
-  <pubDate>Wed, 06 Mar 2024 05:00:00 GMT</pubDate>
+  <pubDate>Wed, 21 Jun 2023 04:00:00 GMT</pubDate>
   <media:content url="https://github.com/decide-project-eu/case-studies-website/tutorials/anonymisation.webp" medium="image" type="image/webp"/>
+</item>
+<item>
+  <title>Cattle barometer</title>
+  <dc:creator>Saba Noor, Jade Bokma, Bart Pardon, Miel Hostens, et al.</dc:creator>
+  <link>https://github.com/decide-project-eu/case-studies-website/tutorials/cattle-barometer.html</link>
+  <description><![CDATA[ 
+
+
+
+<section id="pasteurella-multocida" class="level1">
+<h1>Pasteurella multocida</h1>
+<p><strong>Clinical relevance:</strong> P. multocida is an opportunistic bacterium and part of the common respiratory tract flora.¹ᐧ² Problems can occur during co-infection with viruses/Mycoplasma bovis or after extensive antimicrobial treatment.</p>
+<p><strong>Clinical signs:</strong> respiratory disease (coughing, nasal discharge, dyspnea, fever), septicemia</p>
+<p><strong>Diagnostic sample:</strong> respiratory tract (bronchoalveolair lavage, transtracheal wash), blood culture, peritoneal fluid, necropsy</p>
+<p><strong>Diagnostic test</strong>*: culture and antimicrobial susceptibility testing, PCR** Carriers: yes</p>
+<p><strong>Infection route:</strong> direct contact (nasal secretions), potentially close distance aerosol spread, potentially fomites</p>
+<p><strong>Vaccines:</strong> Inactivated divalent vaccine (with Salmonella typhimurium) available in some EU countries</p>
+<ol type="1">
+<li>Lima S.F., Teixeria A.G.V., Higgins C.H., Lima S.F., Bicalho R.C. 2016. The upper respiratory tract microbiome and its potential role in bovine respiratory disease and otitis media. Sci Rep 6.<br>
+</li>
+<li>Gaeta N.C., Lima S.F., Teixeria A.G., Ganda E.K., Oikonomou G., Gregory L., Bicalho R.C. 2017. Deciphering upper respiratory tract microbiota complexity in healthy calves and calves that develop respiratory disease using shotgun metagenomics. J Dairy Sci 100, 1445-1458.</li>
+</ol>
+<p>** Detection of an opportunistic pathogen by PCR confirms it present in the animal/herd, but does not evidence involvement in disease. P. multocida is that prevalent that PCR analysis is virtually useless.</p>
+</section>
+<section id="bovine-parainfluenza-3-virus" class="level1">
+<h1>Bovine parainfluenza-3 virus</h1>
+<p><strong>Pathogen:</strong> Bovine parainfluenza-3 virus (bPI-3, also bovine respirovirus 3, 3 genotypes (A, B, C) genus: Respirovirus, family: Paramyxoviridae)</p>
+<p><strong>Incubation period</strong>: 2-6 days</p>
+<p><strong>Clinical relevance:</strong> primary pathogen involved in bovine respiratory disease, predisposing for secondary bacterial infections</p>
+<p><strong>Clinical signs</strong>: respiratory disease (coughing, nasal discharge, dyspnea, fever), presumably mild as single infection</p>
+<p><strong>Diagnostic sample</strong>: respiratory tract (nasopharyngeal swab, bronchoalveolair lavage, transtracheal wash), necropsy</p>
+<p><strong>Carriers:</strong> presumably not, subclinical infections likely most important for infection maintenance in the population</p>
+<p><strong>Diagnostic test</strong>*: Direct: PCR, nanopore sequencing, antigen ELISA. Indirect: paired serum samples for antibody ELISA1 (interpretation may be hampered by maternal immunity)</p>
+<p><strong>Infection route</strong>: aerosols, nasal secretion (direct contact), fomites</p>
+<p><strong>Vaccines:</strong> Several multivalent vaccines (BRSV, BVD, M. haemolytica), inactivated or live-attenuated, parenteral or intranasal are available in Europe</p>
+<p><strong>Eradication programs:</strong> no</p>
+<p>* List incomplete, availability of commercial tests can differ between countries</p>
+</section>
+<section id="mannheimia-haemolytica" class="level1">
+<h1>Mannheimia haemolytica</h1>
+<p><strong>Pathogen:</strong> Mannheimia haemolytica (member of the Pasteurellaceae family, two major genotypes (1 and 2))</p>
+<p><strong>Clinical relevance:</strong> M. haemolytica is an opportunistic bacterium and part of the common respiratory tract flora.¹ᐧ² Problems can occur during co-infection with viruses/Mycoplasma bovis and potentially also after breaches in the innate immunity of the respiratory tract by other factors. Outbreaks of virulent M. haemolytica strains in adult dairy cattle with acute mortality are described.³ᐧ⁴ &nbsp;</p>
+<p><strong>Clinical signs</strong>: respiratory disease (coughing, nasal discharge, dyspnea, fever), septicemia</p>
+<p><strong>Diagnostic sample</strong>: respiratory tract (bronchoalveolair lavage, transtracheal wash), peritoneal fluid, necropsy</p>
+<p><strong>Diagnostic test</strong>*: culture and antimicrobial susceptibility testing; PCR**</p>
+<p><strong>Carriers:</strong> yes</p>
+<p><strong>Infection route:</strong> direct contact (nasal secretions), potentially close distance aerosol spread, potentially fomites</p>
+<p><strong>Vaccines</strong>: both inactivated monovalent and multivalent vaccines (with H. somni, PI-3 or BRSV) are available in Europe.</p>
+<p>1. Lima S.F., Teixeria A.G.V., Higgins C.H., Lima S.F., Bicalho R.C. 2016. The upper respiratory tract microbiome and its potential role in bovine respiratory disease and otitis media. Sci Rep 6.&nbsp; &nbsp;</p>
+<p>2. Gaeta N.C., Lima S.F., Teixeria A.G., Ganda E.K., Oikonomou G., Gregory L., Bicalho R.C. 2017. Deciphering upper respiratory tract microbiota complexity in healthy calves and calves that develop respiratory disease using shotgun metagenomics. J Dairy Sci 100, 1445-1458.</p>
+<p>3. Dorso L., Rouault M., Barbotin C., Chartier C., Assié S. 2021. Infectious bovine respiratory disease in adult cattle: an extensive necropsic and etiological study. Animals (Basel) 11, 2280.</p>
+<p>4. Mahu M., Valgaeren B., Pardon B., Deprez P., Haesebrouck F., Boyen F. 2015. Non-haemolytic Mannheimia haemolytica as a cause of pleuropneumonia and septicemia in a calf. Vet Microbiol 180, 157-160.</p>
+<p>** Detection of an opportunistic pathogen by PCR confirms it present in the animal/herd, but does not evidence involvement in disease</p>
+</section>
+<section id="mycoplasma-bovis" class="level1">
+<h1>Mycoplasma bovis</h1>
+<p><strong>Pathogen:</strong> Mycoplasma bovis</p>
+<p><strong>Incubation period</strong>: 2-10 days</p>
+<p><strong>Clinical relevance:</strong> primary pathogen involved in bovine respiratory disease, mastitis, otitis and arthritis, often reported in co-infection with other viral or bacterial pathogens</p>
+<p><strong>Clinical signs</strong>: respiratory disease (coughing, nasal discharge, dyspnea, fever), ear drop, swollen joints, mastitis, seromas and rarer presentations¹</p>
+<p><strong>Diagnostic sample</strong>: respiratory tract (nasopharyngeal swab, bronchoalveolair lavage, transtracheal wash), milk, synovial fluid, necropsy</p>
+<p><strong>Carriers:</strong> yes</p>
+<p><strong>Diagnostic test</strong>*: Direct: culture (special media and CO2 rich incubation needed), PCR, MALDI-TOF MS, nanopore sequencing. Indirect: paired serum samples for antibody ELISA (interpretation may be hampered by maternal immunity)</p>
+<p><strong>Infection route</strong>: nasal secretions (direct contact), colostrum, milk, semen, fomites¹ᐧ²&nbsp;</p>
+<p><strong>Vaccines:</strong> Restrictedavailability of a monovalent registered vaccine and in some European countries autovaccines are allowed</p>
+<p><strong>Eradication programs:</strong> voluntary program in Finland</p>
+<p>1. Maunsell FP., Donovan G.A. 2009. Mycoplasma bovis infections in young calves. Vet Clin North Am Food Anim Pract 25, 139-177.</p>
+<p>2. Haapala V., Pohjanvirta T., Vähänikkilä N., Halkilahti J., Simonen H., Pelkonen S., Soveri T., Simojoki H., Autio T. 2018. Semen as a source of Mycoplasma bovis mastitis in dairy herds. Vet Microbiol 216, 60-66.</p>
+</section>
+<section id="histophilus-somni" class="level1">
+<h1>Histophilus somni</h1>
+<p><strong>Pathogen:</strong> Histophilus somni&nbsp; (member of the Pasteurellaceae family)</p>
+<p><strong>Clinical relevance:</strong> opportunistic pathogen involved in respiratory disease, septicemia, otitis, polyserositis and thrombotic meningoencephalitis-myelitis</p>
+<p><strong>Clinical signs</strong>: respiratory disease (coughing, nasal discharge, dyspnea, fever), central nervous signs (sleeper syndrome), swollen joints, ear drop and sudden death</p>
+<p><strong>Diagnostic sample</strong>: respiratory tract (bronchoalveolair lavage, transtracheal wash)¹, blood culture, necropsy</p>
+<p><strong>Diagnostic test</strong>*: PCR**, culture (CO2 rich incubation needed) and antimicrobial susceptibility testing</p>
+<p><strong>Carriers:</strong> yes</p>
+<p><strong>Infection route:</strong> direct contact (nasal secretions), urine, potentially fomites</p>
+<p><strong>Vaccines:</strong> divalent inactivated vaccines (M. haemolytica, H. somni) are available in Europe</p>
+<p>1. Van Driessche L., Valgaeren B.R., Gille L., Boyen F., Ducatelle R., Haesebrouck F., Deprez P., Pardon B. A deep nasopharyngeal swab versus nonendoscopic bronchoalveolar lavage for isolation of bacterial pathogens from preweaned calves with respiratory disease. J Vet Intern Med 31, 946-953.</p>
+</section>
+<section id="bovine-respiratory-syncytial-virus" class="level1">
+<h1>Bovine respiratory syncytial virus</h1>
+<p><strong>Pathogen:</strong> Bovine respiratory syncytial virus (BRSV, also Bovine orthopneumovirus, multiple subtypes, genus: Orthopneumovirus, family: Pneumoviridae)</p>
+<p><strong>Incubation period:</strong> 2-5 days</p>
+<p><strong>Clinical relevance:</strong> primary pathogen involved in bovine respiratory disease, predisposing for secondary bacterial infections</p>
+<p><strong>Clinical signs</strong>: respiratory disease (coughing, nasal discharge, dyspnea, fever), potentially lethal as single agent</p>
+<p><strong>Diagnostic sample</strong>: respiratory tract (nasopharyngeal swab, bronchoalveolair lavage, transtracheal wash)¹ᐧ², necropsy</p>
+<p><strong>Diagnostic test</strong>*: Direct: PCR, nanopore sequencing, antigen ELISA. Indirect: paired serum samples for antibody ELISA (interpretation may be hampered by maternal immunity)</p>
+<p><strong>Carriers:</strong> persistent infection suggested but not evidenced, subclinical infections likely most important for infection maintenance in the population</p>
+<p><strong>Infection route</strong>: airborne³, aerosol, nasal secretions (direct contact), fomites</p>
+<p><strong>Vaccines:</strong> both monovalent vaccines and multivalent vaccines (combined with bPI-3, BVDV, M. haemolytica), inactivated or live attenuated, parenteral or intranasal are available in Europe</p>
+<p><strong>Eradication programs:</strong> voluntary program in Norway</p>
+<p>* List incomplete, availability of commercial tests can differ between countries</p>
+<p>1. Doyle D., Credille B., Lehenbauer T.W., Berghaus R., Aly S.S., Champagne J., Blanchard P., Crossley B., Berghaus L., Cochran S., Woolums A. 2017. Agreement among 4 sampling methods to identify respiratory pathogens in dairy calves with acute bovine respiratory disease. J Vet Intern Med 31, 954-959.</p>
+<p>2. Makoschey B., Berge A.C. 2021. Review on bovine respiratory syncytial virus and bovine parainfluenza – usual suspects in bovine respiratory disease – a narrative review. BMC Veterinary Research 17, 261.</p>
+<p>3. Mars M.H., Bruschke C.J.M., Van Oirschot J.T. 1999. Airborne transmission of BHV1, BRSV, and BVDV among cattle is possible under experimental conditions. Vet Microbiol 66, 197-207.</p>
+</section>
+<section id="bovine-coronavirus" class="level1">
+<h1>Bovine coronavirus</h1>
+<p><strong>Pathogen:</strong> Bovine coronavirus (BCoV, genus: Betacoronavirus, family: Coronaviridae)</p>
+<p><strong>Incubation period:</strong> 1-7 days</p>
+<p><strong>Clinical relevance</strong>: primary pathogen involved in bovine respiratory disease¹, calf diarrhea and winter dysentery², predisposing for secondary bacterial infections</p>
+<p><strong>Clinical signs</strong>: respiratory disease (coughing, nasal discharge, dyspnea, fever), calf diarrhea, winter dysentery (cows)</p>
+<p><strong>Diagnostic sample</strong>: respiratory tract (nasopharyngeal swab, bronchoalveolar lavage, transtracheal wash)³, necropsy, feces</p>
+<p><strong>Diagnostic test</strong>*: Direct: PCR, nanopore sequencing, antigen ELISA. Indirect: paired serum samples for antibody ELISA4 (interpretation may be hampered by maternal immunity)</p>
+<p><strong>Infection route</strong>: aerosols, nasal secretions (direct contact), feces, fomites</p>
+<p><strong>Carriers:</strong> limited evidence, differentiation from prolonged shedding difficult, subclinical infections likely most important for infection maintenance in the population</p>
+<p><strong>Vaccines</strong>: multivalent vaccines containing inactivated bovine coronavirus (combined with bovine rotavirus and Enterotoxic Escherichia coli) next to other intestinal pathogens intended for dams are registered for neonatal calf diarrhea in Europe.</p>
+<p><strong>Eradication programs:</strong> voluntary program in Norway</p>
+<p>* List incomplete, availability of commercial tests can differ between countries</p>
+<p>¹&nbsp;&nbsp;&nbsp;Decaro N., Campolo M., Desario C., Cirone F., D’abramo M., Lorusso E., Greco G., Mari V., Colaianni M.L., Elia G., Martella V., Buonavoglia C. 2008. Respiratory disease associated with bovine coronavirus infection in cattle herds in Southern Italy. J Vet Diagn Invest 20, 28-32.</p>
+<p>²&nbsp;&nbsp;&nbsp;&nbsp;Boileau M.J., Kapil S.2010. Bovine coronavirus associated syndromes. Vet Clin north Am Food Anim Pract 26, 123-146.</p>
+<p>³&nbsp;&nbsp;&nbsp;&nbsp;Doyle D., Credille B., Lehenbauer T.W., Berghaus R., Aly S.S., Champagne J., Blanchard P., Crossley B., Berghaus L., Cochran S., Woolums A. 2017. Agreement among 4 sampling methods to identify respiratory pathogens in dairy calves with acute bovine respiratory disease. J Vet Intern Med 31, 954-959</p>
+
+
+</section>
+
+ ]]></description>
+  <category>Cattle</category>
+  <category>Work Package 1</category>
+  <category>Use case</category>
+  <guid>https://github.com/decide-project-eu/case-studies-website/tutorials/cattle-barometer.html</guid>
+  <pubDate>Wed, 21 Jun 2023 04:00:00 GMT</pubDate>
+  <media:content url="https://github.com/decide-project-eu/case-studies-website/tutorials/cattle-barometer-tutorial.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>Ontology</title>
@@ -285,8 +328,40 @@ font-style: inherit;">=</span>XSD.string)))</span></code></pre></div>
   <category>Ontology building</category>
   <category>Tutorial</category>
   <guid>https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies.html</guid>
-  <pubDate>Wed, 06 Mar 2024 05:00:00 GMT</pubDate>
+  <pubDate>Wed, 21 Jun 2023 04:00:00 GMT</pubDate>
   <media:content url="https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies.webp" medium="image" type="image/webp"/>
+</item>
+<item>
+  <title>Poultry Barometer</title>
+  <dc:creator>Yara Slegers, Sjaak de Wit, Miel Hostens, et al.</dc:creator>
+  <link>https://github.com/decide-project-eu/case-studies-website/tutorials/poultry-barometer.html</link>
+  <description><![CDATA[ 
+
+
+
+<section id="aim" class="level1">
+<h1>Aim</h1>
+<p>The aim of the “Poultry Barometer” is to provide insight into the most prevalent Infectious Bronchitis Virus (IBV) strains in broiler chickens within specific regions and periods.</p>
+</section>
+<section id="background" class="level1">
+<h1>Background</h1>
+<p>IBV causes infectious bronchitis (IB) in poultry. An infection can lead to respiratory signs, drop in production, and kidney damage. In the Netherlands, broilers are often vaccinated against IBV to limit the impact of disease. However, vaccines do not protect against all IBV strains, and new strain are regularly discovered. Insights into the most prevalent strains can help to better protect broiler flocks against IBV.</p>
+<p>For more information on IBV, visit the <a href="https://www.gdanimalhealth.com/Disease-control/Animal-diseases/Infectious-Bronchitis">GD website</a></p>
+</section>
+<section id="data" class="level1">
+<h1>Data</h1>
+<p>Currently, the dashboard only includes data from the Netherlands, provided by Royal GD. Royal GD performs PCR tests on submitted material to detect IBV. If the virus is detected, sequencing will determine the specific IBV genotype.</p>
+<p>Only anonymous data is used to create the dashboard. After linking a farm to the correct province, farm identification is removed from the data. The dashboard shows only aggregated data.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>Poultry</category>
+  <category>Work Package 1</category>
+  <category>Use case</category>
+  <guid>https://github.com/decide-project-eu/case-studies-website/tutorials/poultry-barometer.html</guid>
+  <pubDate>Sun, 26 Jun 2022 04:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

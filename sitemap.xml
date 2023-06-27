@@ -2,34 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://github.com/decide-project-eu/case-studies-website/case-studies/cattle-barometer.html</loc>
-    <lastmod>2023-06-25T18:16:42.466Z</lastmod>
+    <lastmod>2023-06-27T11:33:17.580Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/decide-project-eu/case-studies-website/case-studies/poultry-barometer.html</loc>
+    <lastmod>2023-06-27T11:33:18.699Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/decide-project-eu/case-studies-website/feeds.html</loc>
-    <lastmod>2023-06-25T18:16:43.382Z</lastmod>
+    <lastmod>2023-06-27T11:33:19.793Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/decide-project-eu/case-studies-website/index.html</loc>
-    <lastmod>2023-06-25T18:16:44.782Z</lastmod>
+    <lastmod>2023-06-27T11:33:21.825Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/decide-project-eu/case-studies-website/latest-content.html</loc>
-    <lastmod>2023-06-25T18:16:46.452Z</lastmod>
+    <lastmod>2023-06-27T11:33:24.157Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/decide-project-eu/case-studies-website/ts-and-cs.html</loc>
-    <lastmod>2023-06-25T18:16:47.372Z</lastmod>
+    <lastmod>2023-06-27T11:33:25.168Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/decide-project-eu/case-studies-website/tutorials/anonymisation.html</loc>
-    <lastmod>2023-06-25T18:16:48.965Z</lastmod>
+    <lastmod>2023-06-27T11:33:26.920Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/decide-project-eu/case-studies-website/tutorials/cattle-barometer.html</loc>
-    <lastmod>2023-06-25T18:16:50.112Z</lastmod>
+    <lastmod>2023-06-27T11:33:28.734Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies.html</loc>
-    <lastmod>2023-06-25T18:16:51.891Z</lastmod>
+    <lastmod>2023-06-27T11:33:31.012Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/decide-project-eu/case-studies-website/tutorials/poultry-barometer.html</loc>
+    <lastmod>2023-06-27T11:33:32.112Z</lastmod>
   </url>
 </urlset>

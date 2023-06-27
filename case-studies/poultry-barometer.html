@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Animal data science in action, brought to you by the Decide project">
 
-<title>Decide species cases</title>
+<title>DECIDE Case Studies - Poultry barometer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,25 +23,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./images/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../images/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -62,35 +59,6 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-latest-content .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-latest-content'] = new List('listing-latest-content', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-2804FN9QRK"></script>
 
 <script type="text/javascript">
@@ -101,19 +69,13 @@ gtag('js', new Date());
 gtag('config', 'G-2804FN9QRK', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="decide.css">
-<meta property="og:title" content="Decide species cases">
-<meta property="og:description" content="Animal data science in action, brought to you by the Decide project">
-<meta property="og:image" content="https://github.com/decide-project-eu/case-studies-website/images/rwds-logo-150px.png">
+<link rel="stylesheet" href="../decide.css">
+<meta property="og:title" content="DECIDE Case Studies - Poultry barometer">
 <meta property="og:site-name" content="DECIDE Case Studies">
-<meta name="twitter:title" content="Decide species cases">
-<meta name="twitter:description" content="Animal data science in action, brought to you by the Decide project">
-<meta name="twitter:image" content="https://github.com/decide-project-eu/case-studies-website/images/rwds-logo-150px.png">
+<meta name="twitter:title" content="DECIDE Case Studies - Poultry barometer">
 <meta name="twitter:site" content="@decide_h2020">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -123,8 +85,8 @@ gtag('config', 'G-2804FN9QRK', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/DECIDE_logo_RGB-1.png" alt="Decide brand" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/DECIDE_logo_RGB-1.png" alt="Decide brand" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="false"></div>
@@ -139,11 +101,11 @@ gtag('config', 'G-2804FN9QRK', { 'anonymize_ip': true});
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-case-studies">    
         <li>
-    <a class="dropdown-item" href="./case-studies/cattle-barometer.html" rel="" target="">
+    <a class="dropdown-item" href="../case-studies/cattle-barometer.html" rel="" target="">
  <span class="dropdown-text">Cattle barometer</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./case-studies/poultry-barometer.html" rel="" target="">
+    <a class="dropdown-item" href="../case-studies/poultry-barometer.html" rel="" target="">
  <span class="dropdown-text">Poultry barometer</span></a>
   </li>  
     </ul>
@@ -154,19 +116,19 @@ gtag('config', 'G-2804FN9QRK', { 'anonymize_ip': true});
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-tutorials">    
         <li>
-    <a class="dropdown-item" href="./tutorials/cattle-barometer.html" rel="" target="">
+    <a class="dropdown-item" href="../tutorials/cattle-barometer.html" rel="" target="">
  <span class="dropdown-text">Cattle barometer</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./tutorials/anonymisation.html" rel="" target="">
+    <a class="dropdown-item" href="../tutorials/anonymisation.html" rel="" target="">
  <span class="dropdown-text">Anonymisation</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./tutorials/ontologies.html" rel="" target="">
+    <a class="dropdown-item" href="../tutorials/ontologies.html" rel="" target="">
  <span class="dropdown-text">Ontology</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./tutorials/poultry-barometer.html" rel="" target="">
+    <a class="dropdown-item" href="../tutorials/poultry-barometer.html" rel="" target="">
  <span class="dropdown-text">Poultry Barometer</span></a>
   </li>  
     </ul>
@@ -198,160 +160,34 @@ gtag('config', 'G-2804FN9QRK', { 'anonymize_ip': true});
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
+<header id="title-block-header" class="quarto-title-block default">
+  <div class="quarto-title-banner">
+    <div class="quarto-title column-body">
+      <h1 class="title">Poultry barometer</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
 <!-- main -->
 
 
 
-<div class="content-container">
-<div class="top-story purple-background">
-<div class="grid">
-<section id="how-the-cattle-barometer-was-transformed-to-fit-multiple-labs-across-europe-in-the-decide-project" class="g-col-12 g-col-lg-4 top-story-text">
-<h2>How the cattle barometer was transformed to fit multiple labs across Europe in the DECIDE project!</h2>
-<p>Within WP1 and WP3 we have been working to transform an existing tool called the Griepbarometer developed in Flanders, Belgium into a international tool applicable across Europe, fit to several diagnostic laboratories.</p>
-</section>
-<div class="g-col-12 g-col-lg-8 top-story-img">
-<p><img src="images/prototype_dgz.jpg" class="img-fluid" width="669"></p>
-</div>
-</div>
-<p></p>
-</div>
-</div>
-<!-- ::: {.header-banner .header-image}
-![](images/nasa-Q1p7bh3SHj8-unsplash-crop.png)
-::: -->
-<div class="header-text">
-<div class="content-container">
-<div class="header-block">
-<p>Welcome to the website of the <strong>Decide Project use cases</strong>, a <a href="https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-2020_en">Horizon 2020</a> project from the <a href="https://commission.europa.eu/index_en">European Commission</a>. This site and its content are being created and curated by the work package leaders and data leaders.</p>
-</div>
-</div>
-</div>
-<div class="content-container">
-<div class="listing-block">
-<p><a href="./latest-content.html"></a></p><a href="./latest-content.html">
-<h2 id="tutorials">Tutorials</h2>
-</a><p><a href="./latest-content.html"></a></p>
-<div id="listing-latest-content" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Work Package 1,Tutorial" data-listing-date-sort="1687320000000" data-listing-file-modified-sort="1687861821803" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<a href="./tutorials/anonymisation.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./tutorials/anonymisation.webp" class="thumbnail-image card-img" style="height: 150px;" alt="Anonymisation tuturial">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Anonymisation
-</h5>
-<div class="card-text listing-description">
-For privacy and confidentiality of sensitive information, we explain the anonymization technique for both R and Python code.…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Saba Noor, Miel Hostens, et al.
-</div>
-<div class="listing-date">
-Jun 21, 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="Cattle,Work Package 1,Use case" data-listing-date-sort="1687320000000" data-listing-file-modified-sort="1687861746189" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
-<a href="./tutorials/cattle-barometer.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./tutorials/cattle-barometer-tutorial.png" class="thumbnail-image card-img" style="height: 150px;" alt="Barometer tuturial">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Cattle barometer
-</h5>
-<div class="card-text listing-description">
-<strong>Clinical relevance:</strong> P. multocida is an opportunistic bacterium and…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Saba Noor, Jade Bokma, Bart Pardon, Miel Hostens, et al.
-</div>
-<div class="listing-date">
-Jun 21, 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="Work package 1,Ontology building,Tutorial" data-listing-date-sort="1687320000000" data-listing-file-modified-sort="1687861791329" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
-<a href="./tutorials/ontologies.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./tutorials/ontologies.webp" class="thumbnail-image card-img" style="height: 150px;" alt="Ontology tutorial">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Ontology
-</h5>
-<div class="card-text listing-description">
-Non-ontology-based systems require rewriting the cleaning code each time new data arrives, making it…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Saba Noor, Miel Hostens, et al.
-</div>
-<div class="listing-date">
-Jun 21, 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-</div>
-</div>
-<div class="footer-text">
-<div class="footer-container black-background">
-<div class="footer-block">
-<div class="grid">
-<section id="published-by" class="g-col-12 g-col-md-6">
-<h3>Published by</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://rss.org.uk/"><img src="images/DECIDE_logo_RGB-1.png" class="img-fluid figure-img" width="400"></a></p>
-</figure>
-</div>
-</section>
-<section id="about-us" class="g-col-12 g-col-md-2">
-<h3>About us</h3>
-<p><a href="https://decideproject.eu/">The project</a><br>
-<a href="https://decideproject.eu/partners/">Partners and funders</a><br>
-<a href="https://decideproject.eu/contact/">Contact us</a></p>
-</section>
-<section id="follow-us" class="g-col-12 g-col-md-2">
-<h3>Follow us</h3>
-<p><a href="https://github.com/decide-project-eu/">GitHub</a><br>
-<a href="https://twitter.com/decide_h2020">Twitter</a><br>
-<a href="https://www.linkedin.com/company/decide-h2020/">LinkedIn</a><br>
-</p>
-</section>
-<!-- ::: {.g-col-12 .g-col-md-12}
-### Our partners
-logos to go here
-::: -->
-</div>
-</div>
-</div>
-</div>
 
+<div id="Tableau">
+
+<div class="tableauPlaceholder" id="viz1687859701622" style="position: relative"><noscript><a href="#"><img alt="Broiler barometer " src="https://public.tableau.com/static/images/De/DecideBroilerBarometer/Broilerbarometer/1_rss.png" style="border: none"></a></noscript><object class="tableauViz" style="display:none;"><param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F"> <param name="embed_code_version" value="3"> <param name="site_root" value=""><param name="name" value="DecideBroilerBarometer/Broilerbarometer"><param name="tabs" value="no"><param name="toolbar" value="yes"><param name="static_image" value="https://public.tableau.com/static/images/De/DecideBroilerBarometer/Broilerbarometer/1.png"> <param name="animate_transition" value="yes"><param name="display_static_image" value="yes"><param name="display_spinner" value="yes"><param name="display_overlay" value="yes"><param name="display_count" value="yes"><param name="language" value="en-US"><param name="filter" value="publish=yes"></object></div>                <script type="text/javascript">                    var divElement = document.getElementById('viz1687368573557');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.4)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.4)+'px';} else { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.4)+'px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+</div>
 
 
 
@@ -614,8 +450,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </a>
   </li>  
 </ul>
-    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/decide-project-eu/case-studies-website/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/decide-project-eu/case-studies-website/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
-    <div class="nav-footer-right"><a href="./ts-and-cs.html">Terms &amp; Conditions</a></div>
+    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/decide-project-eu/case-studies-website/edit/main/case-studies/poultry-barometer.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/decide-project-eu/case-studies-website/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
+    <div class="nav-footer-right"><a href="../ts-and-cs.html">Terms &amp; Conditions</a></div>
   </div>
 </footer>
 
