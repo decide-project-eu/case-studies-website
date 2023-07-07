@@ -18,19 +18,59 @@ language:
 
 This tool visualizes pathogen-specific lab results of field samples obtained from cattle over Europe. It shows the historical trend, dynamics and current presence of specific pathogens per area. It holds the potential for early warning and to support decision-making on farm to control infectious diseases, such as antimicrobial use, vaccination, and purchase of animals.
 
+# Data preparation
+
+## Minimum data requirements
+
+Individual or pooled samples from the respiratory tract of cattle (preferably from ill animals) with the results of diagnostic test for some respiratory pathogens (*e.g. Pasteurella multocida*, *Mycoplasmopsis bovis* (previously *Mycoplasma bovis*), *Mannheimia haemolytica*, *Histophilus somni*, Bovine respiratory syncytial virus, Parainfluenza-type 3, and Bovine coronavirus):
+
+-   Date of sample
+
+-   Diagnostic sample type (*e.g.* BAL, swab, lung, ..)
+
+-   Diagnostic test (*e.g.* PCR, culture, nanopore sequencing, paired-serum)
+
+-   Farm identification (anonymized)
+
+-   Geolocation of farm (*e.g.* postal code/province, country)
+
+-   (Breed/production type of animal/herd)
+
+## How to handle results?
+
+The result can be either 'negative' (0), 'positive' (1) or 'not tested' (NA):
+
+-   PCR: when to consider a test results positive or negative will be at the discretion of the laboratory (cutoff values may differ per lab). Dubious test results such as 'not conclusive', 'no test results due to inhibition', are recommended to file as not tested (NA).
+
+-   Culture (*Pasteurellaceae*): it is expected that culture results are either positive (1) or negative (0). For example, when a swab has been cultured on blood agar plates, we assume that *P. multocida, M. haemolytica,* and *Histophilus somni* are tested. For example, when only *P. multocida* is present, the result for that specific sample should be reported as: PM (1), MH (0), HS (0). Dubious test results due to overgrowth by for example *Proteus species* could be filed as not tested (NA) for all *Pasteurellaceae*.
+
+-   Culture (*M. bovis*): for *M. bovis* specific culture media are necessary, however, when tested, result can be positive (1) or negative (0). Dubious test results due to overgrowth by fungi could be filed as not tested (NA).
+
+-   Nanopore sequencing: when to consider a test results positive or negative will be at the discretion of the laboratory (cutoff values may differ per lab).
+
+
 # Data manipulation
 
-Only [anonymous data](https://decide-project-eu.github.io/case-studies-website/tutorials/anonymisation.html) is used to create this dashboard.
+## Load your data and libraries
 
-## Examples of R-code and Python
+For example an excel or csv file:
 
--   Lab 1
--   Lab 2
--   Lab 3
+```{r, eval = FALSE}
 
-## Load the necessary libraries
+barometer_dt_raw_2021 <- readxl::read_excel("../Data/Lab3.xlsx") 
+barometer_dt_raw_2021 <- read.csv("../Data/Lab4.csv")
+```
 
-```{r message=FALSE, warning=FALSE}
+When you add separate files, combine them:
+
+```{r, eval = FALSE}
+
+barometer_dt_combined <- rbind(barometer_dt_raw_2021, barometer_dt_raw_2022)
+```
+
+Load the necessary libraries, which depends on your data(file) and script:
+
+```{r, eval = FALSE}
 
 package_list <- c("data.table", "tidyverse", "naniar", "stringr", "readr",  "dplyr", 
                   "magrittr", "readxl", "writexl", "sjmisc", "tidyr")
@@ -42,9 +82,30 @@ for (pkg in package_list) {
 }
 ```
 
-## Adding of rows for pathogens
+## Start wrangling your data
 
-For example when all results are reported in one field (*e.g.* sequencing data).
+It may be necessary to filter some of your data:
+
+```{r, eval = FALSE}
+
+barometer_dt_filter <- barometer_dt_combined %>% 
+  dplyr::filter(SYSTEM %in% c('Respiratory', 'NA')
+                )
+barometer_dt_filter2 <- barometer_dt_filter %>% 
+  dplyr::filter(MATRIX %in% c('Pleural Fluid', 'Tissue swab', 'Tonsil', 'Trachea',  'Thoracic Fluid', 
+                              'Lung', 'Swab', 'Tissue swab', 'Nasal Swab', 'Nasal Fluid', 'Tissue-Pool',
+                              'Carcass', 'Pooled swab')
+                ) 
+barometer_dt_filter3 <- barometer_dt_filter2 %>% 
+  dplyr::filter(TEST %in% c("PI3V PCR", "PCR M. haemolytica - ARVL", "Mycoplasma bovis (PCR)", 
+                            "PCR H. somni - ARVL", "PCR P. multocida - ARVL", "Miscellaneous Test",
+                            "Routine Culture", "PCR M. bovis - ARVL", "BRSV PCR", 
+                            "Culture Growth", "PCR BoCoV", "Mycoplasma bovis (PCR)")
+) 
+
+```
+
+Or add rows for pathogens when all results are reported in one field (*e.g.* sequencing data):
 
 ```{r, eval = FALSE}
 
@@ -61,7 +122,146 @@ barometer_dt <- barometer_dt_raw %>%
 
 ```
 
-## Example with dummy file & final format
+Or add rows for culture results:
+
+```{r, eval = FALSE}
+
+barometer_dt$HS <- ifelse(barometer_dt$Diagnostic_test == "Culture", 0, NA)
+barometer_dt$MH <- ifelse(barometer_dt$Diagnostic_test == "Culture", 0, NA)
+barometer_dt$PM <- ifelse(barometer_dt$Diagnostic_test == "Culture", 0, NA)
+
+barometer_dt_culture_wide <- barometer_dt %>%
+  tidyr::pivot_longer(
+    cols = c('PM', 'MH', 'HS'),
+    names_to = 'Pathogen_culture',
+    values_to = 'Result_culture'
+  )
+
+barometer_dt_culture_wide$Pathogen <- 
+  ifelse(barometer_dt_culture_wide$Pathogen == "Missing",
+         barometer_dt_culture_wide$Pathogen_culture,
+         barometer_dt_culture_wide$Pathogen)
+
+```
+
+Or need an intermediate table for culture results:
+
+```{r, eval = FALSE}
+
+df_samples <- data.frame(
+  Result = c('OK', 'OK', 'OK', 'OK'),
+  Parameter_code = c('BAC_AERO','BAC_AERO','BAC_AERO', 'BAC_MYCOPLASMA'),
+  Diagnostic_test= c('Culture','Culture','Culture', 'Culture'),
+  Pathogen_identification=c("Pasteurella multocida","Mannheimia haemolytica","Histophilus somni", 
+                            'Mycoplasma bovis')
+)
+```
+
+Or need to create binary results for PCR & culture
+
+```{r, eval = FALSE}
+
+barometer_results <- barometer_dt_culture_wide %>% 
+  dplyr::mutate(
+    Result = case_when(
+      # Positive tests
+      Diagnostic_test == 'PCR' & 
+        RESULT %in% c("Positive", "Weak Positive", "Mycoplasma bovis PCR Positive",
+                      "Strong Positive") ~ 1,
+      # Negative tests
+      Diagnostic_test == 'PCR' & 
+        RESULT %in% c("No Pathogen detected", "Negative", "Sterile", 
+                      "No Significant Growth", "No CT", 
+                      "Mycoplasma bovis PCR Negative", 
+                      "Mixed Non-Significant Bacterial Growth", 
+                      "No Significant Growth @48hrs", "No Growth", 
+                      "No Pathogen detected", "No RNA detected", 
+                      "No DNA detected", "No Virus Detected", "Not Detected") ~ 0,
+      # Inconclusive tests
+      Diagnostic_test == 'PCR' & 
+        RESULT %in% c("Inconclusive", "Mixed Bacterial Growth", "Mixed Growth",
+                      "Very Mixed Growth") ~ as.numeric(NA),
+      # Culture tests
+      Diagnostic_test == 'Culture' & Pathogen %in% c('MH', 'PM', 'HS') ~ 
+        case_when(
+          Pathogen == 'MH' & RESULT == "Mannheimia haemolytica" ~ 1,
+          Pathogen == 'PM' & RESULT %in% c("Pasteurella multocida", 
+                                           "P. multocida") ~ 1,
+          Pathogen == 'HS' & RESULT %in% c("Histophilus somni",
+                                           "Histophilus somnus",
+                                           "Histophilus somnii") ~ 1,
+          # Default case
+          TRUE ~ 0
+        ),
+    )
+
+```
+
+Or need to merge files:
+
+```{r, eval = FALSE}
+
+barometer <-
+  barometer_dt %>%
+  dplyr::left_join(df_samples, by = c('Diagnostic_test','Result', 'Parameter_code')) %>%
+  dplyr::left_join(
+      barometer_aero_cult, by = c('Filenumber', 'Samplenumber', 'Result', 'Parameter_code',
+                                  'Pathogen_identification')
+      ) %>%
+  dplyr::left_join(
+      barometer_myco_cult, by = c('Filenumber', 'Samplenumber', 'Result', 'Parameter_code',
+                                  'Pathogen_identification')
+  ) 
+
+```
+
+## Reaching the final format
+
+
+Floor date to the 1^st^ of the month:
+
+```{r, eval = FALSE}
+
+barometer_dt$Floored_date <- lubridate::floor_date(barometer_dt$Date, "month")
+```
+
+Aggregate data on farm_ID and month (WIDE):
+
+```{r, eval = FALSE}
+barometer_groupby <- barometer_dt %>%
+  group_by(Lab_reference, Country, Breed, Floored_date, Province, Farm_ID, Diagnostic_test, Sample_type) %>%
+  summarise(across(c(PM, MH, HS, MB, BRSV, PI3, BCV), max))
+```
+
+Convert to *long* version:
+
+```{r, eval = FALSE}
+
+barometer_long <- barometer_groupby %>%
+  tidyr::pivot_longer(
+    cols = c('PM', 'MH', 'HS', 'MB', 'BRSV', 'PI3', 'BCV'),
+    names_to = 'Pathogen',
+    values_to = 'Result',
+  )
+      
+```
+
+Save file to csv:
+
+```{r, eval = FALSE}
+write.csv(barometer_long, "../Data/dummyfile", row.names=TRUE)
+```
+
+_In case you want to convert to the *wide* version:_
+
+```{r, eval = FALSE}
+
+barometer_wide <- barometer_groupby %>%
+  tidyr::pivot_wider(names_from = c(Pathogen), values_from = Result) 
+```
+
+
+## Example with dummy file (WIDE data)
 
 Please find here a [dummy file](.....) which can help you understand the different steps we are taking in the next chunk. You can find the step-by-step explanation below the R chunk.
 
@@ -148,11 +348,11 @@ First we make sure that all column names are in the final format and understanda
 
 -   <small> Filenumber, Samplenumber, Date, Sample_type, Diagnostic_test, Farm_ID, Postal_code, Breed, Province
 
--   The following abbreviations for the 7 most important pathogens involved in bovine respiratory disease are used: PM (*Pasteurella multocida*), MB (*Mycoplasmopsis bovis*, previously *Mycoplasma bovis*), MH (*Mannheimia haemolytica*), HS (*Histophilus somni*), BRSV (bovine respiratory syncytial virus), PI3 (parainfluenza-type 3), and BCV (bovine coronavirus)
+-   The following abbreviations for the 7 most important pathogens involved in bovine respiratory disease are used: PM (*Pasteurella multocida*), MB (*Mycoplasmopsis bovis*, previously *Mycoplasma bovis*), MH (*Mannheimia haemolytica*), HS (*Histophilus somni*), BRSV (bovine respiratory syncytial virus), PI3 (parainfluenza-type 3), and BCV (bovine coronavirus)</small>
 
 Subsequently we mutate/add data to the final format:
 
--   Samplenumber: in case more than one sample is submitted to the lab under one filenumber (*e.g.* 001, 002 or 1, 2, ..)
+-   <small>Samplenumber: in case more than one sample is submitted to the lab under one filenumber (*e.g.* 001, 002 or 1, 2, ..)
 
 -   Date (DD-MM-YYYY): either date of sampling or creation date in lab. *The date of sampling is preferred, however, when this date is (often) lacking, it may be easier to take the creation date of the lab. This is only recommended when time between taking samples and creation date remains short (1-2 days)*
 
@@ -170,25 +370,23 @@ Subsequently we mutate/add data to the final format:
 
 -   Diagnostic test: '*Culture*', '*PCR*', '*NPS*' (nanopore sequencing) or '*Paired serum*'. *In this dataset the Diagnostic test has already been mentioned in the correct format* </small>
 
--   Finally, the Filenumber and Farm_ID are anonymized by using the [SHA-256 hashing function](https://decide-project-eu.github.io/case-studies-website/tutorials/anonymisation.html)
+Finally, the Filenumber and Farm_ID are anonymized by using the [SHA-256 hashing function](https://decide-project-eu.github.io/case-studies-website/tutorials/anonymisation.html).
 
-## How to handle results?
 
-The result can be either 'negative' (0), 'positive' (1) or 'not tested' (NA):
 
--   PCR: when to consider a test results positive or negative will be at the discretion of the laboratory (cutoff values may differ per lab). Dubious test results such as 'not conclusive', 'no test results due to inhibition', are recommended to file as not tested (NA).
+## Example of final format 
 
--   Culture (*Pasteurellaceae*): it is expected that culture results are either positive (1) or negative (0). For example, when a swab has been cultured on blood agar plates, we assume that *P. multocida, M. haemolytica,* and *Histophilus somni* are tested. For example, when only *P. multocida* is present, the result for that specific sample should be reported as: PM (1), MH (0), HS (0). Dubious test results due to overgrowth by for example *Proteus species* could be filed as not tested (NA) for all *Pasteurellaceae*.
+[csv file](...)
 
--   Culture (*M. bovis*): for *M. bovis* specific culture media are necessary, however, when tested, result can be positive (1) or negative (0). Dubious test results due to overgrowth by fungi could be filed as not tested (NA).
+## Examples of complete R-scripts (and Python)
 
--   Nanopore sequencing: when to consider a test results positive or negative will be at the discretion of the laboratory (cutoff values may differ per lab).
+-   Lab 1
 
-## Final format
+-   Lab 2
 
-\[Excel file\]
+-   Lab 3
 
-# Visualisation: Tableau
+# Visualization: Tableau
 
 The Tableau workbook will become open source at the end of the project.
 
@@ -220,7 +418,7 @@ Please contact Jade Bokma: jade.bokma\@ugent.be
 
 **Infection route**: airborne³, aerosol, nasal secretions (direct contact), fomites
 
-**Vaccines:** both monovalent vaccines and multivalent vaccines (combined with bPI-3, BVDV, M. haemolytica), inactivated or live attenuated, parenteral or intranasal are available in Europe
+**Vaccines:** both monovalent vaccines and multivalent vaccines (combined with bPI-3, BVDV, _M. haemolytica_), inactivated or live attenuated, parenteral or intranasal are available in Europe
 
 **Eradication programs:** voluntary program in Norway
 
@@ -250,7 +448,7 @@ Please contact Jade Bokma: jade.bokma\@ugent.be
 
 **Infection route**: aerosols, nasal secretion (direct contact), fomites
 
-**Vaccines:** Several multivalent vaccines (BRSV, BVD, M. haemolytica), inactivated or live-attenuated, parenteral or intranasal are available in Europe
+**Vaccines:** Several multivalent vaccines (BRSV, BVD, _M. haemolytica_), inactivated or live-attenuated, parenteral or intranasal are available in Europe
 
 **Eradication programs:** no
 
