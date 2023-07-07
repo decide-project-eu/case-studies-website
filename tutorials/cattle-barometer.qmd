@@ -28,6 +28,150 @@ Only [anonymous data](https://decide-project-eu.github.io/case-studies-website/t
 -   Lab 2
 -   Lab 3
 
+## Load the necessary libraries
+
+```{r message=FALSE, warning=FALSE}
+
+package_list <- c("data.table", "tidyverse", "naniar", "stringr", "readr",  "dplyr", 
+                  "magrittr", "readxl", "writexl", "sjmisc", "tidyr")
+
+for (pkg in package_list) {
+  if (pkg %in% rownames(.packages()) == FALSE)
+  {library(pkg, character.only = TRUE)}
+
+}
+```
+
+## Adding of rows for pathogens
+
+For example when all results are reported in one field (*e.g.* sequencing data).
+
+```{r, eval = FALSE}
+
+barometer_dt <- barometer_dt_raw %>%
+  dplyr::mutate(
+    HS = ifelse(str_detect(pathogens, "Histophilus somni"), 1, 0),
+    MH = ifelse(str_detect(pathogens, "Mannheimia haemolytica"), 1, 0),
+    PM = ifelse(str_detect(pathogens, "Pasteurella multocida"), 1, 0),
+    BCV = ifelse(str_detect(pathogens, "Bovine coronavirus"), 1, 0),
+    MB = ifelse(str_detect(pathogens, "Mycoplasmopsis bovis"), 1, 0),
+    PI3 = ifelse(str_detect(pathogens, "Bovine respirovirus 3"), 1, 0),
+    BRSV = ifelse(str_detect(pathogens, "Bovine orthopneumovirus"), 1, 0),
+  )
+
+```
+
+## Example with dummy file & final format
+
+Please find here a [dummy file](.....) which can help you understand the different steps we are taking in the next chunk. You can find the step-by-step explanation below the R chunk.
+
+```{r, eval = FALSE}
+
+barometer_dt <- barometer_dt_raw %>% 
+  dplyr::rename(
+    Dossier = 'N° échantillon',
+    Date = 'Date of Sample',
+    Sample_type= 'Sample Type',
+    Diagnostic_test = METH,
+    Farm_ID = TRP,
+    PM = P_multocida,
+    MH = M_haemolytica,
+    HS = H_somnus,
+    MB = M_bovis,
+    BRSV = BRSV,
+    PI3 = PI3,
+    BCV = Coronavirus
+    ) %>% 
+  tidyr::separate(ADDRESS, c('Postal_code', 'City')) %>%
+  dplyr::mutate(
+    Postal_code = as.double(Postal_code),
+    Filenumber = str_sub(Dossier, 1, 12),
+    Samplenumber = str_sub(Dossier, -3),
+    Country ='Belgium',
+    Lab_reference ='3', 
+    Sample_type = case_when(
+      Sample_type == "BAL" ~ 'BAL', 
+      Sample_type == "SWAB" ~'Swab',
+      Sample_type == "CARCASS" ~ 'Autopsy',
+      TRUE ~ 'Missing'
+    ),
+    Breed = case_when(
+      SPECUL == "MEAT" ~ 'Beef', 
+      SPECUL == "MILK" ~'Dairy',
+      SPECUL == "MXD" ~ 'Mixed',
+      TRUE ~ 'Unknown'
+    ),
+    Province = case_when(
+        between(as.numeric(Postal_code), 1000, 1299) ~ 'Brussels',
+        between(as.numeric(Postal_code), 1300, 1499) ~ 'Walloon Brabant',
+        between(as.numeric(Postal_code), 1500, 1999) ~ 'Flemish Brabant',
+        between(as.numeric(Postal_code), 3000, 3499) ~ 'Antwerp',
+        between(as.numeric(Postal_code), 2000, 2999) ~ 'Limburg',
+        between(as.numeric(Postal_code), 3500, 3999) ~ 'Limburg',
+        between(as.numeric(Postal_code), 4000, 4999) ~ 'Liège',
+        between(as.numeric(Postal_code), 5000, 5999) ~ 'Namur',
+        between(as.numeric(Postal_code), 6000, 6599) ~ 'Hainaut',
+        between(as.numeric(Postal_code), 7000, 7999) ~ 'Hainaut',
+        between(as.numeric(Postal_code), 6600, 6999) ~ 'Luxembourg',
+        between(as.numeric(Postal_code), 8000, 8999) ~ 'West Flanders',
+        TRUE ~ 'East Flanders'
+    )
+  )%>%
+  dplyr::select(
+    Filenumber,
+    Diagnostic_test,
+    Samplenumber,
+    Country,
+    Lab_reference,
+    Sample_type,
+    Breed,
+    PM,
+    MH,
+    HS,
+    MB,
+    BRSV,
+    PI3,
+    BCV,
+    Date,
+    Postal_code,
+    Province,
+    Farm_ID
+  ) %>%
+  dplyr::distinct() %>%
+  dplyr::mutate(
+    Filenumber = sha256_hash(as.character(Filenumber)),
+    Farm_ID = sha256_hash(as.character(Samplenumber))
+  ) 
+```
+
+First we make sure that all column names are in the final format and understandable (in English):
+
+-   <small> Filenumber, Samplenumber, Date, Sample_type, Diagnostic_test, Farm_ID, Postal_code, Breed, Province
+
+-   The following abbreviations for the 7 most important pathogens involved in bovine respiratory disease are used: PM (*Pasteurella multocida*), MB (*Mycoplasmopsis bovis*, previously *Mycoplasma bovis*), MH (*Mannheimia haemolytica*), HS (*Histophilus somni*), BRSV (bovine respiratory syncytial virus), PI3 (parainfluenza-type 3), and BCV (bovine coronavirus)
+
+Subsequently we mutate/add data to the final format:
+
+-   Samplenumber: in case more than one sample is submitted to the lab under one filenumber (*e.g.* 001, 002 or 1, 2, ..)
+
+-   Date (DD-MM-YYYY): either date of sampling or creation date in lab. *The date of sampling is preferred, however, when this date is (often) lacking, it may be easier to take the creation date of the lab. This is only recommended when time between taking samples and creation date remains short (1-2 days)*
+
+-   Geolocation at the province level. Therefore, in this case we needed to separate the postal code (*e.g.* 2388) from the municipality/city to extract the province (*e.g.* Brussels)
+
+-   Country (*e.g.* Belgium) should be mentioned in a separate column
+
+-   Lab reference: a number (*e.g.* 3)
+
+<!-- -->
+
+-   Sample type: '*BAL*' (bronchoalveolar lavage), '*Swab*' (nasal swab, eye swab, deep nasopharyngeal swab, ... from a living animal), '*TTA*' (transtracheal aspirate/wash), '*Autopsy*' (all samples from carcasses) or '*Unknown*'
+
+-   Breed or production type: '*Dairy*', '*Beef*', '*Mixed'*,'*Veal*', '*Fattening* *calves*', '*Unknown*'
+
+-   Diagnostic test: '*Culture*', '*PCR*', '*NPS*' (nanopore sequencing) or '*Paired serum*'. *In this dataset the Diagnostic test has already been mentioned in the correct format* </small>
+
+-   Finally, the Filenumber and Farm_ID are anonymized by using the [SHA-256 hashing function](https://decide-project-eu.github.io/case-studies-website/tutorials/anonymisation.html)
+
 ## How to handle results?
 
 The result can be either 'negative' (0), 'positive' (1) or 'not tested' (NA):
@@ -43,7 +187,6 @@ The result can be either 'negative' (0), 'positive' (1) or 'not tested' (NA):
 ## Final format
 
 \[Excel file\]
-
 
 # Visualisation: Tableau
 
