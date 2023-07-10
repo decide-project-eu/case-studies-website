@@ -13,9 +13,11 @@
 <url>https://github.com/decide-project-eu/case-studies-website/images/DECIDE_logo_RGB-1.png</url>
 <title>DECIDE Case Studies</title>
 <link>https://github.com/decide-project-eu/case-studies-website/latest-content.html</link>
+<height>44</height>
+<width>144</width>
 </image>
 <generator>quarto-1.3.353</generator>
-<lastBuildDate>Wed, 21 Jun 2023 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 20 Jun 2023 22:00:00 GMT</lastBuildDate>
 <item>
   <title>Anonymisation</title>
   <dc:creator>Saba Noor, Miel Hostens, et al.</dc:creator>
@@ -111,91 +113,1397 @@ font-style: inherit;">=</span>XSD.string)))</span></code></pre></div>
   <category>Work Package 1</category>
   <category>Tutorial</category>
   <guid>https://github.com/decide-project-eu/case-studies-website/tutorials/anonymisation.html</guid>
-  <pubDate>Wed, 21 Jun 2023 04:00:00 GMT</pubDate>
+  <pubDate>Tue, 20 Jun 2023 22:00:00 GMT</pubDate>
   <media:content url="https://github.com/decide-project-eu/case-studies-website/tutorials/anonymisation.webp" medium="image" type="image/webp"/>
 </item>
 <item>
   <title>Cattle barometer</title>
-  <dc:creator>Saba Noor, Jade Bokma, Bart Pardon, Miel Hostens, et al.</dc:creator>
+  <dc:creator>Jade Bokma, Saba Noor, Bart Pardon, Miel Hostens, et al.</dc:creator>
   <link>https://github.com/decide-project-eu/case-studies-website/tutorials/cattle-barometer.html</link>
   <description><![CDATA[ 
 
 
 
-<section id="pasteurella-multocida" class="level1">
-<h1>Pasteurella multocida</h1>
-<p><strong>Clinical relevance:</strong> P. multocida is an opportunistic bacterium and part of the common respiratory tract flora.¹ᐧ² Problems can occur during co-infection with viruses/Mycoplasma bovis or after extensive antimicrobial treatment.</p>
-<p><strong>Clinical signs:</strong> respiratory disease (coughing, nasal discharge, dyspnea, fever), septicemia</p>
-<p><strong>Diagnostic sample:</strong> respiratory tract (bronchoalveolair lavage, transtracheal wash), blood culture, peritoneal fluid, necropsy</p>
-<p><strong>Diagnostic test</strong>*: culture and antimicrobial susceptibility testing, PCR** Carriers: yes</p>
-<p><strong>Infection route:</strong> direct contact (nasal secretions), potentially close distance aerosol spread, potentially fomites</p>
-<p><strong>Vaccines:</strong> Inactivated divalent vaccine (with Salmonella typhimurium) available in some EU countries</p>
-<ol type="1">
-<li>Lima S.F., Teixeria A.G.V., Higgins C.H., Lima S.F., Bicalho R.C. 2016. The upper respiratory tract microbiome and its potential role in bovine respiratory disease and otitis media. Sci Rep 6.<br>
-</li>
-<li>Gaeta N.C., Lima S.F., Teixeria A.G., Ganda E.K., Oikonomou G., Gregory L., Bicalho R.C. 2017. Deciphering upper respiratory tract microbiota complexity in healthy calves and calves that develop respiratory disease using shotgun metagenomics. J Dairy Sci 100, 1445-1458.</li>
-</ol>
-<p>** Detection of an opportunistic pathogen by PCR confirms it present in the animal/herd, but does not evidence involvement in disease. P. multocida is that prevalent that PCR analysis is virtually useless.</p>
+<section id="aim" class="level1">
+<h1>Aim</h1>
+<p>This tool visualizes pathogen-specific lab results of field samples obtained from cattle over Europe. It shows the historical trend, dynamics and current presence of specific pathogens per area. It holds the potential for early warning and to support decision-making on farm to control infectious diseases, such as antimicrobial use, vaccination, and purchase of animals.</p>
 </section>
-<section id="bovine-parainfluenza-3-virus" class="level1">
-<h1>Bovine parainfluenza-3 virus</h1>
-<p><strong>Pathogen:</strong> Bovine parainfluenza-3 virus (bPI-3, also bovine respirovirus 3, 3 genotypes (A, B, C) genus: Respirovirus, family: Paramyxoviridae)</p>
-<p><strong>Incubation period</strong>: 2-6 days</p>
-<p><strong>Clinical relevance:</strong> primary pathogen involved in bovine respiratory disease, predisposing for secondary bacterial infections</p>
-<p><strong>Clinical signs</strong>: respiratory disease (coughing, nasal discharge, dyspnea, fever), presumably mild as single infection</p>
-<p><strong>Diagnostic sample</strong>: respiratory tract (nasopharyngeal swab, bronchoalveolair lavage, transtracheal wash), necropsy</p>
-<p><strong>Carriers:</strong> presumably not, subclinical infections likely most important for infection maintenance in the population</p>
-<p><strong>Diagnostic test</strong>*: Direct: PCR, nanopore sequencing, antigen ELISA. Indirect: paired serum samples for antibody ELISA1 (interpretation may be hampered by maternal immunity)</p>
-<p><strong>Infection route</strong>: aerosols, nasal secretion (direct contact), fomites</p>
-<p><strong>Vaccines:</strong> Several multivalent vaccines (BRSV, BVD, M. haemolytica), inactivated or live-attenuated, parenteral or intranasal are available in Europe</p>
-<p><strong>Eradication programs:</strong> no</p>
-<p>* List incomplete, availability of commercial tests can differ between countries</p>
+<section id="data-preparation" class="level1">
+<h1>Data preparation</h1>
+<section id="minimum-data-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="minimum-data-requirements">Minimum data requirements</h2>
+<p>Individual or pooled samples from the respiratory tract of cattle (preferably from ill animals) with the results of diagnostic test for some respiratory pathogens (<em>e.g.&nbsp;Pasteurella multocida</em>, <em>Mycoplasmopsis bovis</em> (previously <em>Mycoplasma bovis</em>), <em>Mannheimia haemolytica</em>, <em>Histophilus somni</em>, Bovine respiratory syncytial virus, Parainfluenza-type 3, and Bovine coronavirus):</p>
+<ul>
+<li><p>Date of sample</p></li>
+<li><p>Diagnostic sample type (<em>e.g.</em> BAL, swab, lung, ..)</p></li>
+<li><p>Diagnostic test (<em>e.g.</em> PCR, culture, nanopore sequencing, paired-serum)</p></li>
+<li><p>Farm identification (anonymized)</p></li>
+<li><p>Geolocation of farm (<em>e.g.</em> postal code/province, country)</p></li>
+<li><p>(Breed/production type of animal/herd)</p></li>
+</ul>
 </section>
-<section id="mannheimia-haemolytica" class="level1">
-<h1>Mannheimia haemolytica</h1>
-<p><strong>Pathogen:</strong> Mannheimia haemolytica (member of the Pasteurellaceae family, two major genotypes (1 and 2))</p>
-<p><strong>Clinical relevance:</strong> M. haemolytica is an opportunistic bacterium and part of the common respiratory tract flora.¹ᐧ² Problems can occur during co-infection with viruses/Mycoplasma bovis and potentially also after breaches in the innate immunity of the respiratory tract by other factors. Outbreaks of virulent M. haemolytica strains in adult dairy cattle with acute mortality are described.³ᐧ⁴ &nbsp;</p>
-<p><strong>Clinical signs</strong>: respiratory disease (coughing, nasal discharge, dyspnea, fever), septicemia</p>
-<p><strong>Diagnostic sample</strong>: respiratory tract (bronchoalveolair lavage, transtracheal wash), peritoneal fluid, necropsy</p>
-<p><strong>Diagnostic test</strong>*: culture and antimicrobial susceptibility testing; PCR**</p>
-<p><strong>Carriers:</strong> yes</p>
-<p><strong>Infection route:</strong> direct contact (nasal secretions), potentially close distance aerosol spread, potentially fomites</p>
-<p><strong>Vaccines</strong>: both inactivated monovalent and multivalent vaccines (with H. somni, PI-3 or BRSV) are available in Europe.</p>
-<p>1. Lima S.F., Teixeria A.G.V., Higgins C.H., Lima S.F., Bicalho R.C. 2016. The upper respiratory tract microbiome and its potential role in bovine respiratory disease and otitis media. Sci Rep 6.&nbsp; &nbsp;</p>
-<p>2. Gaeta N.C., Lima S.F., Teixeria A.G., Ganda E.K., Oikonomou G., Gregory L., Bicalho R.C. 2017. Deciphering upper respiratory tract microbiota complexity in healthy calves and calves that develop respiratory disease using shotgun metagenomics. J Dairy Sci 100, 1445-1458.</p>
-<p>3. Dorso L., Rouault M., Barbotin C., Chartier C., Assié S. 2021. Infectious bovine respiratory disease in adult cattle: an extensive necropsic and etiological study. Animals (Basel) 11, 2280.</p>
-<p>4. Mahu M., Valgaeren B., Pardon B., Deprez P., Haesebrouck F., Boyen F. 2015. Non-haemolytic Mannheimia haemolytica as a cause of pleuropneumonia and septicemia in a calf. Vet Microbiol 180, 157-160.</p>
-<p>** Detection of an opportunistic pathogen by PCR confirms it present in the animal/herd, but does not evidence involvement in disease</p>
+<section id="how-to-handle-results" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-handle-results">How to handle results?</h2>
+<p>The result can be either ‘negative’ (0), ‘positive’ (1) or ‘not tested’ (NA):</p>
+<ul>
+<li><p>PCR: when to consider a test results positive or negative will be at the discretion of the laboratory (cutoff values may differ per lab). Dubious test results such as ‘not conclusive’, ‘no test results due to inhibition’, are recommended to file as not tested (NA).</p></li>
+<li><p>Culture (<em>Pasteurellaceae</em>): it is expected that culture results are either positive (1) or negative (0). For example, when a swab has been cultured on blood agar plates, we assume that <em>P. multocida, M. haemolytica,</em> and <em>Histophilus somni</em> are tested. For example, when only <em>P. multocida</em> is present, the result for that specific sample should be reported as: PM (1), MH (0), HS (0). Dubious test results due to overgrowth by for example <em>Proteus species</em> could be filed as not tested (NA) for all <em>Pasteurellaceae</em>.</p></li>
+<li><p>Culture (<em>M. bovis</em>): for <em>M. bovis</em> specific culture media are necessary, however, when tested, result can be positive (1) or negative (0). Dubious test results due to overgrowth by fungi could be filed as not tested (NA).</p></li>
+<li><p>Nanopore sequencing: when to consider a test results positive or negative will be at the discretion of the laboratory (cutoff values may differ per lab).</p></li>
+</ul>
 </section>
-<section id="mycoplasma-bovis" class="level1">
-<h1>Mycoplasma bovis</h1>
-<p><strong>Pathogen:</strong> Mycoplasma bovis</p>
-<p><strong>Incubation period</strong>: 2-10 days</p>
-<p><strong>Clinical relevance:</strong> primary pathogen involved in bovine respiratory disease, mastitis, otitis and arthritis, often reported in co-infection with other viral or bacterial pathogens</p>
-<p><strong>Clinical signs</strong>: respiratory disease (coughing, nasal discharge, dyspnea, fever), ear drop, swollen joints, mastitis, seromas and rarer presentations¹</p>
-<p><strong>Diagnostic sample</strong>: respiratory tract (nasopharyngeal swab, bronchoalveolair lavage, transtracheal wash), milk, synovial fluid, necropsy</p>
-<p><strong>Carriers:</strong> yes</p>
-<p><strong>Diagnostic test</strong>*: Direct: culture (special media and CO2 rich incubation needed), PCR, MALDI-TOF MS, nanopore sequencing. Indirect: paired serum samples for antibody ELISA (interpretation may be hampered by maternal immunity)</p>
-<p><strong>Infection route</strong>: nasal secretions (direct contact), colostrum, milk, semen, fomites¹ᐧ²&nbsp;</p>
-<p><strong>Vaccines:</strong> Restrictedavailability of a monovalent registered vaccine and in some European countries autovaccines are allowed</p>
-<p><strong>Eradication programs:</strong> voluntary program in Finland</p>
-<p>1. Maunsell FP., Donovan G.A. 2009. Mycoplasma bovis infections in young calves. Vet Clin North Am Food Anim Pract 25, 139-177.</p>
-<p>2. Haapala V., Pohjanvirta T., Vähänikkilä N., Halkilahti J., Simonen H., Pelkonen S., Soveri T., Simojoki H., Autio T. 2018. Semen as a source of Mycoplasma bovis mastitis in dairy herds. Vet Microbiol 216, 60-66.</p>
 </section>
-<section id="histophilus-somni" class="level1">
-<h1>Histophilus somni</h1>
-<p><strong>Pathogen:</strong> Histophilus somni&nbsp; (member of the Pasteurellaceae family)</p>
-<p><strong>Clinical relevance:</strong> opportunistic pathogen involved in respiratory disease, septicemia, otitis, polyserositis and thrombotic meningoencephalitis-myelitis</p>
-<p><strong>Clinical signs</strong>: respiratory disease (coughing, nasal discharge, dyspnea, fever), central nervous signs (sleeper syndrome), swollen joints, ear drop and sudden death</p>
-<p><strong>Diagnostic sample</strong>: respiratory tract (bronchoalveolair lavage, transtracheal wash)¹, blood culture, necropsy</p>
-<p><strong>Diagnostic test</strong>*: PCR**, culture (CO2 rich incubation needed) and antimicrobial susceptibility testing</p>
-<p><strong>Carriers:</strong> yes</p>
-<p><strong>Infection route:</strong> direct contact (nasal secretions), urine, potentially fomites</p>
-<p><strong>Vaccines:</strong> divalent inactivated vaccines (M. haemolytica, H. somni) are available in Europe</p>
-<p>1. Van Driessche L., Valgaeren B.R., Gille L., Boyen F., Ducatelle R., Haesebrouck F., Deprez P., Pardon B. A deep nasopharyngeal swab versus nonendoscopic bronchoalveolar lavage for isolation of bacterial pathogens from preweaned calves with respiratory disease. J Vet Intern Med 31, 946-953.</p>
+<section id="data-manipulation" class="level1">
+<h1>Data manipulation</h1>
+<section id="load-your-data-and-libraries" class="level2">
+<h2 class="anchored" data-anchor-id="load-your-data-and-libraries">Load your data and libraries</h2>
+<p>For example an excel or csv file:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">barometer_dt_raw_2021 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> readxl<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">read_excel</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"../Data/Lab3.xlsx"</span>) </span>
+<span id="cb1-2">barometer_dt_raw_2021 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">read.csv</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"../Data/Lab4.csv"</span>)</span></code></pre></div>
+</div>
+<p>When you add separate files, combine them:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">barometer_dt_combined <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">rbind</span>(barometer_dt_raw_2021, barometer_dt_raw_2022)</span></code></pre></div>
+</div>
+<p>Load the necessary libraries, which depends on your data(file) and script:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">package_list <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"data.table"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tidyverse"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"naniar"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"stringr"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"readr"</span>,  <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"dplyr"</span>, </span>
+<span id="cb3-2">                  <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"magrittr"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"readxl"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"writexl"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"sjmisc"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tidyr"</span>)</span>
+<span id="cb3-3"></span>
+<span id="cb3-4"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> (pkg <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> package_list) {</span>
+<span id="cb3-5">  <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">if</span> (pkg <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%in%</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">rownames</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">.packages</span>()) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">FALSE</span>)</span>
+<span id="cb3-6">  {<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(pkg, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">character.only =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">TRUE</span>)}</span>
+<span id="cb3-7"></span>
+<span id="cb3-8">}</span></code></pre></div>
+</div>
 </section>
-<section id="bovine-respiratory-syncytial-virus" class="level1">
-<h1>Bovine respiratory syncytial virus</h1>
+<section id="start-wrangling-your-data" class="level2">
+<h2 class="anchored" data-anchor-id="start-wrangling-your-data">Start wrangling your data</h2>
+<p>It may be necessary to filter some of your data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">barometer_dt_filter <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> barometer_dt_combined <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span> </span>
+<span id="cb4-2">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">filter</span>(SYSTEM <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%in%</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Respiratory'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'NA'</span>)</span>
+<span id="cb4-3">                )</span>
+<span id="cb4-4">barometer_dt_filter2 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> barometer_dt_filter <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span> </span>
+<span id="cb4-5">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">filter</span>(MATRIX <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%in%</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Pleural Fluid'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Tissue swab'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Tonsil'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Trachea'</span>,  <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Thoracic Fluid'</span>, </span>
+<span id="cb4-6">                              <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Lung'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Swab'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Tissue swab'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Nasal Swab'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Nasal Fluid'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Tissue-Pool'</span>,</span>
+<span id="cb4-7">                              <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Carcass'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Pooled swab'</span>)</span>
+<span id="cb4-8">                ) </span>
+<span id="cb4-9">barometer_dt_filter3 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> barometer_dt_filter2 <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span> </span>
+<span id="cb4-10">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">filter</span>(TEST <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%in%</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"PI3V PCR"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"PCR M. haemolytica - ARVL"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Mycoplasma bovis (PCR)"</span>, </span>
+<span id="cb4-11">                            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"PCR H. somni - ARVL"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"PCR P. multocida - ARVL"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Miscellaneous Test"</span>,</span>
+<span id="cb4-12">                            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Routine Culture"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"PCR M. bovis - ARVL"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"BRSV PCR"</span>, </span>
+<span id="cb4-13">                            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Culture Growth"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"PCR BoCoV"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Mycoplasma bovis (PCR)"</span>)</span>
+<span id="cb4-14">) </span></code></pre></div>
+</div>
+<p>Or add rows for pathogens when all results are reported in one field (<em>e.g.</em> sequencing data):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">barometer_dt <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> barometer_dt_raw <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb5-2">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(</span>
+<span id="cb5-3">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">HS =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ifelse</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_detect</span>(pathogens, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Histophilus somni"</span>), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>),</span>
+<span id="cb5-4">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">MH =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ifelse</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_detect</span>(pathogens, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Mannheimia haemolytica"</span>), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>),</span>
+<span id="cb5-5">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">PM =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ifelse</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_detect</span>(pathogens, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Pasteurella multocida"</span>), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>),</span>
+<span id="cb5-6">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">BCV =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ifelse</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_detect</span>(pathogens, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Bovine coronavirus"</span>), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>),</span>
+<span id="cb5-7">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">MB =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ifelse</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_detect</span>(pathogens, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Mycoplasmopsis bovis"</span>), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>),</span>
+<span id="cb5-8">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">PI3 =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ifelse</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_detect</span>(pathogens, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Bovine respirovirus 3"</span>), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>),</span>
+<span id="cb5-9">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">BRSV =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ifelse</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_detect</span>(pathogens, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Bovine orthopneumovirus"</span>), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>),</span>
+<span id="cb5-10">  )</span></code></pre></div>
+</div>
+<p>Or add rows for culture results:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">barometer_dt<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>HS <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ifelse</span>(barometer_dt<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>Diagnostic_test <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Culture"</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">NA</span>)</span>
+<span id="cb6-2">barometer_dt<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>MH <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ifelse</span>(barometer_dt<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>Diagnostic_test <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Culture"</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">NA</span>)</span>
+<span id="cb6-3">barometer_dt<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>PM <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ifelse</span>(barometer_dt<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>Diagnostic_test <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Culture"</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">NA</span>)</span>
+<span id="cb6-4"></span>
+<span id="cb6-5">barometer_dt_culture_wide <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> barometer_dt <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb6-6">  tidyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">pivot_longer</span>(</span>
+<span id="cb6-7">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">cols =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'PM'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'MH'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'HS'</span>),</span>
+<span id="cb6-8">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">names_to =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Pathogen_culture'</span>,</span>
+<span id="cb6-9">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">values_to =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Result_culture'</span></span>
+<span id="cb6-10">  )</span>
+<span id="cb6-11"></span>
+<span id="cb6-12">barometer_dt_culture_wide<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>Pathogen <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> </span>
+<span id="cb6-13">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ifelse</span>(barometer_dt_culture_wide<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>Pathogen <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Missing"</span>,</span>
+<span id="cb6-14">         barometer_dt_culture_wide<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>Pathogen_culture,</span>
+<span id="cb6-15">         barometer_dt_culture_wide<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>Pathogen)</span></code></pre></div>
+</div>
+<p>Or need an intermediate table for culture results:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">df_samples <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">data.frame</span>(</span>
+<span id="cb7-2">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Result =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'OK'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'OK'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'OK'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'OK'</span>),</span>
+<span id="cb7-3">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Parameter_code =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'BAC_AERO'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'BAC_AERO'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'BAC_AERO'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'BAC_MYCOPLASMA'</span>),</span>
+<span id="cb7-4">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Diagnostic_test=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Culture'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Culture'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Culture'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Culture'</span>),</span>
+<span id="cb7-5">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Pathogen_identification=</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Pasteurella multocida"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Mannheimia haemolytica"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Histophilus somni"</span>, </span>
+<span id="cb7-6">                            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Mycoplasma bovis'</span>)</span>
+<span id="cb7-7">)</span></code></pre></div>
+</div>
+<p>Or need to create binary results for PCR &amp; culture</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1">barometer_results <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> barometer_dt_culture_wide <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span> </span>
+<span id="cb8-2">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(</span>
+<span id="cb8-3">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Result =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">case_when</span>(</span>
+<span id="cb8-4">      <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Positive tests</span></span>
+<span id="cb8-5">      Diagnostic_test <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'PCR'</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&amp;</span> </span>
+<span id="cb8-6">        RESULT <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%in%</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Positive"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Weak Positive"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Mycoplasma bovis PCR Positive"</span>,</span>
+<span id="cb8-7">                      <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Strong Positive"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,</span>
+<span id="cb8-8">      <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Negative tests</span></span>
+<span id="cb8-9">      Diagnostic_test <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'PCR'</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&amp;</span> </span>
+<span id="cb8-10">        RESULT <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%in%</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"No Pathogen detected"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Negative"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Sterile"</span>, </span>
+<span id="cb8-11">                      <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"No Significant Growth"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"No CT"</span>, </span>
+<span id="cb8-12">                      <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Mycoplasma bovis PCR Negative"</span>, </span>
+<span id="cb8-13">                      <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Mixed Non-Significant Bacterial Growth"</span>, </span>
+<span id="cb8-14">                      <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"No Significant Growth @48hrs"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"No Growth"</span>, </span>
+<span id="cb8-15">                      <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"No Pathogen detected"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"No RNA detected"</span>, </span>
+<span id="cb8-16">                      <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"No DNA detected"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"No Virus Detected"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Not Detected"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>,</span>
+<span id="cb8-17">      <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Inconclusive tests</span></span>
+<span id="cb8-18">      Diagnostic_test <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'PCR'</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&amp;</span> </span>
+<span id="cb8-19">        RESULT <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%in%</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Inconclusive"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Mixed Bacterial Growth"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Mixed Growth"</span>,</span>
+<span id="cb8-20">                      <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Very Mixed Growth"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.numeric</span>(<span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">NA</span>),</span>
+<span id="cb8-21">      <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Culture tests</span></span>
+<span id="cb8-22">      Diagnostic_test <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Culture'</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&amp;</span> Pathogen <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%in%</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'MH'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'PM'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'HS'</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> </span>
+<span id="cb8-23">        <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">case_when</span>(</span>
+<span id="cb8-24">          Pathogen <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'MH'</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&amp;</span> RESULT <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Mannheimia haemolytica"</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,</span>
+<span id="cb8-25">          Pathogen <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'PM'</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&amp;</span> RESULT <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%in%</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Pasteurella multocida"</span>, </span>
+<span id="cb8-26">                                           <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"P. multocida"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,</span>
+<span id="cb8-27">          Pathogen <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'HS'</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&amp;</span> RESULT <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%in%</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Histophilus somni"</span>,</span>
+<span id="cb8-28">                                           <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Histophilus somnus"</span>,</span>
+<span id="cb8-29">                                           <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Histophilus somnii"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,</span>
+<span id="cb8-30">          <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Default case</span></span>
+<span id="cb8-31">          <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">TRUE</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span></span>
+<span id="cb8-32">        ),</span>
+<span id="cb8-33">    )</span></code></pre></div>
+</div>
+<p>Or need to merge files:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1">barometer <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span></span>
+<span id="cb9-2">  barometer_dt <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb9-3">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">left_join</span>(df_samples, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">by =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Diagnostic_test'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Result'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Parameter_code'</span>)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb9-4">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">left_join</span>(</span>
+<span id="cb9-5">      barometer_aero_cult, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">by =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Filenumber'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Samplenumber'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Result'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Parameter_code'</span>,</span>
+<span id="cb9-6">                                  <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Pathogen_identification'</span>)</span>
+<span id="cb9-7">      ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb9-8">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">left_join</span>(</span>
+<span id="cb9-9">      barometer_myco_cult, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">by =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Filenumber'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Samplenumber'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Result'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Parameter_code'</span>,</span>
+<span id="cb9-10">                                  <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Pathogen_identification'</span>)</span>
+<span id="cb9-11">  ) </span></code></pre></div>
+</div>
+</section>
+<section id="reaching-the-final-format" class="level2">
+<h2 class="anchored" data-anchor-id="reaching-the-final-format">Reaching the final format</h2>
+<p>Floor date to the 1<sup>st</sup> of the month:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1">barometer_dt<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>Floored_date <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> lubridate<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">floor_date</span>(barometer_dt<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>Date, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"month"</span>)</span></code></pre></div>
+</div>
+<p>Aggregate data on farm_ID and month (WIDE):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1">barometer_groupby <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> barometer_dt <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb11-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">group_by</span>(Lab_reference, Country, Breed, Floored_date, Province, Farm_ID, Diagnostic_test, Sample_type) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb11-3">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">summarise</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">across</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(PM, MH, HS, MB, BRSV, PI3, BCV), max))</span></code></pre></div>
+</div>
+<p>Convert to <em>long</em> version:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1">barometer_long <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> barometer_groupby <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb12-2">  tidyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">pivot_longer</span>(</span>
+<span id="cb12-3">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">cols =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'PM'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'MH'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'HS'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'MB'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'BRSV'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'PI3'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'BCV'</span>),</span>
+<span id="cb12-4">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">names_to =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Pathogen'</span>,</span>
+<span id="cb12-5">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">values_to =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Result'</span>,</span>
+<span id="cb12-6">  )</span></code></pre></div>
+</div>
+<p>Save file to csv:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">write.csv</span>(barometer_long, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"../Data/dummyfile"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">row.names=</span><span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">TRUE</span>)</span></code></pre></div>
+</div>
+<p><em>In case you want to convert to the <em>wide</em> version:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1">barometer_wide <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> barometer_groupby <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb14-2">  tidyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">pivot_wider</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">names_from =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(Pathogen), <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">values_from =</span> Result) </span></code></pre></div>
+</div>
+</section>
+<section id="example-with-dummy-file-wide-data" class="level2">
+<h2 class="anchored" data-anchor-id="example-with-dummy-file-wide-data">Example with dummy file (WIDE data)</h2>
+<p>Please find here a <a href=".....">dummy file</a> which can help you understand the different steps we are taking in the next chunk. You can find the step-by-step explanation below the R chunk.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1">barometer_dt <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> barometer_dt_raw <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span> </span>
+<span id="cb15-2">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">rename</span>(</span>
+<span id="cb15-3">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Dossier =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'N° échantillon'</span>,</span>
+<span id="cb15-4">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Date =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Date of Sample'</span>,</span>
+<span id="cb15-5">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Sample_type=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Sample Type'</span>,</span>
+<span id="cb15-6">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Diagnostic_test =</span> METH,</span>
+<span id="cb15-7">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Farm_ID =</span> TRP,</span>
+<span id="cb15-8">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">PM =</span> P_multocida,</span>
+<span id="cb15-9">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">MH =</span> M_haemolytica,</span>
+<span id="cb15-10">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">HS =</span> H_somnus,</span>
+<span id="cb15-11">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">MB =</span> M_bovis,</span>
+<span id="cb15-12">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">BRSV =</span> BRSV,</span>
+<span id="cb15-13">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">PI3 =</span> PI3,</span>
+<span id="cb15-14">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">BCV =</span> Coronavirus</span>
+<span id="cb15-15">    ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span> </span>
+<span id="cb15-16">  tidyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">separate</span>(ADDRESS, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Postal_code'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'City'</span>)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb15-17">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(</span>
+<span id="cb15-18">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Postal_code =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.double</span>(Postal_code),</span>
+<span id="cb15-19">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Filenumber =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_sub</span>(Dossier, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">12</span>),</span>
+<span id="cb15-20">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Samplenumber =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_sub</span>(Dossier, <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>),</span>
+<span id="cb15-21">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Country =</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Belgium'</span>,</span>
+<span id="cb15-22">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Lab_reference =</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'3'</span>, </span>
+<span id="cb15-23">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Sample_type =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">case_when</span>(</span>
+<span id="cb15-24">      Sample_type <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"BAL"</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'BAL'</span>, </span>
+<span id="cb15-25">      Sample_type <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"SWAB"</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Swab'</span>,</span>
+<span id="cb15-26">      Sample_type <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"CARCASS"</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Autopsy'</span>,</span>
+<span id="cb15-27">      <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">TRUE</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Missing'</span></span>
+<span id="cb15-28">    ),</span>
+<span id="cb15-29">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Breed =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">case_when</span>(</span>
+<span id="cb15-30">      SPECUL <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"MEAT"</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Beef'</span>, </span>
+<span id="cb15-31">      SPECUL <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"MILK"</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Dairy'</span>,</span>
+<span id="cb15-32">      SPECUL <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"MXD"</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Mixed'</span>,</span>
+<span id="cb15-33">      <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">TRUE</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Unknown'</span></span>
+<span id="cb15-34">    ),</span>
+<span id="cb15-35">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Province =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">case_when</span>(</span>
+<span id="cb15-36">        <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">between</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.numeric</span>(Postal_code), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1000</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1299</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Brussels'</span>,</span>
+<span id="cb15-37">        <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">between</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.numeric</span>(Postal_code), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1300</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1499</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Walloon Brabant'</span>,</span>
+<span id="cb15-38">        <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">between</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.numeric</span>(Postal_code), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1500</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1999</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Flemish Brabant'</span>,</span>
+<span id="cb15-39">        <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">between</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.numeric</span>(Postal_code), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3000</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3499</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Antwerp'</span>,</span>
+<span id="cb15-40">        <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">between</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.numeric</span>(Postal_code), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2000</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2999</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Limburg'</span>,</span>
+<span id="cb15-41">        <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">between</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.numeric</span>(Postal_code), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3500</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3999</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Limburg'</span>,</span>
+<span id="cb15-42">        <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">between</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.numeric</span>(Postal_code), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4000</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4999</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Liège'</span>,</span>
+<span id="cb15-43">        <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">between</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.numeric</span>(Postal_code), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5000</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5999</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Namur'</span>,</span>
+<span id="cb15-44">        <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">between</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.numeric</span>(Postal_code), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6000</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6599</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Hainaut'</span>,</span>
+<span id="cb15-45">        <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">between</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.numeric</span>(Postal_code), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">7000</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">7999</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Hainaut'</span>,</span>
+<span id="cb15-46">        <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">between</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.numeric</span>(Postal_code), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6600</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6999</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Luxembourg'</span>,</span>
+<span id="cb15-47">        <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">between</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.numeric</span>(Postal_code), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8000</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8999</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'West Flanders'</span>,</span>
+<span id="cb15-48">        <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">TRUE</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'East Flanders'</span></span>
+<span id="cb15-49">    )</span>
+<span id="cb15-50">  )<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb15-51">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">select</span>(</span>
+<span id="cb15-52">    Filenumber,</span>
+<span id="cb15-53">    Diagnostic_test,</span>
+<span id="cb15-54">    Samplenumber,</span>
+<span id="cb15-55">    Country,</span>
+<span id="cb15-56">    Lab_reference,</span>
+<span id="cb15-57">    Sample_type,</span>
+<span id="cb15-58">    Breed,</span>
+<span id="cb15-59">    PM,</span>
+<span id="cb15-60">    MH,</span>
+<span id="cb15-61">    HS,</span>
+<span id="cb15-62">    MB,</span>
+<span id="cb15-63">    BRSV,</span>
+<span id="cb15-64">    PI3,</span>
+<span id="cb15-65">    BCV,</span>
+<span id="cb15-66">    Date,</span>
+<span id="cb15-67">    Postal_code,</span>
+<span id="cb15-68">    Province,</span>
+<span id="cb15-69">    Farm_ID</span>
+<span id="cb15-70">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb15-71">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">distinct</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb15-72">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(</span>
+<span id="cb15-73">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Filenumber =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sha256_hash</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.character</span>(Filenumber)),</span>
+<span id="cb15-74">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Farm_ID =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sha256_hash</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.character</span>(Samplenumber))</span>
+<span id="cb15-75">  ) </span></code></pre></div>
+</div>
+<p>First we make sure that all column names are in the final format and understandable (in English):</p>
+<ul>
+<li><p><small> Filenumber, Samplenumber, Date, Sample_type, Diagnostic_test, Farm_ID, Postal_code, Breed, Province</small></p></li><small>
+</small><li><small></small><p><small>The following abbreviations for the 7 most important pathogens involved in bovine respiratory disease are used: PM (<em>Pasteurella multocida</em>), MB (<em>Mycoplasmopsis bovis</em>, previously <em>Mycoplasma bovis</em>), MH (<em>Mannheimia haemolytica</em>), HS (<em>Histophilus somni</em>), BRSV (bovine respiratory syncytial virus), PI3 (parainfluenza-type 3), and BCV (bovine coronavirus)</small></p></li>
+</ul>
+<p>Subsequently we mutate/add data to the final format:</p>
+<ul>
+<li><p><small>Samplenumber: in case more than one sample is submitted to the lab under one filenumber (<em>e.g.</em> 001, 002 or 1, 2, ..)</small></p></li><small>
+<li><p>Date (DD-MM-YYYY): either date of sampling or creation date in lab. <em>The date of sampling is preferred, however, when this date is (often) lacking, it may be easier to take the creation date of the lab. This is only recommended when time between taking samples and creation date remains short (1-2 days)</em></p></li>
+<li><p>Geolocation at the province level. Therefore, in this case we needed to separate the postal code (<em>e.g.</em> 2388) from the municipality/city to extract the province (<em>e.g.</em> Brussels)</p></li>
+<li><p>Country (<em>e.g.</em> Belgium) should be mentioned in a separate column</p></li>
+<li><p>Lab reference: a number (<em>e.g.</em> 3)</p></li>
+</small></ul><small>
+<!-- -->
+</small><ul><small>
+<li><p>Sample type: ‘<em>BAL</em>’ (bronchoalveolar lavage), ‘<em>Swab</em>’ (nasal swab, eye swab, deep nasopharyngeal swab, … from a living animal), ‘<em>TTA</em>’ (transtracheal aspirate/wash), ‘<em>Autopsy</em>’ (all samples from carcasses) or ‘<em>Unknown</em>’</p></li>
+<li><p>Breed or production type: ‘<em>Dairy</em>’, ‘<em>Beef</em>’, ‘<em>Mixed’</em>,’<em>Veal</em>’, ‘<em>Fattening</em> <em>calves</em>’, ‘<em>Unknown</em>’</p></li>
+</small><li><small></small><p><small>Diagnostic test: ‘<em>Culture</em>’, ‘<em>PCR</em>’, ‘<em>NPS</em>’ (nanopore sequencing) or ‘<em>Paired serum</em>’. <em>In this dataset the Diagnostic test has already been mentioned in the correct format</em> </small></p></li>
+</ul>
+<p>Finally, the Filenumber and Farm_ID are anonymized by using the <a href="https://decide-project-eu.github.io/case-studies-website/tutorials/anonymisation.html">SHA-256 hashing function</a>.</p>
+</section>
+<section id="example-of-final-format" class="level2">
+<h2 class="anchored" data-anchor-id="example-of-final-format">Example of final format</h2>
+<p><a href="...">csv file</a></p>
+</section>
+<section id="examples-of-complete-r-scripts-and-python" class="level2">
+<h2 class="anchored" data-anchor-id="examples-of-complete-r-scripts-and-python">Examples of complete R-scripts (and Python)</h2>
+<ul>
+<li><p>Lab 1</p></li>
+<li><p>Lab 2</p></li>
+<li><p>Lab 3</p></li>
+</ul>
+</section>
+</section>
+<section id="visualization-tableau" class="level1">
+<h1>Visualization: Tableau</h1>
+<p>The Tableau workbook will become open source at the end of the project.</p>
+</section>
+<section id="data-transfer-agreement" class="level1">
+<h1>Data Transfer Agreement</h1>
+<p>Please find an example of a data transfer agreement <a href="..\DECIDE_barometerflow\case-studies-website\tutorials\Data_transfer_agreement_examplewebsite.pdf">here</a>.</p>
+</section>
+<section id="want-to-contribute-contact-us-or-give-feedback" class="level1">
+<h1>Want to contribute, contact us or give feedback?</h1>
+<p>Please contact Jade Bokma: jade.bokma@ugent.be</p>
+</section>
+<section id="pathogen-specific-information" class="level1">
+<h1>Pathogen-specific information</h1>
+<section id="bovine-respiratory-syncytial-virus" class="level2">
+<h2 class="anchored" data-anchor-id="bovine-respiratory-syncytial-virus">Bovine respiratory syncytial virus</h2>
 <p><strong>Pathogen:</strong> Bovine respiratory syncytial virus (BRSV, also Bovine orthopneumovirus, multiple subtypes, genus: Orthopneumovirus, family: Pneumoviridae)</p>
 <p><strong>Incubation period:</strong> 2-5 days</p>
 <p><strong>Clinical relevance:</strong> primary pathogen involved in bovine respiratory disease, predisposing for secondary bacterial infections</p>
@@ -204,15 +1512,29 @@ font-style: inherit;">=</span>XSD.string)))</span></code></pre></div>
 <p><strong>Diagnostic test</strong>*: Direct: PCR, nanopore sequencing, antigen ELISA. Indirect: paired serum samples for antibody ELISA (interpretation may be hampered by maternal immunity)</p>
 <p><strong>Carriers:</strong> persistent infection suggested but not evidenced, subclinical infections likely most important for infection maintenance in the population</p>
 <p><strong>Infection route</strong>: airborne³, aerosol, nasal secretions (direct contact), fomites</p>
-<p><strong>Vaccines:</strong> both monovalent vaccines and multivalent vaccines (combined with bPI-3, BVDV, M. haemolytica), inactivated or live attenuated, parenteral or intranasal are available in Europe</p>
+<p><strong>Vaccines:</strong> both monovalent vaccines and multivalent vaccines (combined with bPI-3, BVDV, <em>M. haemolytica</em>), inactivated or live attenuated, parenteral or intranasal are available in Europe</p>
 <p><strong>Eradication programs:</strong> voluntary program in Norway</p>
-<p>* List incomplete, availability of commercial tests can differ between countries</p>
+<p><small>* List incomplete, availability of commercial tests can differ between countries</small></p><small>
 <p>1. Doyle D., Credille B., Lehenbauer T.W., Berghaus R., Aly S.S., Champagne J., Blanchard P., Crossley B., Berghaus L., Cochran S., Woolums A. 2017. Agreement among 4 sampling methods to identify respiratory pathogens in dairy calves with acute bovine respiratory disease. J Vet Intern Med 31, 954-959.</p>
 <p>2. Makoschey B., Berge A.C. 2021. Review on bovine respiratory syncytial virus and bovine parainfluenza – usual suspects in bovine respiratory disease – a narrative review. BMC Veterinary Research 17, 261.</p>
-<p>3. Mars M.H., Bruschke C.J.M., Van Oirschot J.T. 1999. Airborne transmission of BHV1, BRSV, and BVDV among cattle is possible under experimental conditions. Vet Microbiol 66, 197-207.</p>
+</small><p><small>3. Mars M.H., Bruschke C.J.M., Van Oirschot J.T. 1999. Airborne transmission of BHV1, BRSV, and BVDV among cattle is possible under experimental conditions. Vet Microbiol 66, 197-207. </small></p>
 </section>
-<section id="bovine-coronavirus" class="level1">
-<h1>Bovine coronavirus</h1>
+<section id="bovine-parainfluenza-3-virus" class="level2">
+<h2 class="anchored" data-anchor-id="bovine-parainfluenza-3-virus">Bovine parainfluenza-3 virus</h2>
+<p><strong>Pathogen:</strong> Bovine parainfluenza-3 virus (bPI-3, also bovine respirovirus 3, 3 genotypes (A, B, C) genus: Respirovirus, family: Paramyxoviridae)</p>
+<p><strong>Incubation period</strong>: 2-6 days</p>
+<p><strong>Clinical relevance:</strong> primary pathogen involved in bovine respiratory disease, predisposing for secondary bacterial infections</p>
+<p><strong>Clinical signs</strong>: respiratory disease (coughing, nasal discharge, dyspnea, fever), presumably mild as single infection</p>
+<p><strong>Diagnostic sample</strong>: respiratory tract (nasopharyngeal swab, bronchoalveolair lavage, transtracheal wash), necropsy</p>
+<p><strong>Carriers:</strong> presumably not, subclinical infections likely most important for infection maintenance in the population</p>
+<p><strong>Diagnostic test</strong>*: Direct: PCR, nanopore sequencing, antigen ELISA. Indirect: paired serum samples for antibody ELISA1 (interpretation may be hampered by maternal immunity)</p>
+<p><strong>Infection route</strong>: aerosols, nasal secretion (direct contact), fomites</p>
+<p><strong>Vaccines:</strong> Several multivalent vaccines (BRSV, BVD, <em>M. haemolytica</em>), inactivated or live-attenuated, parenteral or intranasal are available in Europe</p>
+<p><strong>Eradication programs:</strong> no</p>
+<p><small>* List incomplete, availability of commercial tests can differ between countries </small></p>
+</section>
+<section id="bovine-coronavirus" class="level2">
+<h2 class="anchored" data-anchor-id="bovine-coronavirus">Bovine coronavirus</h2>
 <p><strong>Pathogen:</strong> Bovine coronavirus (BCoV, genus: Betacoronavirus, family: Coronaviridae)</p>
 <p><strong>Incubation period:</strong> 1-7 days</p>
 <p><strong>Clinical relevance</strong>: primary pathogen involved in bovine respiratory disease¹, calf diarrhea and winter dysentery², predisposing for secondary bacterial infections</p>
@@ -223,12 +1545,69 @@ font-style: inherit;">=</span>XSD.string)))</span></code></pre></div>
 <p><strong>Carriers:</strong> limited evidence, differentiation from prolonged shedding difficult, subclinical infections likely most important for infection maintenance in the population</p>
 <p><strong>Vaccines</strong>: multivalent vaccines containing inactivated bovine coronavirus (combined with bovine rotavirus and Enterotoxic Escherichia coli) next to other intestinal pathogens intended for dams are registered for neonatal calf diarrhea in Europe.</p>
 <p><strong>Eradication programs:</strong> voluntary program in Norway</p>
-<p>* List incomplete, availability of commercial tests can differ between countries</p>
+<p><small>* List incomplete, availability of commercial tests can differ between countries</small></p><small>
 <p>¹&nbsp;&nbsp;&nbsp;Decaro N., Campolo M., Desario C., Cirone F., D’abramo M., Lorusso E., Greco G., Mari V., Colaianni M.L., Elia G., Martella V., Buonavoglia C. 2008. Respiratory disease associated with bovine coronavirus infection in cattle herds in Southern Italy. J Vet Diagn Invest 20, 28-32.</p>
 <p>²&nbsp;&nbsp;&nbsp;&nbsp;Boileau M.J., Kapil S.2010. Bovine coronavirus associated syndromes. Vet Clin north Am Food Anim Pract 26, 123-146.</p>
-<p>³&nbsp;&nbsp;&nbsp;&nbsp;Doyle D., Credille B., Lehenbauer T.W., Berghaus R., Aly S.S., Champagne J., Blanchard P., Crossley B., Berghaus L., Cochran S., Woolums A. 2017. Agreement among 4 sampling methods to identify respiratory pathogens in dairy calves with acute bovine respiratory disease. J Vet Intern Med 31, 954-959</p>
+</small><p><small>³&nbsp;&nbsp;&nbsp;&nbsp;Doyle D., Credille B., Lehenbauer T.W., Berghaus R., Aly S.S., Champagne J., Blanchard P., Crossley B., Berghaus L., Cochran S., Woolums A. 2017. Agreement among 4 sampling methods to identify respiratory pathogens in dairy calves with acute bovine respiratory disease. J Vet Intern Med 31, 954-959. </small></p>
+</section>
+<section id="pasteurella-multocida" class="level2">
+<h2 class="anchored" data-anchor-id="pasteurella-multocida"><em>Pasteurella multocida</em></h2>
+<p><strong>Clinical relevance:</strong> <em>P. multocida</em> is an opportunistic bacterium and part of the common respiratory tract flora.¹ᐧ² Problems can occur during co-infection with viruses/Mycoplasma bovis or after extensive antimicrobial treatment.</p>
+<p><strong>Clinical signs:</strong> respiratory disease (coughing, nasal discharge, dyspnea, fever), septicemia</p>
+<p><strong>Diagnostic sample:</strong> respiratory tract (bronchoalveolair lavage, transtracheal wash), blood culture, peritoneal fluid, necropsy</p>
+<p><strong>Diagnostic test</strong>*: culture and antimicrobial susceptibility testing, PCR**</p>
+<p><strong>Carriers:</strong> yes</p>
+<p><strong>Infection route:</strong> direct contact (nasal secretions), potentially close distance aerosol spread, potentially fomites</p>
+<p><strong>Vaccines:</strong> Inactivated divalent vaccine (with Salmonella typhimurium) available in some EU countries</p>
+<p><small>1. Lima S.F., Teixeria A.G.V., Higgins C.H., Lima S.F., Bicalho R.C. 2016. The upper respiratory tract microbiome and its potential role in bovine respiratory disease and otitis media. Sci Rep 6.<br>
+2. Gaeta N.C., Lima S.F., Teixeria A.G., Ganda E.K., Oikonomou G., Gregory L., Bicalho R.C. 2017. Deciphering upper respiratory tract microbiota complexity in healthy calves and calves that develop respiratory disease using shotgun metagenomics. J Dairy Sci 100, 1445-1458.</small></p>
+<p>** Detection of an opportunistic pathogen by PCR confirms it present in the animal/herd, but does not evidence involvement in disease. <em>P. multocida</em> is that prevalent that PCR analysis is virtually useless.</p>
+</section>
+<section id="mannheimia-haemolytica" class="level2">
+<h2 class="anchored" data-anchor-id="mannheimia-haemolytica"><em>Mannheimia haemolytica</em></h2>
+<p><strong>Pathogen:</strong> <em>Mannheimia haemolytica</em> (member of the Pasteurellaceae family, two major genotypes (1 and 2))</p>
+<p><strong>Clinical relevance:</strong> <em>M. haemolytica</em> is an opportunistic bacterium and part of the common respiratory tract flora.¹ᐧ² Problems can occur during co-infection with viruses/Mycoplasma bovis and potentially also after breaches in the innate immunity of the respiratory tract by other factors. Outbreaks of virulent <em>M. haemolytica</em> strains in adult dairy cattle with acute mortality are described.³ᐧ⁴ &nbsp;</p>
+<p><strong>Clinical signs</strong>: respiratory disease (coughing, nasal discharge, dyspnea, fever), septicemia</p>
+<p><strong>Diagnostic sample</strong>: respiratory tract (bronchoalveolair lavage, transtracheal wash), peritoneal fluid, necropsy</p>
+<p><strong>Diagnostic test</strong>*: culture and antimicrobial susceptibility testing; PCR**</p>
+<p><strong>Carriers:</strong> yes</p>
+<p><strong>Infection route:</strong> direct contact (nasal secretions), potentially close distance aerosol spread, potentially fomites</p>
+<p><strong>Vaccines</strong>: both inactivated monovalent and multivalent vaccines (with <em>H. somni</em>, PI-3 or BRSV) are available in Europe.</p>
+<p><small> 1. Lima S.F., Teixeria A.G.V., Higgins C.H., Lima S.F., Bicalho R.C. 2016. The upper respiratory tract microbiome and its potential role in bovine respiratory disease and otitis media. Sci Rep 6.&nbsp; &nbsp;</small></p><small>
+<p>2. Gaeta N.C., Lima S.F., Teixeria A.G., Ganda E.K., Oikonomou G., Gregory L., Bicalho R.C. 2017. Deciphering upper respiratory tract microbiota complexity in healthy calves and calves that develop respiratory disease using shotgun metagenomics. J Dairy Sci 100, 1445-1458.</p>
+<p>3. Dorso L., Rouault M., Barbotin C., Chartier C., Assié S. 2021. Infectious bovine respiratory disease in adult cattle: an extensive necropsic and etiological study. Animals (Basel) 11, 2280.</p>
+<p>4. Mahu M., Valgaeren B., Pardon B., Deprez P., Haesebrouck F., Boyen F. 2015. Non-haemolytic Mannheimia haemolytica as a cause of pleuropneumonia and septicemia in a calf. Vet Microbiol 180, 157-160.</p>
+</small><p><small>** Detection of an opportunistic pathogen by PCR confirms it present in the animal/herd, but does not evidence involvement in disease </small></p>
+</section>
+<section id="mycoplasma-bovis" class="level2">
+<h2 class="anchored" data-anchor-id="mycoplasma-bovis"><em>Mycoplasma bovis</em></h2>
+<p><strong>Pathogen:</strong> <em>Mycoplasma bovis</em></p>
+<p><strong>Incubation period</strong>: 2-10 days</p>
+<p><strong>Clinical relevance:</strong> primary pathogen involved in bovine respiratory disease, mastitis, otitis and arthritis, often reported in co-infection with other viral or bacterial pathogens</p>
+<p><strong>Clinical signs</strong>: respiratory disease (coughing, nasal discharge, dyspnea, fever), ear drop, swollen joints, mastitis, seromas and rarer presentations¹</p>
+<p><strong>Diagnostic sample</strong>: respiratory tract (nasopharyngeal swab, bronchoalveolair lavage, transtracheal wash), milk, synovial fluid, necropsy</p>
+<p><strong>Carriers:</strong> yes</p>
+<p><strong>Diagnostic test</strong>*: Direct: culture (special media and CO<sub>2</sub> rich incubation needed), PCR, MALDI-TOF MS, nanopore sequencing. Indirect: paired serum samples for antibody ELISA (interpretation may be hampered by maternal immunity)</p>
+<p><strong>Infection route</strong>: nasal secretions (direct contact), colostrum, milk, semen, fomites¹ᐧ²&nbsp;</p>
+<p><strong>Vaccines:</strong> Restrictedavailability of a monovalent registered vaccine and in some European countries autovaccines are allowed</p>
+<p><strong>Eradication programs:</strong> voluntary program in Finland</p>
+<p><small>1. Maunsell FP., Donovan G.A. 2009. Mycoplasma bovis infections in young calves. Vet Clin North Am Food Anim Pract 25, 139-177.</small></p><small>
+</small><p><small>2. Haapala V., Pohjanvirta T., Vähänikkilä N., Halkilahti J., Simonen H., Pelkonen S., Soveri T., Simojoki H., Autio T. 2018. Semen as a source of Mycoplasma bovis mastitis in dairy herds. Vet Microbiol 216, 60-66.</small></p>
+</section>
+<section id="histophilus-somni" class="level2">
+<h2 class="anchored" data-anchor-id="histophilus-somni"><em>Histophilus somni</em></h2>
+<p><strong>Pathogen:</strong> <em>Histophilus somni</em> (member of the Pasteurellaceae family)</p>
+<p><strong>Clinical relevance:</strong> opportunistic pathogen involved in respiratory disease, septicemia, otitis, polyserositis and thrombotic meningoencephalitis-myelitis</p>
+<p><strong>Clinical signs</strong>: respiratory disease (coughing, nasal discharge, dyspnea, fever), central nervous signs (sleeper syndrome), swollen joints, ear drop and sudden death</p>
+<p><strong>Diagnostic sample</strong>: respiratory tract (bronchoalveolair lavage, transtracheal wash)¹, blood culture, necropsy</p>
+<p><strong>Diagnostic test</strong>*: PCR**, culture (CO<sub>2</sub> rich incubation needed) and antimicrobial susceptibility testing</p>
+<p><strong>Carriers:</strong> yes</p>
+<p><strong>Infection route:</strong> direct contact (nasal secretions), urine, potentially fomites</p>
+<p><strong>Vaccines:</strong> divalent inactivated vaccines ( <em>M. haemolytica</em>, <em>H. somni</em>) are available in Europe</p>
+<p><small>1. Van Driessche L., Valgaeren B.R., Gille L., Boyen F., Ducatelle R., Haesebrouck F., Deprez P., Pardon B. 2017. A deep nasopharyngeal swab versus nonendoscopic bronchoalveolar lavage for isolation of bacterial pathogens from preweaned calves with respiratory disease. J Vet Intern Med 31, 946-953.</small></p>
 
 
+</section>
 </section>
 
  ]]></description>
@@ -236,7 +1615,7 @@ font-style: inherit;">=</span>XSD.string)))</span></code></pre></div>
   <category>Work Package 1</category>
   <category>Use case</category>
   <guid>https://github.com/decide-project-eu/case-studies-website/tutorials/cattle-barometer.html</guid>
-  <pubDate>Wed, 21 Jun 2023 04:00:00 GMT</pubDate>
+  <pubDate>Tue, 20 Jun 2023 22:00:00 GMT</pubDate>
   <media:content url="https://github.com/decide-project-eu/case-studies-website/tutorials/cattle-barometer-tutorial.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
@@ -326,7 +1705,7 @@ font-style: inherit;">=</span>XSD.string)))</span></code></pre></div>
   <category>Ontology building</category>
   <category>Tutorial</category>
   <guid>https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies.html</guid>
-  <pubDate>Wed, 21 Jun 2023 04:00:00 GMT</pubDate>
+  <pubDate>Tue, 20 Jun 2023 22:00:00 GMT</pubDate>
   <media:content url="https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies.webp" medium="image" type="image/webp"/>
 </item>
 <item>
@@ -359,7 +1738,7 @@ font-style: inherit;">=</span>XSD.string)))</span></code></pre></div>
   <category>Work Package 1</category>
   <category>Use case</category>
   <guid>https://github.com/decide-project-eu/case-studies-website/tutorials/poultry-barometer.html</guid>
-  <pubDate>Sun, 26 Jun 2022 04:00:00 GMT</pubDate>
+  <pubDate>Sat, 25 Jun 2022 22:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

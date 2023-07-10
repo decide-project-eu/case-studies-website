@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Saba Noor, Jade Bokma, Bart Pardon, Miel Hostens, et al.">
+<meta name="author" content="Jade Bokma, Saba Noor, Bart Pardon, Miel Hostens, et al.">
 <meta name="dcterms.date" content="2023-06-21">
 
 <title>DECIDE Case Studies - Cattle barometer</title>
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -180,13 +214,34 @@ gtag('config', 'G-2804FN9QRK', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#pasteurella-multocida" id="toc-pasteurella-multocida" class="nav-link active" data-scroll-target="#pasteurella-multocida">Pasteurella multocida</a></li>
-  <li><a href="#bovine-parainfluenza-3-virus" id="toc-bovine-parainfluenza-3-virus" class="nav-link" data-scroll-target="#bovine-parainfluenza-3-virus">Bovine parainfluenza-3 virus</a></li>
-  <li><a href="#mannheimia-haemolytica" id="toc-mannheimia-haemolytica" class="nav-link" data-scroll-target="#mannheimia-haemolytica">Mannheimia haemolytica</a></li>
-  <li><a href="#mycoplasma-bovis" id="toc-mycoplasma-bovis" class="nav-link" data-scroll-target="#mycoplasma-bovis">Mycoplasma bovis</a></li>
-  <li><a href="#histophilus-somni" id="toc-histophilus-somni" class="nav-link" data-scroll-target="#histophilus-somni">Histophilus somni</a></li>
+  <li><a href="#aim" id="toc-aim" class="nav-link active" data-scroll-target="#aim">Aim</a></li>
+  <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation">Data preparation</a>
+  <ul class="collapse">
+  <li><a href="#minimum-data-requirements" id="toc-minimum-data-requirements" class="nav-link" data-scroll-target="#minimum-data-requirements">Minimum data requirements</a></li>
+  <li><a href="#how-to-handle-results" id="toc-how-to-handle-results" class="nav-link" data-scroll-target="#how-to-handle-results">How to handle results?</a></li>
+  </ul></li>
+  <li><a href="#data-manipulation" id="toc-data-manipulation" class="nav-link" data-scroll-target="#data-manipulation">Data manipulation</a>
+  <ul class="collapse">
+  <li><a href="#load-your-data-and-libraries" id="toc-load-your-data-and-libraries" class="nav-link" data-scroll-target="#load-your-data-and-libraries">Load your data and libraries</a></li>
+  <li><a href="#start-wrangling-your-data" id="toc-start-wrangling-your-data" class="nav-link" data-scroll-target="#start-wrangling-your-data">Start wrangling your data</a></li>
+  <li><a href="#reaching-the-final-format" id="toc-reaching-the-final-format" class="nav-link" data-scroll-target="#reaching-the-final-format">Reaching the final format</a></li>
+  <li><a href="#example-with-dummy-file-wide-data" id="toc-example-with-dummy-file-wide-data" class="nav-link" data-scroll-target="#example-with-dummy-file-wide-data">Example with dummy file (WIDE data)</a></li>
+  <li><a href="#example-of-final-format" id="toc-example-of-final-format" class="nav-link" data-scroll-target="#example-of-final-format">Example of final format</a></li>
+  <li><a href="#examples-of-complete-r-scripts-and-python" id="toc-examples-of-complete-r-scripts-and-python" class="nav-link" data-scroll-target="#examples-of-complete-r-scripts-and-python">Examples of complete R-scripts (and Python)</a></li>
+  </ul></li>
+  <li><a href="#visualization-tableau" id="toc-visualization-tableau" class="nav-link" data-scroll-target="#visualization-tableau">Visualization: Tableau</a></li>
+  <li><a href="#data-transfer-agreement" id="toc-data-transfer-agreement" class="nav-link" data-scroll-target="#data-transfer-agreement">Data Transfer Agreement</a></li>
+  <li><a href="#want-to-contribute-contact-us-or-give-feedback" id="toc-want-to-contribute-contact-us-or-give-feedback" class="nav-link" data-scroll-target="#want-to-contribute-contact-us-or-give-feedback">Want to contribute, contact us or give feedback?</a></li>
+  <li><a href="#pathogen-specific-information" id="toc-pathogen-specific-information" class="nav-link" data-scroll-target="#pathogen-specific-information">Pathogen-specific information</a>
+  <ul class="collapse">
   <li><a href="#bovine-respiratory-syncytial-virus" id="toc-bovine-respiratory-syncytial-virus" class="nav-link" data-scroll-target="#bovine-respiratory-syncytial-virus">Bovine respiratory syncytial virus</a></li>
+  <li><a href="#bovine-parainfluenza-3-virus" id="toc-bovine-parainfluenza-3-virus" class="nav-link" data-scroll-target="#bovine-parainfluenza-3-virus">Bovine parainfluenza-3 virus</a></li>
   <li><a href="#bovine-coronavirus" id="toc-bovine-coronavirus" class="nav-link" data-scroll-target="#bovine-coronavirus">Bovine coronavirus</a></li>
+  <li><a href="#pasteurella-multocida" id="toc-pasteurella-multocida" class="nav-link" data-scroll-target="#pasteurella-multocida"><em>Pasteurella multocida</em></a></li>
+  <li><a href="#mannheimia-haemolytica" id="toc-mannheimia-haemolytica" class="nav-link" data-scroll-target="#mannheimia-haemolytica"><em>Mannheimia haemolytica</em></a></li>
+  <li><a href="#mycoplasma-bovis" id="toc-mycoplasma-bovis" class="nav-link" data-scroll-target="#mycoplasma-bovis"><em>Mycoplasma bovis</em></a></li>
+  <li><a href="#histophilus-somni" id="toc-histophilus-somni" class="nav-link" data-scroll-target="#histophilus-somni"><em>Histophilus somni</em></a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/decide-project-eu/case-studies-website/edit/main/tutorials/cattle-barometer.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/decide-project-eu/case-studies-website/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -211,7 +266,7 @@ gtag('config', 'G-2804FN9QRK', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Saba Noor, Jade Bokma, Bart Pardon, Miel Hostens, et al. </p>
+             <p>Jade Bokma, Saba Noor, Bart Pardon, Miel Hostens, et al. </p>
           </div>
   </div>
     
@@ -228,80 +283,332 @@ gtag('config', 'G-2804FN9QRK', { 'anonymize_ip': true});
 
 </header>
 
-<section id="pasteurella-multocida" class="level1">
-<h1>Pasteurella multocida</h1>
-<p><strong>Clinical relevance:</strong> P. multocida is an opportunistic bacterium and part of the common respiratory tract flora.¹ᐧ² Problems can occur during co-infection with viruses/Mycoplasma bovis or after extensive antimicrobial treatment.</p>
-<p><strong>Clinical signs:</strong> respiratory disease (coughing, nasal discharge, dyspnea, fever), septicemia</p>
-<p><strong>Diagnostic sample:</strong> respiratory tract (bronchoalveolair lavage, transtracheal wash), blood culture, peritoneal fluid, necropsy</p>
-<p><strong>Diagnostic test</strong>*: culture and antimicrobial susceptibility testing, PCR** Carriers: yes</p>
-<p><strong>Infection route:</strong> direct contact (nasal secretions), potentially close distance aerosol spread, potentially fomites</p>
-<p><strong>Vaccines:</strong> Inactivated divalent vaccine (with Salmonella typhimurium) available in some EU countries</p>
-<ol type="1">
-<li>Lima S.F., Teixeria A.G.V., Higgins C.H., Lima S.F., Bicalho R.C. 2016. The upper respiratory tract microbiome and its potential role in bovine respiratory disease and otitis media. Sci Rep 6.<br>
-</li>
-<li>Gaeta N.C., Lima S.F., Teixeria A.G., Ganda E.K., Oikonomou G., Gregory L., Bicalho R.C. 2017. Deciphering upper respiratory tract microbiota complexity in healthy calves and calves that develop respiratory disease using shotgun metagenomics. J Dairy Sci 100, 1445-1458.</li>
-</ol>
-<p>** Detection of an opportunistic pathogen by PCR confirms it present in the animal/herd, but does not evidence involvement in disease. P. multocida is that prevalent that PCR analysis is virtually useless.</p>
+<section id="aim" class="level1">
+<h1>Aim</h1>
+<p>This tool visualizes pathogen-specific lab results of field samples obtained from cattle over Europe. It shows the historical trend, dynamics and current presence of specific pathogens per area. It holds the potential for early warning and to support decision-making on farm to control infectious diseases, such as antimicrobial use, vaccination, and purchase of animals.</p>
 </section>
-<section id="bovine-parainfluenza-3-virus" class="level1">
-<h1>Bovine parainfluenza-3 virus</h1>
-<p><strong>Pathogen:</strong> Bovine parainfluenza-3 virus (bPI-3, also bovine respirovirus 3, 3 genotypes (A, B, C) genus: Respirovirus, family: Paramyxoviridae)</p>
-<p><strong>Incubation period</strong>: 2-6 days</p>
-<p><strong>Clinical relevance:</strong> primary pathogen involved in bovine respiratory disease, predisposing for secondary bacterial infections</p>
-<p><strong>Clinical signs</strong>: respiratory disease (coughing, nasal discharge, dyspnea, fever), presumably mild as single infection</p>
-<p><strong>Diagnostic sample</strong>: respiratory tract (nasopharyngeal swab, bronchoalveolair lavage, transtracheal wash), necropsy</p>
-<p><strong>Carriers:</strong> presumably not, subclinical infections likely most important for infection maintenance in the population</p>
-<p><strong>Diagnostic test</strong>*: Direct: PCR, nanopore sequencing, antigen ELISA. Indirect: paired serum samples for antibody ELISA1 (interpretation may be hampered by maternal immunity)</p>
-<p><strong>Infection route</strong>: aerosols, nasal secretion (direct contact), fomites</p>
-<p><strong>Vaccines:</strong> Several multivalent vaccines (BRSV, BVD, M. haemolytica), inactivated or live-attenuated, parenteral or intranasal are available in Europe</p>
-<p><strong>Eradication programs:</strong> no</p>
-<p>* List incomplete, availability of commercial tests can differ between countries</p>
+<section id="data-preparation" class="level1">
+<h1>Data preparation</h1>
+<section id="minimum-data-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="minimum-data-requirements">Minimum data requirements</h2>
+<p>Individual or pooled samples from the respiratory tract of cattle (preferably from ill animals) with the results of diagnostic test for some respiratory pathogens (<em>e.g.&nbsp;Pasteurella multocida</em>, <em>Mycoplasmopsis bovis</em> (previously <em>Mycoplasma bovis</em>), <em>Mannheimia haemolytica</em>, <em>Histophilus somni</em>, Bovine respiratory syncytial virus, Parainfluenza-type 3, and Bovine coronavirus):</p>
+<ul>
+<li><p>Date of sample</p></li>
+<li><p>Diagnostic sample type (<em>e.g.</em> BAL, swab, lung, ..)</p></li>
+<li><p>Diagnostic test (<em>e.g.</em> PCR, culture, nanopore sequencing, paired-serum)</p></li>
+<li><p>Farm identification (anonymized)</p></li>
+<li><p>Geolocation of farm (<em>e.g.</em> postal code/province, country)</p></li>
+<li><p>(Breed/production type of animal/herd)</p></li>
+</ul>
 </section>
-<section id="mannheimia-haemolytica" class="level1">
-<h1>Mannheimia haemolytica</h1>
-<p><strong>Pathogen:</strong> Mannheimia haemolytica (member of the Pasteurellaceae family, two major genotypes (1 and 2))</p>
-<p><strong>Clinical relevance:</strong> M. haemolytica is an opportunistic bacterium and part of the common respiratory tract flora.¹ᐧ² Problems can occur during co-infection with viruses/Mycoplasma bovis and potentially also after breaches in the innate immunity of the respiratory tract by other factors. Outbreaks of virulent M. haemolytica strains in adult dairy cattle with acute mortality are described.³ᐧ⁴ &nbsp;</p>
-<p><strong>Clinical signs</strong>: respiratory disease (coughing, nasal discharge, dyspnea, fever), septicemia</p>
-<p><strong>Diagnostic sample</strong>: respiratory tract (bronchoalveolair lavage, transtracheal wash), peritoneal fluid, necropsy</p>
-<p><strong>Diagnostic test</strong>*: culture and antimicrobial susceptibility testing; PCR**</p>
-<p><strong>Carriers:</strong> yes</p>
-<p><strong>Infection route:</strong> direct contact (nasal secretions), potentially close distance aerosol spread, potentially fomites</p>
-<p><strong>Vaccines</strong>: both inactivated monovalent and multivalent vaccines (with H. somni, PI-3 or BRSV) are available in Europe.</p>
-<p>1. Lima S.F., Teixeria A.G.V., Higgins C.H., Lima S.F., Bicalho R.C. 2016. The upper respiratory tract microbiome and its potential role in bovine respiratory disease and otitis media. Sci Rep 6.&nbsp; &nbsp;</p>
-<p>2. Gaeta N.C., Lima S.F., Teixeria A.G., Ganda E.K., Oikonomou G., Gregory L., Bicalho R.C. 2017. Deciphering upper respiratory tract microbiota complexity in healthy calves and calves that develop respiratory disease using shotgun metagenomics. J Dairy Sci 100, 1445-1458.</p>
-<p>3. Dorso L., Rouault M., Barbotin C., Chartier C., Assié S. 2021. Infectious bovine respiratory disease in adult cattle: an extensive necropsic and etiological study. Animals (Basel) 11, 2280.</p>
-<p>4. Mahu M., Valgaeren B., Pardon B., Deprez P., Haesebrouck F., Boyen F. 2015. Non-haemolytic Mannheimia haemolytica as a cause of pleuropneumonia and septicemia in a calf. Vet Microbiol 180, 157-160.</p>
-<p>** Detection of an opportunistic pathogen by PCR confirms it present in the animal/herd, but does not evidence involvement in disease</p>
+<section id="how-to-handle-results" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-handle-results">How to handle results?</h2>
+<p>The result can be either ‘negative’ (0), ‘positive’ (1) or ‘not tested’ (NA):</p>
+<ul>
+<li><p>PCR: when to consider a test results positive or negative will be at the discretion of the laboratory (cutoff values may differ per lab). Dubious test results such as ‘not conclusive’, ‘no test results due to inhibition’, are recommended to file as not tested (NA).</p></li>
+<li><p>Culture (<em>Pasteurellaceae</em>): it is expected that culture results are either positive (1) or negative (0). For example, when a swab has been cultured on blood agar plates, we assume that <em>P. multocida, M. haemolytica,</em> and <em>Histophilus somni</em> are tested. For example, when only <em>P. multocida</em> is present, the result for that specific sample should be reported as: PM (1), MH (0), HS (0). Dubious test results due to overgrowth by for example <em>Proteus species</em> could be filed as not tested (NA) for all <em>Pasteurellaceae</em>.</p></li>
+<li><p>Culture (<em>M. bovis</em>): for <em>M. bovis</em> specific culture media are necessary, however, when tested, result can be positive (1) or negative (0). Dubious test results due to overgrowth by fungi could be filed as not tested (NA).</p></li>
+<li><p>Nanopore sequencing: when to consider a test results positive or negative will be at the discretion of the laboratory (cutoff values may differ per lab).</p></li>
+</ul>
 </section>
-<section id="mycoplasma-bovis" class="level1">
-<h1>Mycoplasma bovis</h1>
-<p><strong>Pathogen:</strong> Mycoplasma bovis</p>
-<p><strong>Incubation period</strong>: 2-10 days</p>
-<p><strong>Clinical relevance:</strong> primary pathogen involved in bovine respiratory disease, mastitis, otitis and arthritis, often reported in co-infection with other viral or bacterial pathogens</p>
-<p><strong>Clinical signs</strong>: respiratory disease (coughing, nasal discharge, dyspnea, fever), ear drop, swollen joints, mastitis, seromas and rarer presentations¹</p>
-<p><strong>Diagnostic sample</strong>: respiratory tract (nasopharyngeal swab, bronchoalveolair lavage, transtracheal wash), milk, synovial fluid, necropsy</p>
-<p><strong>Carriers:</strong> yes</p>
-<p><strong>Diagnostic test</strong>*: Direct: culture (special media and CO2 rich incubation needed), PCR, MALDI-TOF MS, nanopore sequencing. Indirect: paired serum samples for antibody ELISA (interpretation may be hampered by maternal immunity)</p>
-<p><strong>Infection route</strong>: nasal secretions (direct contact), colostrum, milk, semen, fomites¹ᐧ²&nbsp;</p>
-<p><strong>Vaccines:</strong> Restrictedavailability of a monovalent registered vaccine and in some European countries autovaccines are allowed</p>
-<p><strong>Eradication programs:</strong> voluntary program in Finland</p>
-<p>1. Maunsell FP., Donovan G.A. 2009. Mycoplasma bovis infections in young calves. Vet Clin North Am Food Anim Pract 25, 139-177.</p>
-<p>2. Haapala V., Pohjanvirta T., Vähänikkilä N., Halkilahti J., Simonen H., Pelkonen S., Soveri T., Simojoki H., Autio T. 2018. Semen as a source of Mycoplasma bovis mastitis in dairy herds. Vet Microbiol 216, 60-66.</p>
 </section>
-<section id="histophilus-somni" class="level1">
-<h1>Histophilus somni</h1>
-<p><strong>Pathogen:</strong> Histophilus somni&nbsp; (member of the Pasteurellaceae family)</p>
-<p><strong>Clinical relevance:</strong> opportunistic pathogen involved in respiratory disease, septicemia, otitis, polyserositis and thrombotic meningoencephalitis-myelitis</p>
-<p><strong>Clinical signs</strong>: respiratory disease (coughing, nasal discharge, dyspnea, fever), central nervous signs (sleeper syndrome), swollen joints, ear drop and sudden death</p>
-<p><strong>Diagnostic sample</strong>: respiratory tract (bronchoalveolair lavage, transtracheal wash)¹, blood culture, necropsy</p>
-<p><strong>Diagnostic test</strong>*: PCR**, culture (CO2 rich incubation needed) and antimicrobial susceptibility testing</p>
-<p><strong>Carriers:</strong> yes</p>
-<p><strong>Infection route:</strong> direct contact (nasal secretions), urine, potentially fomites</p>
-<p><strong>Vaccines:</strong> divalent inactivated vaccines (M. haemolytica, H. somni) are available in Europe</p>
-<p>1. Van Driessche L., Valgaeren B.R., Gille L., Boyen F., Ducatelle R., Haesebrouck F., Deprez P., Pardon B. A deep nasopharyngeal swab versus nonendoscopic bronchoalveolar lavage for isolation of bacterial pathogens from preweaned calves with respiratory disease. J Vet Intern Med 31, 946-953.</p>
+<section id="data-manipulation" class="level1">
+<h1>Data manipulation</h1>
+<section id="load-your-data-and-libraries" class="level2">
+<h2 class="anchored" data-anchor-id="load-your-data-and-libraries">Load your data and libraries</h2>
+<p>For example an excel or csv file:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>barometer_dt_raw_2021 <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(<span class="st">"../Data/Lab3.xlsx"</span>) </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>barometer_dt_raw_2021 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"../Data/Lab4.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>When you add separate files, combine them:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>barometer_dt_combined <span class="ot">&lt;-</span> <span class="fu">rbind</span>(barometer_dt_raw_2021, barometer_dt_raw_2022)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Load the necessary libraries, which depends on your data(file) and script:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>package_list <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"data.table"</span>, <span class="st">"tidyverse"</span>, <span class="st">"naniar"</span>, <span class="st">"stringr"</span>, <span class="st">"readr"</span>,  <span class="st">"dplyr"</span>, </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                  <span class="st">"magrittr"</span>, <span class="st">"readxl"</span>, <span class="st">"writexl"</span>, <span class="st">"sjmisc"</span>, <span class="st">"tidyr"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (pkg <span class="cf">in</span> package_list) {</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (pkg <span class="sc">%in%</span> <span class="fu">rownames</span>(<span class="fu">.packages</span>()) <span class="sc">==</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  {<span class="fu">library</span>(pkg, <span class="at">character.only =</span> <span class="cn">TRUE</span>)}</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="bovine-respiratory-syncytial-virus" class="level1">
-<h1>Bovine respiratory syncytial virus</h1>
+<section id="start-wrangling-your-data" class="level2">
+<h2 class="anchored" data-anchor-id="start-wrangling-your-data">Start wrangling your data</h2>
+<p>It may be necessary to filter some of your data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>barometer_dt_filter <span class="ot">&lt;-</span> barometer_dt_combined <span class="sc">%&gt;%</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(SYSTEM <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'Respiratory'</span>, <span class="st">'NA'</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                )</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>barometer_dt_filter2 <span class="ot">&lt;-</span> barometer_dt_filter <span class="sc">%&gt;%</span> </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(MATRIX <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'Pleural Fluid'</span>, <span class="st">'Tissue swab'</span>, <span class="st">'Tonsil'</span>, <span class="st">'Trachea'</span>,  <span class="st">'Thoracic Fluid'</span>, </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>                              <span class="st">'Lung'</span>, <span class="st">'Swab'</span>, <span class="st">'Tissue swab'</span>, <span class="st">'Nasal Swab'</span>, <span class="st">'Nasal Fluid'</span>, <span class="st">'Tissue-Pool'</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>                              <span class="st">'Carcass'</span>, <span class="st">'Pooled swab'</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>                ) </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>barometer_dt_filter3 <span class="ot">&lt;-</span> barometer_dt_filter2 <span class="sc">%&gt;%</span> </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(TEST <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"PI3V PCR"</span>, <span class="st">"PCR M. haemolytica - ARVL"</span>, <span class="st">"Mycoplasma bovis (PCR)"</span>, </span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>                            <span class="st">"PCR H. somni - ARVL"</span>, <span class="st">"PCR P. multocida - ARVL"</span>, <span class="st">"Miscellaneous Test"</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                            <span class="st">"Routine Culture"</span>, <span class="st">"PCR M. bovis - ARVL"</span>, <span class="st">"BRSV PCR"</span>, </span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>                            <span class="st">"Culture Growth"</span>, <span class="st">"PCR BoCoV"</span>, <span class="st">"Mycoplasma bovis (PCR)"</span>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Or add rows for pathogens when all results are reported in one field (<em>e.g.</em> sequencing data):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>barometer_dt <span class="ot">&lt;-</span> barometer_dt_raw <span class="sc">%&gt;%</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">HS =</span> <span class="fu">ifelse</span>(<span class="fu">str_detect</span>(pathogens, <span class="st">"Histophilus somni"</span>), <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">MH =</span> <span class="fu">ifelse</span>(<span class="fu">str_detect</span>(pathogens, <span class="st">"Mannheimia haemolytica"</span>), <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">PM =</span> <span class="fu">ifelse</span>(<span class="fu">str_detect</span>(pathogens, <span class="st">"Pasteurella multocida"</span>), <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">BCV =</span> <span class="fu">ifelse</span>(<span class="fu">str_detect</span>(pathogens, <span class="st">"Bovine coronavirus"</span>), <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">MB =</span> <span class="fu">ifelse</span>(<span class="fu">str_detect</span>(pathogens, <span class="st">"Mycoplasmopsis bovis"</span>), <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">PI3 =</span> <span class="fu">ifelse</span>(<span class="fu">str_detect</span>(pathogens, <span class="st">"Bovine respirovirus 3"</span>), <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">BRSV =</span> <span class="fu">ifelse</span>(<span class="fu">str_detect</span>(pathogens, <span class="st">"Bovine orthopneumovirus"</span>), <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Or add rows for culture results:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>barometer_dt<span class="sc">$</span>HS <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(barometer_dt<span class="sc">$</span>Diagnostic_test <span class="sc">==</span> <span class="st">"Culture"</span>, <span class="dv">0</span>, <span class="cn">NA</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>barometer_dt<span class="sc">$</span>MH <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(barometer_dt<span class="sc">$</span>Diagnostic_test <span class="sc">==</span> <span class="st">"Culture"</span>, <span class="dv">0</span>, <span class="cn">NA</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>barometer_dt<span class="sc">$</span>PM <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(barometer_dt<span class="sc">$</span>Diagnostic_test <span class="sc">==</span> <span class="st">"Culture"</span>, <span class="dv">0</span>, <span class="cn">NA</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>barometer_dt_culture_wide <span class="ot">&lt;-</span> barometer_dt <span class="sc">%&gt;%</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">c</span>(<span class="st">'PM'</span>, <span class="st">'MH'</span>, <span class="st">'HS'</span>),</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">'Pathogen_culture'</span>,</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">'Result_culture'</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>barometer_dt_culture_wide<span class="sc">$</span>Pathogen <span class="ot">&lt;-</span> </span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ifelse</span>(barometer_dt_culture_wide<span class="sc">$</span>Pathogen <span class="sc">==</span> <span class="st">"Missing"</span>,</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>         barometer_dt_culture_wide<span class="sc">$</span>Pathogen_culture,</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>         barometer_dt_culture_wide<span class="sc">$</span>Pathogen)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Or need an intermediate table for culture results:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df_samples <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">Result =</span> <span class="fu">c</span>(<span class="st">'OK'</span>, <span class="st">'OK'</span>, <span class="st">'OK'</span>, <span class="st">'OK'</span>),</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Parameter_code =</span> <span class="fu">c</span>(<span class="st">'BAC_AERO'</span>,<span class="st">'BAC_AERO'</span>,<span class="st">'BAC_AERO'</span>, <span class="st">'BAC_MYCOPLASMA'</span>),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Diagnostic_test=</span> <span class="fu">c</span>(<span class="st">'Culture'</span>,<span class="st">'Culture'</span>,<span class="st">'Culture'</span>, <span class="st">'Culture'</span>),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Pathogen_identification=</span><span class="fu">c</span>(<span class="st">"Pasteurella multocida"</span>,<span class="st">"Mannheimia haemolytica"</span>,<span class="st">"Histophilus somni"</span>, </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>                            <span class="st">'Mycoplasma bovis'</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Or need to create binary results for PCR &amp; culture</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>barometer_results <span class="ot">&lt;-</span> barometer_dt_culture_wide <span class="sc">%&gt;%</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">Result =</span> <span class="fu">case_when</span>(</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Positive tests</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>      Diagnostic_test <span class="sc">==</span> <span class="st">'PCR'</span> <span class="sc">&amp;</span> </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        RESULT <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Positive"</span>, <span class="st">"Weak Positive"</span>, <span class="st">"Mycoplasma bovis PCR Positive"</span>,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Strong Positive"</span>) <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Negative tests</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>      Diagnostic_test <span class="sc">==</span> <span class="st">'PCR'</span> <span class="sc">&amp;</span> </span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>        RESULT <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"No Pathogen detected"</span>, <span class="st">"Negative"</span>, <span class="st">"Sterile"</span>, </span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"No Significant Growth"</span>, <span class="st">"No CT"</span>, </span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Mycoplasma bovis PCR Negative"</span>, </span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Mixed Non-Significant Bacterial Growth"</span>, </span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"No Significant Growth @48hrs"</span>, <span class="st">"No Growth"</span>, </span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"No Pathogen detected"</span>, <span class="st">"No RNA detected"</span>, </span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"No DNA detected"</span>, <span class="st">"No Virus Detected"</span>, <span class="st">"Not Detected"</span>) <span class="sc">~</span> <span class="dv">0</span>,</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Inconclusive tests</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>      Diagnostic_test <span class="sc">==</span> <span class="st">'PCR'</span> <span class="sc">&amp;</span> </span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>        RESULT <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Inconclusive"</span>, <span class="st">"Mixed Bacterial Growth"</span>, <span class="st">"Mixed Growth"</span>,</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Very Mixed Growth"</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="cn">NA</span>),</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Culture tests</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>      Diagnostic_test <span class="sc">==</span> <span class="st">'Culture'</span> <span class="sc">&amp;</span> Pathogen <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'MH'</span>, <span class="st">'PM'</span>, <span class="st">'HS'</span>) <span class="sc">~</span> </span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>        <span class="fu">case_when</span>(</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>          Pathogen <span class="sc">==</span> <span class="st">'MH'</span> <span class="sc">&amp;</span> RESULT <span class="sc">==</span> <span class="st">"Mannheimia haemolytica"</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>          Pathogen <span class="sc">==</span> <span class="st">'PM'</span> <span class="sc">&amp;</span> RESULT <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Pasteurella multocida"</span>, </span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>                                           <span class="st">"P. multocida"</span>) <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>          Pathogen <span class="sc">==</span> <span class="st">'HS'</span> <span class="sc">&amp;</span> RESULT <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Histophilus somni"</span>,</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>                                           <span class="st">"Histophilus somnus"</span>,</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>                                           <span class="st">"Histophilus somnii"</span>) <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>          <span class="co"># Default case</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>          <span class="cn">TRUE</span> <span class="sc">~</span> <span class="dv">0</span></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Or need to merge files:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>barometer <span class="ot">&lt;-</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  barometer_dt <span class="sc">%&gt;%</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">left_join</span>(df_samples, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">'Diagnostic_test'</span>,<span class="st">'Result'</span>, <span class="st">'Parameter_code'</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">left_join</span>(</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>      barometer_aero_cult, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">'Filenumber'</span>, <span class="st">'Samplenumber'</span>, <span class="st">'Result'</span>, <span class="st">'Parameter_code'</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">'Pathogen_identification'</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">%&gt;%</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">left_join</span>(</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>      barometer_myco_cult, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">'Filenumber'</span>, <span class="st">'Samplenumber'</span>, <span class="st">'Result'</span>, <span class="st">'Parameter_code'</span>,</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">'Pathogen_identification'</span>)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="reaching-the-final-format" class="level2">
+<h2 class="anchored" data-anchor-id="reaching-the-final-format">Reaching the final format</h2>
+<p>Floor date to the 1<sup>st</sup> of the month:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>barometer_dt<span class="sc">$</span>Floored_date <span class="ot">&lt;-</span> lubridate<span class="sc">::</span><span class="fu">floor_date</span>(barometer_dt<span class="sc">$</span>Date, <span class="st">"month"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Aggregate data on farm_ID and month (WIDE):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>barometer_groupby <span class="ot">&lt;-</span> barometer_dt <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Lab_reference, Country, Breed, Floored_date, Province, Farm_ID, Diagnostic_test, Sample_type) <span class="sc">%&gt;%</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">c</span>(PM, MH, HS, MB, BRSV, PI3, BCV), max))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Convert to <em>long</em> version:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>barometer_long <span class="ot">&lt;-</span> barometer_groupby <span class="sc">%&gt;%</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">c</span>(<span class="st">'PM'</span>, <span class="st">'MH'</span>, <span class="st">'HS'</span>, <span class="st">'MB'</span>, <span class="st">'BRSV'</span>, <span class="st">'PI3'</span>, <span class="st">'BCV'</span>),</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">'Pathogen'</span>,</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">'Result'</span>,</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Save file to csv:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(barometer_long, <span class="st">"../Data/dummyfile"</span>, <span class="at">row.names=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>In case you want to convert to the <em>wide</em> version:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>barometer_wide <span class="ot">&lt;-</span> barometer_groupby <span class="sc">%&gt;%</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> <span class="fu">c</span>(Pathogen), <span class="at">values_from =</span> Result) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="example-with-dummy-file-wide-data" class="level2">
+<h2 class="anchored" data-anchor-id="example-with-dummy-file-wide-data">Example with dummy file (WIDE data)</h2>
+<p>Please find here a <a href=".....">dummy file</a> which can help you understand the different steps we are taking in the next chunk. You can find the step-by-step explanation below the R chunk.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>barometer_dt <span class="ot">&lt;-</span> barometer_dt_raw <span class="sc">%&gt;%</span> </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">rename</span>(</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">Dossier =</span> <span class="st">'N° échantillon'</span>,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Date =</span> <span class="st">'Date of Sample'</span>,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Sample_type=</span> <span class="st">'Sample Type'</span>,</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Diagnostic_test =</span> METH,</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">Farm_ID =</span> TRP,</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">PM =</span> P_multocida,</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">MH =</span> M_haemolytica,</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">HS =</span> H_somnus,</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">MB =</span> M_bovis,</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">BRSV =</span> BRSV,</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">PI3 =</span> PI3,</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">BCV =</span> Coronavirus</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">separate</span>(ADDRESS, <span class="fu">c</span>(<span class="st">'Postal_code'</span>, <span class="st">'City'</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">Postal_code =</span> <span class="fu">as.double</span>(Postal_code),</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">Filenumber =</span> <span class="fu">str_sub</span>(Dossier, <span class="dv">1</span>, <span class="dv">12</span>),</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">Samplenumber =</span> <span class="fu">str_sub</span>(Dossier, <span class="sc">-</span><span class="dv">3</span>),</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">Country =</span><span class="st">'Belgium'</span>,</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">Lab_reference =</span><span class="st">'3'</span>, </span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">Sample_type =</span> <span class="fu">case_when</span>(</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>      Sample_type <span class="sc">==</span> <span class="st">"BAL"</span> <span class="sc">~</span> <span class="st">'BAL'</span>, </span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>      Sample_type <span class="sc">==</span> <span class="st">"SWAB"</span> <span class="sc">~</span><span class="st">'Swab'</span>,</span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>      Sample_type <span class="sc">==</span> <span class="st">"CARCASS"</span> <span class="sc">~</span> <span class="st">'Autopsy'</span>,</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">'Missing'</span></span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">Breed =</span> <span class="fu">case_when</span>(</span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>      SPECUL <span class="sc">==</span> <span class="st">"MEAT"</span> <span class="sc">~</span> <span class="st">'Beef'</span>, </span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>      SPECUL <span class="sc">==</span> <span class="st">"MILK"</span> <span class="sc">~</span><span class="st">'Dairy'</span>,</span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>      SPECUL <span class="sc">==</span> <span class="st">"MXD"</span> <span class="sc">~</span> <span class="st">'Mixed'</span>,</span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">'Unknown'</span></span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">Province =</span> <span class="fu">case_when</span>(</span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a>        <span class="fu">between</span>(<span class="fu">as.numeric</span>(Postal_code), <span class="dv">1000</span>, <span class="dv">1299</span>) <span class="sc">~</span> <span class="st">'Brussels'</span>,</span>
+<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a>        <span class="fu">between</span>(<span class="fu">as.numeric</span>(Postal_code), <span class="dv">1300</span>, <span class="dv">1499</span>) <span class="sc">~</span> <span class="st">'Walloon Brabant'</span>,</span>
+<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a>        <span class="fu">between</span>(<span class="fu">as.numeric</span>(Postal_code), <span class="dv">1500</span>, <span class="dv">1999</span>) <span class="sc">~</span> <span class="st">'Flemish Brabant'</span>,</span>
+<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a>        <span class="fu">between</span>(<span class="fu">as.numeric</span>(Postal_code), <span class="dv">3000</span>, <span class="dv">3499</span>) <span class="sc">~</span> <span class="st">'Antwerp'</span>,</span>
+<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a>        <span class="fu">between</span>(<span class="fu">as.numeric</span>(Postal_code), <span class="dv">2000</span>, <span class="dv">2999</span>) <span class="sc">~</span> <span class="st">'Limburg'</span>,</span>
+<span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a>        <span class="fu">between</span>(<span class="fu">as.numeric</span>(Postal_code), <span class="dv">3500</span>, <span class="dv">3999</span>) <span class="sc">~</span> <span class="st">'Limburg'</span>,</span>
+<span id="cb15-42"><a href="#cb15-42" aria-hidden="true" tabindex="-1"></a>        <span class="fu">between</span>(<span class="fu">as.numeric</span>(Postal_code), <span class="dv">4000</span>, <span class="dv">4999</span>) <span class="sc">~</span> <span class="st">'Liège'</span>,</span>
+<span id="cb15-43"><a href="#cb15-43" aria-hidden="true" tabindex="-1"></a>        <span class="fu">between</span>(<span class="fu">as.numeric</span>(Postal_code), <span class="dv">5000</span>, <span class="dv">5999</span>) <span class="sc">~</span> <span class="st">'Namur'</span>,</span>
+<span id="cb15-44"><a href="#cb15-44" aria-hidden="true" tabindex="-1"></a>        <span class="fu">between</span>(<span class="fu">as.numeric</span>(Postal_code), <span class="dv">6000</span>, <span class="dv">6599</span>) <span class="sc">~</span> <span class="st">'Hainaut'</span>,</span>
+<span id="cb15-45"><a href="#cb15-45" aria-hidden="true" tabindex="-1"></a>        <span class="fu">between</span>(<span class="fu">as.numeric</span>(Postal_code), <span class="dv">7000</span>, <span class="dv">7999</span>) <span class="sc">~</span> <span class="st">'Hainaut'</span>,</span>
+<span id="cb15-46"><a href="#cb15-46" aria-hidden="true" tabindex="-1"></a>        <span class="fu">between</span>(<span class="fu">as.numeric</span>(Postal_code), <span class="dv">6600</span>, <span class="dv">6999</span>) <span class="sc">~</span> <span class="st">'Luxembourg'</span>,</span>
+<span id="cb15-47"><a href="#cb15-47" aria-hidden="true" tabindex="-1"></a>        <span class="fu">between</span>(<span class="fu">as.numeric</span>(Postal_code), <span class="dv">8000</span>, <span class="dv">8999</span>) <span class="sc">~</span> <span class="st">'West Flanders'</span>,</span>
+<span id="cb15-48"><a href="#cb15-48" aria-hidden="true" tabindex="-1"></a>        <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">'East Flanders'</span></span>
+<span id="cb15-49"><a href="#cb15-49" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb15-50"><a href="#cb15-50" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">%&gt;%</span></span>
+<span id="cb15-51"><a href="#cb15-51" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(</span>
+<span id="cb15-52"><a href="#cb15-52" aria-hidden="true" tabindex="-1"></a>    Filenumber,</span>
+<span id="cb15-53"><a href="#cb15-53" aria-hidden="true" tabindex="-1"></a>    Diagnostic_test,</span>
+<span id="cb15-54"><a href="#cb15-54" aria-hidden="true" tabindex="-1"></a>    Samplenumber,</span>
+<span id="cb15-55"><a href="#cb15-55" aria-hidden="true" tabindex="-1"></a>    Country,</span>
+<span id="cb15-56"><a href="#cb15-56" aria-hidden="true" tabindex="-1"></a>    Lab_reference,</span>
+<span id="cb15-57"><a href="#cb15-57" aria-hidden="true" tabindex="-1"></a>    Sample_type,</span>
+<span id="cb15-58"><a href="#cb15-58" aria-hidden="true" tabindex="-1"></a>    Breed,</span>
+<span id="cb15-59"><a href="#cb15-59" aria-hidden="true" tabindex="-1"></a>    PM,</span>
+<span id="cb15-60"><a href="#cb15-60" aria-hidden="true" tabindex="-1"></a>    MH,</span>
+<span id="cb15-61"><a href="#cb15-61" aria-hidden="true" tabindex="-1"></a>    HS,</span>
+<span id="cb15-62"><a href="#cb15-62" aria-hidden="true" tabindex="-1"></a>    MB,</span>
+<span id="cb15-63"><a href="#cb15-63" aria-hidden="true" tabindex="-1"></a>    BRSV,</span>
+<span id="cb15-64"><a href="#cb15-64" aria-hidden="true" tabindex="-1"></a>    PI3,</span>
+<span id="cb15-65"><a href="#cb15-65" aria-hidden="true" tabindex="-1"></a>    BCV,</span>
+<span id="cb15-66"><a href="#cb15-66" aria-hidden="true" tabindex="-1"></a>    Date,</span>
+<span id="cb15-67"><a href="#cb15-67" aria-hidden="true" tabindex="-1"></a>    Postal_code,</span>
+<span id="cb15-68"><a href="#cb15-68" aria-hidden="true" tabindex="-1"></a>    Province,</span>
+<span id="cb15-69"><a href="#cb15-69" aria-hidden="true" tabindex="-1"></a>    Farm_ID</span>
+<span id="cb15-70"><a href="#cb15-70" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb15-71"><a href="#cb15-71" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">distinct</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb15-72"><a href="#cb15-72" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb15-73"><a href="#cb15-73" aria-hidden="true" tabindex="-1"></a>    <span class="at">Filenumber =</span> <span class="fu">sha256_hash</span>(<span class="fu">as.character</span>(Filenumber)),</span>
+<span id="cb15-74"><a href="#cb15-74" aria-hidden="true" tabindex="-1"></a>    <span class="at">Farm_ID =</span> <span class="fu">sha256_hash</span>(<span class="fu">as.character</span>(Samplenumber))</span>
+<span id="cb15-75"><a href="#cb15-75" aria-hidden="true" tabindex="-1"></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>First we make sure that all column names are in the final format and understandable (in English):</p>
+<ul>
+<li><p><small> Filenumber, Samplenumber, Date, Sample_type, Diagnostic_test, Farm_ID, Postal_code, Breed, Province</small></p></li><small>
+</small><li><small></small><p><small>The following abbreviations for the 7 most important pathogens involved in bovine respiratory disease are used: PM (<em>Pasteurella multocida</em>), MB (<em>Mycoplasmopsis bovis</em>, previously <em>Mycoplasma bovis</em>), MH (<em>Mannheimia haemolytica</em>), HS (<em>Histophilus somni</em>), BRSV (bovine respiratory syncytial virus), PI3 (parainfluenza-type 3), and BCV (bovine coronavirus)</small></p></li>
+</ul>
+<p>Subsequently we mutate/add data to the final format:</p>
+<ul>
+<li><p><small>Samplenumber: in case more than one sample is submitted to the lab under one filenumber (<em>e.g.</em> 001, 002 or 1, 2, ..)</small></p></li><small>
+<li><p>Date (DD-MM-YYYY): either date of sampling or creation date in lab. <em>The date of sampling is preferred, however, when this date is (often) lacking, it may be easier to take the creation date of the lab. This is only recommended when time between taking samples and creation date remains short (1-2 days)</em></p></li>
+<li><p>Geolocation at the province level. Therefore, in this case we needed to separate the postal code (<em>e.g.</em> 2388) from the municipality/city to extract the province (<em>e.g.</em> Brussels)</p></li>
+<li><p>Country (<em>e.g.</em> Belgium) should be mentioned in a separate column</p></li>
+<li><p>Lab reference: a number (<em>e.g.</em> 3)</p></li>
+</small></ul><small>
+<!-- -->
+</small><ul><small>
+<li><p>Sample type: ‘<em>BAL</em>’ (bronchoalveolar lavage), ‘<em>Swab</em>’ (nasal swab, eye swab, deep nasopharyngeal swab, … from a living animal), ‘<em>TTA</em>’ (transtracheal aspirate/wash), ‘<em>Autopsy</em>’ (all samples from carcasses) or ‘<em>Unknown</em>’</p></li>
+<li><p>Breed or production type: ‘<em>Dairy</em>’, ‘<em>Beef</em>’, ‘<em>Mixed’</em>,’<em>Veal</em>’, ‘<em>Fattening</em> <em>calves</em>’, ‘<em>Unknown</em>’</p></li>
+</small><li><small></small><p><small>Diagnostic test: ‘<em>Culture</em>’, ‘<em>PCR</em>’, ‘<em>NPS</em>’ (nanopore sequencing) or ‘<em>Paired serum</em>’. <em>In this dataset the Diagnostic test has already been mentioned in the correct format</em> </small></p></li>
+</ul>
+<p>Finally, the Filenumber and Farm_ID are anonymized by using the <a href="https://decide-project-eu.github.io/case-studies-website/tutorials/anonymisation.html">SHA-256 hashing function</a>.</p>
+</section>
+<section id="example-of-final-format" class="level2">
+<h2 class="anchored" data-anchor-id="example-of-final-format">Example of final format</h2>
+<p><a href="...">csv file</a></p>
+</section>
+<section id="examples-of-complete-r-scripts-and-python" class="level2">
+<h2 class="anchored" data-anchor-id="examples-of-complete-r-scripts-and-python">Examples of complete R-scripts (and Python)</h2>
+<ul>
+<li><p>Lab 1</p></li>
+<li><p>Lab 2</p></li>
+<li><p>Lab 3</p></li>
+</ul>
+</section>
+</section>
+<section id="visualization-tableau" class="level1">
+<h1>Visualization: Tableau</h1>
+<p>The Tableau workbook will become open source at the end of the project.</p>
+</section>
+<section id="data-transfer-agreement" class="level1">
+<h1>Data Transfer Agreement</h1>
+<p>Please find an example of a data transfer agreement <a href="..\DECIDE_barometerflow\case-studies-website\tutorials\Data_transfer_agreement_examplewebsite.pdf">here</a>.</p>
+</section>
+<section id="want-to-contribute-contact-us-or-give-feedback" class="level1">
+<h1>Want to contribute, contact us or give feedback?</h1>
+<p>Please contact Jade Bokma: jade.bokma@ugent.be</p>
+</section>
+<section id="pathogen-specific-information" class="level1">
+<h1>Pathogen-specific information</h1>
+<section id="bovine-respiratory-syncytial-virus" class="level2">
+<h2 class="anchored" data-anchor-id="bovine-respiratory-syncytial-virus">Bovine respiratory syncytial virus</h2>
 <p><strong>Pathogen:</strong> Bovine respiratory syncytial virus (BRSV, also Bovine orthopneumovirus, multiple subtypes, genus: Orthopneumovirus, family: Pneumoviridae)</p>
 <p><strong>Incubation period:</strong> 2-5 days</p>
 <p><strong>Clinical relevance:</strong> primary pathogen involved in bovine respiratory disease, predisposing for secondary bacterial infections</p>
@@ -310,15 +617,29 @@ gtag('config', 'G-2804FN9QRK', { 'anonymize_ip': true});
 <p><strong>Diagnostic test</strong>*: Direct: PCR, nanopore sequencing, antigen ELISA. Indirect: paired serum samples for antibody ELISA (interpretation may be hampered by maternal immunity)</p>
 <p><strong>Carriers:</strong> persistent infection suggested but not evidenced, subclinical infections likely most important for infection maintenance in the population</p>
 <p><strong>Infection route</strong>: airborne³, aerosol, nasal secretions (direct contact), fomites</p>
-<p><strong>Vaccines:</strong> both monovalent vaccines and multivalent vaccines (combined with bPI-3, BVDV, M. haemolytica), inactivated or live attenuated, parenteral or intranasal are available in Europe</p>
+<p><strong>Vaccines:</strong> both monovalent vaccines and multivalent vaccines (combined with bPI-3, BVDV, <em>M. haemolytica</em>), inactivated or live attenuated, parenteral or intranasal are available in Europe</p>
 <p><strong>Eradication programs:</strong> voluntary program in Norway</p>
-<p>* List incomplete, availability of commercial tests can differ between countries</p>
+<p><small>* List incomplete, availability of commercial tests can differ between countries</small></p><small>
 <p>1. Doyle D., Credille B., Lehenbauer T.W., Berghaus R., Aly S.S., Champagne J., Blanchard P., Crossley B., Berghaus L., Cochran S., Woolums A. 2017. Agreement among 4 sampling methods to identify respiratory pathogens in dairy calves with acute bovine respiratory disease. J Vet Intern Med 31, 954-959.</p>
 <p>2. Makoschey B., Berge A.C. 2021. Review on bovine respiratory syncytial virus and bovine parainfluenza – usual suspects in bovine respiratory disease – a narrative review. BMC Veterinary Research 17, 261.</p>
-<p>3. Mars M.H., Bruschke C.J.M., Van Oirschot J.T. 1999. Airborne transmission of BHV1, BRSV, and BVDV among cattle is possible under experimental conditions. Vet Microbiol 66, 197-207.</p>
+</small><p><small>3. Mars M.H., Bruschke C.J.M., Van Oirschot J.T. 1999. Airborne transmission of BHV1, BRSV, and BVDV among cattle is possible under experimental conditions. Vet Microbiol 66, 197-207. </small></p>
 </section>
-<section id="bovine-coronavirus" class="level1">
-<h1>Bovine coronavirus</h1>
+<section id="bovine-parainfluenza-3-virus" class="level2">
+<h2 class="anchored" data-anchor-id="bovine-parainfluenza-3-virus">Bovine parainfluenza-3 virus</h2>
+<p><strong>Pathogen:</strong> Bovine parainfluenza-3 virus (bPI-3, also bovine respirovirus 3, 3 genotypes (A, B, C) genus: Respirovirus, family: Paramyxoviridae)</p>
+<p><strong>Incubation period</strong>: 2-6 days</p>
+<p><strong>Clinical relevance:</strong> primary pathogen involved in bovine respiratory disease, predisposing for secondary bacterial infections</p>
+<p><strong>Clinical signs</strong>: respiratory disease (coughing, nasal discharge, dyspnea, fever), presumably mild as single infection</p>
+<p><strong>Diagnostic sample</strong>: respiratory tract (nasopharyngeal swab, bronchoalveolair lavage, transtracheal wash), necropsy</p>
+<p><strong>Carriers:</strong> presumably not, subclinical infections likely most important for infection maintenance in the population</p>
+<p><strong>Diagnostic test</strong>*: Direct: PCR, nanopore sequencing, antigen ELISA. Indirect: paired serum samples for antibody ELISA1 (interpretation may be hampered by maternal immunity)</p>
+<p><strong>Infection route</strong>: aerosols, nasal secretion (direct contact), fomites</p>
+<p><strong>Vaccines:</strong> Several multivalent vaccines (BRSV, BVD, <em>M. haemolytica</em>), inactivated or live-attenuated, parenteral or intranasal are available in Europe</p>
+<p><strong>Eradication programs:</strong> no</p>
+<p><small>* List incomplete, availability of commercial tests can differ between countries </small></p>
+</section>
+<section id="bovine-coronavirus" class="level2">
+<h2 class="anchored" data-anchor-id="bovine-coronavirus">Bovine coronavirus</h2>
 <p><strong>Pathogen:</strong> Bovine coronavirus (BCoV, genus: Betacoronavirus, family: Coronaviridae)</p>
 <p><strong>Incubation period:</strong> 1-7 days</p>
 <p><strong>Clinical relevance</strong>: primary pathogen involved in bovine respiratory disease¹, calf diarrhea and winter dysentery², predisposing for secondary bacterial infections</p>
@@ -329,12 +650,69 @@ gtag('config', 'G-2804FN9QRK', { 'anonymize_ip': true});
 <p><strong>Carriers:</strong> limited evidence, differentiation from prolonged shedding difficult, subclinical infections likely most important for infection maintenance in the population</p>
 <p><strong>Vaccines</strong>: multivalent vaccines containing inactivated bovine coronavirus (combined with bovine rotavirus and Enterotoxic Escherichia coli) next to other intestinal pathogens intended for dams are registered for neonatal calf diarrhea in Europe.</p>
 <p><strong>Eradication programs:</strong> voluntary program in Norway</p>
-<p>* List incomplete, availability of commercial tests can differ between countries</p>
+<p><small>* List incomplete, availability of commercial tests can differ between countries</small></p><small>
 <p>¹&nbsp;&nbsp;&nbsp;Decaro N., Campolo M., Desario C., Cirone F., D’abramo M., Lorusso E., Greco G., Mari V., Colaianni M.L., Elia G., Martella V., Buonavoglia C. 2008. Respiratory disease associated with bovine coronavirus infection in cattle herds in Southern Italy. J Vet Diagn Invest 20, 28-32.</p>
 <p>²&nbsp;&nbsp;&nbsp;&nbsp;Boileau M.J., Kapil S.2010. Bovine coronavirus associated syndromes. Vet Clin north Am Food Anim Pract 26, 123-146.</p>
-<p>³&nbsp;&nbsp;&nbsp;&nbsp;Doyle D., Credille B., Lehenbauer T.W., Berghaus R., Aly S.S., Champagne J., Blanchard P., Crossley B., Berghaus L., Cochran S., Woolums A. 2017. Agreement among 4 sampling methods to identify respiratory pathogens in dairy calves with acute bovine respiratory disease. J Vet Intern Med 31, 954-959</p>
+</small><p><small>³&nbsp;&nbsp;&nbsp;&nbsp;Doyle D., Credille B., Lehenbauer T.W., Berghaus R., Aly S.S., Champagne J., Blanchard P., Crossley B., Berghaus L., Cochran S., Woolums A. 2017. Agreement among 4 sampling methods to identify respiratory pathogens in dairy calves with acute bovine respiratory disease. J Vet Intern Med 31, 954-959. </small></p>
+</section>
+<section id="pasteurella-multocida" class="level2">
+<h2 class="anchored" data-anchor-id="pasteurella-multocida"><em>Pasteurella multocida</em></h2>
+<p><strong>Clinical relevance:</strong> <em>P. multocida</em> is an opportunistic bacterium and part of the common respiratory tract flora.¹ᐧ² Problems can occur during co-infection with viruses/Mycoplasma bovis or after extensive antimicrobial treatment.</p>
+<p><strong>Clinical signs:</strong> respiratory disease (coughing, nasal discharge, dyspnea, fever), septicemia</p>
+<p><strong>Diagnostic sample:</strong> respiratory tract (bronchoalveolair lavage, transtracheal wash), blood culture, peritoneal fluid, necropsy</p>
+<p><strong>Diagnostic test</strong>*: culture and antimicrobial susceptibility testing, PCR**</p>
+<p><strong>Carriers:</strong> yes</p>
+<p><strong>Infection route:</strong> direct contact (nasal secretions), potentially close distance aerosol spread, potentially fomites</p>
+<p><strong>Vaccines:</strong> Inactivated divalent vaccine (with Salmonella typhimurium) available in some EU countries</p>
+<p><small>1. Lima S.F., Teixeria A.G.V., Higgins C.H., Lima S.F., Bicalho R.C. 2016. The upper respiratory tract microbiome and its potential role in bovine respiratory disease and otitis media. Sci Rep 6.<br>
+2. Gaeta N.C., Lima S.F., Teixeria A.G., Ganda E.K., Oikonomou G., Gregory L., Bicalho R.C. 2017. Deciphering upper respiratory tract microbiota complexity in healthy calves and calves that develop respiratory disease using shotgun metagenomics. J Dairy Sci 100, 1445-1458.</small></p>
+<p>** Detection of an opportunistic pathogen by PCR confirms it present in the animal/herd, but does not evidence involvement in disease. <em>P. multocida</em> is that prevalent that PCR analysis is virtually useless.</p>
+</section>
+<section id="mannheimia-haemolytica" class="level2">
+<h2 class="anchored" data-anchor-id="mannheimia-haemolytica"><em>Mannheimia haemolytica</em></h2>
+<p><strong>Pathogen:</strong> <em>Mannheimia haemolytica</em> (member of the Pasteurellaceae family, two major genotypes (1 and 2))</p>
+<p><strong>Clinical relevance:</strong> <em>M. haemolytica</em> is an opportunistic bacterium and part of the common respiratory tract flora.¹ᐧ² Problems can occur during co-infection with viruses/Mycoplasma bovis and potentially also after breaches in the innate immunity of the respiratory tract by other factors. Outbreaks of virulent <em>M. haemolytica</em> strains in adult dairy cattle with acute mortality are described.³ᐧ⁴ &nbsp;</p>
+<p><strong>Clinical signs</strong>: respiratory disease (coughing, nasal discharge, dyspnea, fever), septicemia</p>
+<p><strong>Diagnostic sample</strong>: respiratory tract (bronchoalveolair lavage, transtracheal wash), peritoneal fluid, necropsy</p>
+<p><strong>Diagnostic test</strong>*: culture and antimicrobial susceptibility testing; PCR**</p>
+<p><strong>Carriers:</strong> yes</p>
+<p><strong>Infection route:</strong> direct contact (nasal secretions), potentially close distance aerosol spread, potentially fomites</p>
+<p><strong>Vaccines</strong>: both inactivated monovalent and multivalent vaccines (with <em>H. somni</em>, PI-3 or BRSV) are available in Europe.</p>
+<p><small> 1. Lima S.F., Teixeria A.G.V., Higgins C.H., Lima S.F., Bicalho R.C. 2016. The upper respiratory tract microbiome and its potential role in bovine respiratory disease and otitis media. Sci Rep 6.&nbsp; &nbsp;</small></p><small>
+<p>2. Gaeta N.C., Lima S.F., Teixeria A.G., Ganda E.K., Oikonomou G., Gregory L., Bicalho R.C. 2017. Deciphering upper respiratory tract microbiota complexity in healthy calves and calves that develop respiratory disease using shotgun metagenomics. J Dairy Sci 100, 1445-1458.</p>
+<p>3. Dorso L., Rouault M., Barbotin C., Chartier C., Assié S. 2021. Infectious bovine respiratory disease in adult cattle: an extensive necropsic and etiological study. Animals (Basel) 11, 2280.</p>
+<p>4. Mahu M., Valgaeren B., Pardon B., Deprez P., Haesebrouck F., Boyen F. 2015. Non-haemolytic Mannheimia haemolytica as a cause of pleuropneumonia and septicemia in a calf. Vet Microbiol 180, 157-160.</p>
+</small><p><small>** Detection of an opportunistic pathogen by PCR confirms it present in the animal/herd, but does not evidence involvement in disease </small></p>
+</section>
+<section id="mycoplasma-bovis" class="level2">
+<h2 class="anchored" data-anchor-id="mycoplasma-bovis"><em>Mycoplasma bovis</em></h2>
+<p><strong>Pathogen:</strong> <em>Mycoplasma bovis</em></p>
+<p><strong>Incubation period</strong>: 2-10 days</p>
+<p><strong>Clinical relevance:</strong> primary pathogen involved in bovine respiratory disease, mastitis, otitis and arthritis, often reported in co-infection with other viral or bacterial pathogens</p>
+<p><strong>Clinical signs</strong>: respiratory disease (coughing, nasal discharge, dyspnea, fever), ear drop, swollen joints, mastitis, seromas and rarer presentations¹</p>
+<p><strong>Diagnostic sample</strong>: respiratory tract (nasopharyngeal swab, bronchoalveolair lavage, transtracheal wash), milk, synovial fluid, necropsy</p>
+<p><strong>Carriers:</strong> yes</p>
+<p><strong>Diagnostic test</strong>*: Direct: culture (special media and CO<sub>2</sub> rich incubation needed), PCR, MALDI-TOF MS, nanopore sequencing. Indirect: paired serum samples for antibody ELISA (interpretation may be hampered by maternal immunity)</p>
+<p><strong>Infection route</strong>: nasal secretions (direct contact), colostrum, milk, semen, fomites¹ᐧ²&nbsp;</p>
+<p><strong>Vaccines:</strong> Restrictedavailability of a monovalent registered vaccine and in some European countries autovaccines are allowed</p>
+<p><strong>Eradication programs:</strong> voluntary program in Finland</p>
+<p><small>1. Maunsell FP., Donovan G.A. 2009. Mycoplasma bovis infections in young calves. Vet Clin North Am Food Anim Pract 25, 139-177.</small></p><small>
+</small><p><small>2. Haapala V., Pohjanvirta T., Vähänikkilä N., Halkilahti J., Simonen H., Pelkonen S., Soveri T., Simojoki H., Autio T. 2018. Semen as a source of Mycoplasma bovis mastitis in dairy herds. Vet Microbiol 216, 60-66.</small></p>
+</section>
+<section id="histophilus-somni" class="level2">
+<h2 class="anchored" data-anchor-id="histophilus-somni"><em>Histophilus somni</em></h2>
+<p><strong>Pathogen:</strong> <em>Histophilus somni</em> (member of the Pasteurellaceae family)</p>
+<p><strong>Clinical relevance:</strong> opportunistic pathogen involved in respiratory disease, septicemia, otitis, polyserositis and thrombotic meningoencephalitis-myelitis</p>
+<p><strong>Clinical signs</strong>: respiratory disease (coughing, nasal discharge, dyspnea, fever), central nervous signs (sleeper syndrome), swollen joints, ear drop and sudden death</p>
+<p><strong>Diagnostic sample</strong>: respiratory tract (bronchoalveolair lavage, transtracheal wash)¹, blood culture, necropsy</p>
+<p><strong>Diagnostic test</strong>*: PCR**, culture (CO<sub>2</sub> rich incubation needed) and antimicrobial susceptibility testing</p>
+<p><strong>Carriers:</strong> yes</p>
+<p><strong>Infection route:</strong> direct contact (nasal secretions), urine, potentially fomites</p>
+<p><strong>Vaccines:</strong> divalent inactivated vaccines ( <em>M. haemolytica</em>, <em>H. somni</em>) are available in Europe</p>
+<p><small>1. Van Driessche L., Valgaeren B.R., Gille L., Boyen F., Ducatelle R., Haesebrouck F., Deprez P., Pardon B. 2017. A deep nasopharyngeal swab versus nonendoscopic bronchoalveolar lavage for isolation of bacterial pathogens from preweaned calves with respiratory disease. J Vet Intern Med 31, 946-953.</small></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
