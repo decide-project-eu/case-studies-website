@@ -5,7 +5,7 @@ categories:
   - Cattle
   - Work Package 1
   - Use case
-author: Saba Noor, Jade Bokma, Bart Pardon, Miel Hostens, et al.
+author: Jade Bokma, Saba Noor, Bart Pardon, Miel Hostens, et al.
 date: 06/21/23
 toc: true
 image: cattle-barometer-tutorial.png
@@ -14,124 +14,393 @@ language:
     section-title-footnotes: References
 ---
 
-# Pasteurella multocida
+# Aim
 
-**Clinical relevance:** P. multocida is an opportunistic bacterium and part of the common respiratory tract flora.¹ᐧ² Problems can occur during co-infection with viruses/Mycoplasma bovis or after extensive antimicrobial treatment.
+This tool visualizes pathogen-specific lab results of field samples obtained from cattle over Europe. It shows the historical trend, dynamics and current presence of specific pathogens per area. It holds the potential for early warning and to support decision-making on farm to control infectious diseases, such as antimicrobial use, vaccination, and purchase of animals.
 
-**Clinical signs:** respiratory disease (coughing, nasal discharge, dyspnea, fever), septicemia
+# Data preparation
 
-**Diagnostic sample:** respiratory tract (bronchoalveolair lavage, transtracheal wash), blood culture, peritoneal fluid, necropsy
+## Minimum data requirements
 
-**Diagnostic test**\*: culture and antimicrobial susceptibility testing, PCR\*\* Carriers: yes
+Individual or pooled samples from the respiratory tract of cattle (preferably from ill animals) with the results of diagnostic test for some respiratory pathogens (*e.g. Pasteurella multocida*, *Mycoplasmopsis bovis* (previously *Mycoplasma bovis*), *Mannheimia haemolytica*, *Histophilus somni*, Bovine respiratory syncytial virus, Parainfluenza-type 3, and Bovine coronavirus):
 
-**Infection route:** direct contact (nasal secretions), potentially close distance aerosol spread, potentially fomites
+-   Date of sample
 
-**Vaccines:** Inactivated divalent vaccine (with Salmonella typhimurium) available in some EU countries
+-   Diagnostic sample type (*e.g.* BAL, swab, lung, ..)
 
-1.  Lima S.F., Teixeria A.G.V., Higgins C.H., Lima S.F., Bicalho R.C. 2016. The upper respiratory tract microbiome and its potential role in bovine respiratory disease and otitis media. Sci Rep 6.\
-2.  Gaeta N.C., Lima S.F., Teixeria A.G., Ganda E.K., Oikonomou G., Gregory L., Bicalho R.C. 2017. Deciphering upper respiratory tract microbiota complexity in healthy calves and calves that develop respiratory disease using shotgun metagenomics. J Dairy Sci 100, 1445-1458.
+-   Diagnostic test (*e.g.* PCR, culture, nanopore sequencing, paired-serum)
 
-\*\* Detection of an opportunistic pathogen by PCR confirms it present in the animal/herd, but does not evidence involvement in disease. P. multocida is that prevalent that PCR analysis is virtually useless.
+-   Farm identification (anonymized)
 
-# Bovine parainfluenza-3 virus
+-   Geolocation of farm (*e.g.* postal code/province, country)
 
-**Pathogen:** Bovine parainfluenza-3 virus (bPI-3, also bovine respirovirus 3, 3 genotypes (A, B, C) genus: Respirovirus, family: Paramyxoviridae)
+-   (Breed/production type of animal/herd)
 
-**Incubation period**: 2-6 days
+## How to handle results?
 
-**Clinical relevance:** primary pathogen involved in bovine respiratory disease, predisposing for secondary bacterial infections
+The result can be either 'negative' (0), 'positive' (1) or 'not tested' (NA):
 
-**Clinical signs**: respiratory disease (coughing, nasal discharge, dyspnea, fever), presumably mild as single infection
+-   PCR: when to consider a test results positive or negative will be at the discretion of the laboratory (cutoff values may differ per lab). Dubious test results such as 'not conclusive', 'no test results due to inhibition', are recommended to file as not tested (NA).
 
-**Diagnostic sample**: respiratory tract (nasopharyngeal swab, bronchoalveolair lavage, transtracheal wash), necropsy
+-   Culture (*Pasteurellaceae*): it is expected that culture results are either positive (1) or negative (0). For example, when a swab has been cultured on blood agar plates, we assume that *P. multocida, M. haemolytica,* and *Histophilus somni* are tested. For example, when only *P. multocida* is present, the result for that specific sample should be reported as: PM (1), MH (0), HS (0). Dubious test results due to overgrowth by for example *Proteus species* could be filed as not tested (NA) for all *Pasteurellaceae*.
 
-**Carriers:** presumably not, subclinical infections likely most important for infection maintenance in the population
+-   Culture (*M. bovis*): for *M. bovis* specific culture media are necessary, however, when tested, result can be positive (1) or negative (0). Dubious test results due to overgrowth by fungi could be filed as not tested (NA).
 
-**Diagnostic test**\*: Direct: PCR, nanopore sequencing, antigen ELISA. Indirect: paired serum samples for antibody ELISA1 (interpretation may be hampered by maternal immunity)
+-   Nanopore sequencing: when to consider a test results positive or negative will be at the discretion of the laboratory (cutoff values may differ per lab).
 
-**Infection route**: aerosols, nasal secretion (direct contact), fomites
 
-**Vaccines:** Several multivalent vaccines (BRSV, BVD, M. haemolytica), inactivated or live-attenuated, parenteral or intranasal are available in Europe
+# Data manipulation
 
-**Eradication programs:** no
+## Load your data and libraries
 
-\* List incomplete, availability of commercial tests can differ between countries
+For example an excel or csv file:
 
-# Mannheimia haemolytica
+```{r, eval = FALSE}
 
-**Pathogen:** Mannheimia haemolytica (member of the Pasteurellaceae family, two major genotypes (1 and 2))
+barometer_dt_raw_2021 <- readxl::read_excel("../Data/Lab3.xlsx") 
+barometer_dt_raw_2021 <- read.csv("../Data/Lab4.csv")
+```
 
-**Clinical relevance:** M. haemolytica is an opportunistic bacterium and part of the common respiratory tract flora.¹ᐧ² Problems can occur during co-infection with viruses/Mycoplasma bovis and potentially also after breaches in the innate immunity of the respiratory tract by other factors. Outbreaks of virulent M. haemolytica strains in adult dairy cattle with acute mortality are described.³ᐧ⁴  
+When you add separate files, combine them:
 
-**Clinical signs**: respiratory disease (coughing, nasal discharge, dyspnea, fever), septicemia
+```{r, eval = FALSE}
 
-**Diagnostic sample**: respiratory tract (bronchoalveolair lavage, transtracheal wash), peritoneal fluid, necropsy
+barometer_dt_combined <- rbind(barometer_dt_raw_2021, barometer_dt_raw_2022)
+```
 
-**Diagnostic test**\*: culture and antimicrobial susceptibility testing; PCR\*\*
+Load the necessary libraries, which depends on your data(file) and script:
 
-**Carriers:** yes
+```{r, eval = FALSE}
 
-**Infection route:** direct contact (nasal secretions), potentially close distance aerosol spread, potentially fomites
+package_list <- c("data.table", "tidyverse", "naniar", "stringr", "readr",  "dplyr", 
+                  "magrittr", "readxl", "writexl", "sjmisc", "tidyr")
 
-**Vaccines**: both inactivated monovalent and multivalent vaccines (with H. somni, PI-3 or BRSV) are available in Europe.
+for (pkg in package_list) {
+  if (pkg %in% rownames(.packages()) == FALSE)
+  {library(pkg, character.only = TRUE)}
 
-1\. Lima S.F., Teixeria A.G.V., Higgins C.H., Lima S.F., Bicalho R.C. 2016. The upper respiratory tract microbiome and its potential role in bovine respiratory disease and otitis media. Sci Rep 6.   
+}
+```
 
-2\. Gaeta N.C., Lima S.F., Teixeria A.G., Ganda E.K., Oikonomou G., Gregory L., Bicalho R.C. 2017. Deciphering upper respiratory tract microbiota complexity in healthy calves and calves that develop respiratory disease using shotgun metagenomics. J Dairy Sci 100, 1445-1458.
+## Start wrangling your data
 
-3\. Dorso L., Rouault M., Barbotin C., Chartier C., Assié S. 2021. Infectious bovine respiratory disease in adult cattle: an extensive necropsic and etiological study. Animals (Basel) 11, 2280.
+It may be necessary to filter some of your data:
 
-4\. Mahu M., Valgaeren B., Pardon B., Deprez P., Haesebrouck F., Boyen F. 2015. Non-haemolytic Mannheimia haemolytica as a cause of pleuropneumonia and septicemia in a calf. Vet Microbiol 180, 157-160.
+```{r, eval = FALSE}
 
-\*\* Detection of an opportunistic pathogen by PCR confirms it present in the animal/herd, but does not evidence involvement in disease
+barometer_dt_filter <- barometer_dt_combined %>% 
+  dplyr::filter(SYSTEM %in% c('Respiratory', 'NA')
+                )
+barometer_dt_filter2 <- barometer_dt_filter %>% 
+  dplyr::filter(MATRIX %in% c('Pleural Fluid', 'Tissue swab', 'Tonsil', 'Trachea',  'Thoracic Fluid', 
+                              'Lung', 'Swab', 'Tissue swab', 'Nasal Swab', 'Nasal Fluid', 'Tissue-Pool',
+                              'Carcass', 'Pooled swab')
+                ) 
+barometer_dt_filter3 <- barometer_dt_filter2 %>% 
+  dplyr::filter(TEST %in% c("PI3V PCR", "PCR M. haemolytica - ARVL", "Mycoplasma bovis (PCR)", 
+                            "PCR H. somni - ARVL", "PCR P. multocida - ARVL", "Miscellaneous Test",
+                            "Routine Culture", "PCR M. bovis - ARVL", "BRSV PCR", 
+                            "Culture Growth", "PCR BoCoV", "Mycoplasma bovis (PCR)")
+) 
 
-# Mycoplasma bovis
+```
 
-**Pathogen:** Mycoplasma bovis
+Or add rows for pathogens when all results are reported in one field (*e.g.* sequencing data):
 
-**Incubation period**: 2-10 days
+```{r, eval = FALSE}
 
-**Clinical relevance:** primary pathogen involved in bovine respiratory disease, mastitis, otitis and arthritis, often reported in co-infection with other viral or bacterial pathogens
+barometer_dt <- barometer_dt_raw %>%
+  dplyr::mutate(
+    HS = ifelse(str_detect(pathogens, "Histophilus somni"), 1, 0),
+    MH = ifelse(str_detect(pathogens, "Mannheimia haemolytica"), 1, 0),
+    PM = ifelse(str_detect(pathogens, "Pasteurella multocida"), 1, 0),
+    BCV = ifelse(str_detect(pathogens, "Bovine coronavirus"), 1, 0),
+    MB = ifelse(str_detect(pathogens, "Mycoplasmopsis bovis"), 1, 0),
+    PI3 = ifelse(str_detect(pathogens, "Bovine respirovirus 3"), 1, 0),
+    BRSV = ifelse(str_detect(pathogens, "Bovine orthopneumovirus"), 1, 0),
+  )
 
-**Clinical signs**: respiratory disease (coughing, nasal discharge, dyspnea, fever), ear drop, swollen joints, mastitis, seromas and rarer presentations¹
+```
 
-**Diagnostic sample**: respiratory tract (nasopharyngeal swab, bronchoalveolair lavage, transtracheal wash), milk, synovial fluid, necropsy
+Or add rows for culture results:
 
-**Carriers:** yes
+```{r, eval = FALSE}
 
-**Diagnostic test**\*: Direct: culture (special media and CO2 rich incubation needed), PCR, MALDI-TOF MS, nanopore sequencing. Indirect: paired serum samples for antibody ELISA (interpretation may be hampered by maternal immunity)
+barometer_dt$HS <- ifelse(barometer_dt$Diagnostic_test == "Culture", 0, NA)
+barometer_dt$MH <- ifelse(barometer_dt$Diagnostic_test == "Culture", 0, NA)
+barometer_dt$PM <- ifelse(barometer_dt$Diagnostic_test == "Culture", 0, NA)
 
-**Infection route**: nasal secretions (direct contact), colostrum, milk, semen, fomites¹ᐧ² 
+barometer_dt_culture_wide <- barometer_dt %>%
+  tidyr::pivot_longer(
+    cols = c('PM', 'MH', 'HS'),
+    names_to = 'Pathogen_culture',
+    values_to = 'Result_culture'
+  )
 
-**Vaccines:** Restrictedavailability of a monovalent registered vaccine and in some European countries autovaccines are allowed
+barometer_dt_culture_wide$Pathogen <- 
+  ifelse(barometer_dt_culture_wide$Pathogen == "Missing",
+         barometer_dt_culture_wide$Pathogen_culture,
+         barometer_dt_culture_wide$Pathogen)
 
-**Eradication programs:** voluntary program in Finland
+```
 
-1\. Maunsell FP., Donovan G.A. 2009. Mycoplasma bovis infections in young calves. Vet Clin North Am Food Anim Pract 25, 139-177.
+Or need an intermediate table for culture results:
 
-2\. Haapala V., Pohjanvirta T., Vähänikkilä N., Halkilahti J., Simonen H., Pelkonen S., Soveri T., Simojoki H., Autio T. 2018. Semen as a source of Mycoplasma bovis mastitis in dairy herds. Vet Microbiol 216, 60-66.
+```{r, eval = FALSE}
 
-# Histophilus somni
+df_samples <- data.frame(
+  Result = c('OK', 'OK', 'OK', 'OK'),
+  Parameter_code = c('BAC_AERO','BAC_AERO','BAC_AERO', 'BAC_MYCOPLASMA'),
+  Diagnostic_test= c('Culture','Culture','Culture', 'Culture'),
+  Pathogen_identification=c("Pasteurella multocida","Mannheimia haemolytica","Histophilus somni", 
+                            'Mycoplasma bovis')
+)
+```
 
-**Pathogen:** Histophilus somni  (member of the Pasteurellaceae family)
+Or need to create binary results for PCR & culture
 
-**Clinical relevance:** opportunistic pathogen involved in respiratory disease, septicemia, otitis, polyserositis and thrombotic meningoencephalitis-myelitis
+```{r, eval = FALSE}
 
-**Clinical signs**: respiratory disease (coughing, nasal discharge, dyspnea, fever), central nervous signs (sleeper syndrome), swollen joints, ear drop and sudden death
+barometer_results <- barometer_dt_culture_wide %>% 
+  dplyr::mutate(
+    Result = case_when(
+      # Positive tests
+      Diagnostic_test == 'PCR' & 
+        RESULT %in% c("Positive", "Weak Positive", "Mycoplasma bovis PCR Positive",
+                      "Strong Positive") ~ 1,
+      # Negative tests
+      Diagnostic_test == 'PCR' & 
+        RESULT %in% c("No Pathogen detected", "Negative", "Sterile", 
+                      "No Significant Growth", "No CT", 
+                      "Mycoplasma bovis PCR Negative", 
+                      "Mixed Non-Significant Bacterial Growth", 
+                      "No Significant Growth @48hrs", "No Growth", 
+                      "No Pathogen detected", "No RNA detected", 
+                      "No DNA detected", "No Virus Detected", "Not Detected") ~ 0,
+      # Inconclusive tests
+      Diagnostic_test == 'PCR' & 
+        RESULT %in% c("Inconclusive", "Mixed Bacterial Growth", "Mixed Growth",
+                      "Very Mixed Growth") ~ as.numeric(NA),
+      # Culture tests
+      Diagnostic_test == 'Culture' & Pathogen %in% c('MH', 'PM', 'HS') ~ 
+        case_when(
+          Pathogen == 'MH' & RESULT == "Mannheimia haemolytica" ~ 1,
+          Pathogen == 'PM' & RESULT %in% c("Pasteurella multocida", 
+                                           "P. multocida") ~ 1,
+          Pathogen == 'HS' & RESULT %in% c("Histophilus somni",
+                                           "Histophilus somnus",
+                                           "Histophilus somnii") ~ 1,
+          # Default case
+          TRUE ~ 0
+        ),
+    )
 
-**Diagnostic sample**: respiratory tract (bronchoalveolair lavage, transtracheal wash)¹, blood culture, necropsy
+```
 
-**Diagnostic test**\*: PCR\*\*, culture (CO2 rich incubation needed) and antimicrobial susceptibility testing
+Or need to merge files:
 
-**Carriers:** yes
+```{r, eval = FALSE}
 
-**Infection route:** direct contact (nasal secretions), urine, potentially fomites
+barometer <-
+  barometer_dt %>%
+  dplyr::left_join(df_samples, by = c('Diagnostic_test','Result', 'Parameter_code')) %>%
+  dplyr::left_join(
+      barometer_aero_cult, by = c('Filenumber', 'Samplenumber', 'Result', 'Parameter_code',
+                                  'Pathogen_identification')
+      ) %>%
+  dplyr::left_join(
+      barometer_myco_cult, by = c('Filenumber', 'Samplenumber', 'Result', 'Parameter_code',
+                                  'Pathogen_identification')
+  ) 
 
-**Vaccines:** divalent inactivated vaccines (M. haemolytica, H. somni) are available in Europe
+```
 
-1\. Van Driessche L., Valgaeren B.R., Gille L., Boyen F., Ducatelle R., Haesebrouck F., Deprez P., Pardon B. A deep nasopharyngeal swab versus nonendoscopic bronchoalveolar lavage for isolation of bacterial pathogens from preweaned calves with respiratory disease. J Vet Intern Med 31, 946-953.
+## Reaching the final format
 
-# Bovine respiratory syncytial virus
+
+Floor date to the 1^st^ of the month:
+
+```{r, eval = FALSE}
+
+barometer_dt$Floored_date <- lubridate::floor_date(barometer_dt$Date, "month")
+```
+
+Aggregate data on farm_ID and month (WIDE):
+
+```{r, eval = FALSE}
+barometer_groupby <- barometer_dt %>%
+  group_by(Lab_reference, Country, Breed, Floored_date, Province, Farm_ID, Diagnostic_test, Sample_type) %>%
+  summarise(across(c(PM, MH, HS, MB, BRSV, PI3, BCV), max))
+```
+
+Convert to *long* version:
+
+```{r, eval = FALSE}
+
+barometer_long <- barometer_groupby %>%
+  tidyr::pivot_longer(
+    cols = c('PM', 'MH', 'HS', 'MB', 'BRSV', 'PI3', 'BCV'),
+    names_to = 'Pathogen',
+    values_to = 'Result',
+  )
+      
+```
+
+Save file to csv:
+
+```{r, eval = FALSE}
+write.csv(barometer_long, "../Data/dummyfile", row.names=TRUE)
+```
+
+_In case you want to convert to the *wide* version:_
+
+```{r, eval = FALSE}
+
+barometer_wide <- barometer_groupby %>%
+  tidyr::pivot_wider(names_from = c(Pathogen), values_from = Result) 
+```
+
+
+## Example with dummy file (WIDE data)
+
+Please find here a [dummy file](.....) which can help you understand the different steps we are taking in the next chunk. You can find the step-by-step explanation below the R chunk.
+
+```{r, eval = FALSE}
+
+barometer_dt <- barometer_dt_raw %>% 
+  dplyr::rename(
+    Dossier = 'N° échantillon',
+    Date = 'Date of Sample',
+    Sample_type= 'Sample Type',
+    Diagnostic_test = METH,
+    Farm_ID = TRP,
+    PM = P_multocida,
+    MH = M_haemolytica,
+    HS = H_somnus,
+    MB = M_bovis,
+    BRSV = BRSV,
+    PI3 = PI3,
+    BCV = Coronavirus
+    ) %>% 
+  tidyr::separate(ADDRESS, c('Postal_code', 'City')) %>%
+  dplyr::mutate(
+    Postal_code = as.double(Postal_code),
+    Filenumber = str_sub(Dossier, 1, 12),
+    Samplenumber = str_sub(Dossier, -3),
+    Country ='Belgium',
+    Lab_reference ='3', 
+    Sample_type = case_when(
+      Sample_type == "BAL" ~ 'BAL', 
+      Sample_type == "SWAB" ~'Swab',
+      Sample_type == "CARCASS" ~ 'Autopsy',
+      TRUE ~ 'Missing'
+    ),
+    Breed = case_when(
+      SPECUL == "MEAT" ~ 'Beef', 
+      SPECUL == "MILK" ~'Dairy',
+      SPECUL == "MXD" ~ 'Mixed',
+      TRUE ~ 'Unknown'
+    ),
+    Province = case_when(
+        between(as.numeric(Postal_code), 1000, 1299) ~ 'Brussels',
+        between(as.numeric(Postal_code), 1300, 1499) ~ 'Walloon Brabant',
+        between(as.numeric(Postal_code), 1500, 1999) ~ 'Flemish Brabant',
+        between(as.numeric(Postal_code), 3000, 3499) ~ 'Antwerp',
+        between(as.numeric(Postal_code), 2000, 2999) ~ 'Limburg',
+        between(as.numeric(Postal_code), 3500, 3999) ~ 'Limburg',
+        between(as.numeric(Postal_code), 4000, 4999) ~ 'Liège',
+        between(as.numeric(Postal_code), 5000, 5999) ~ 'Namur',
+        between(as.numeric(Postal_code), 6000, 6599) ~ 'Hainaut',
+        between(as.numeric(Postal_code), 7000, 7999) ~ 'Hainaut',
+        between(as.numeric(Postal_code), 6600, 6999) ~ 'Luxembourg',
+        between(as.numeric(Postal_code), 8000, 8999) ~ 'West Flanders',
+        TRUE ~ 'East Flanders'
+    )
+  )%>%
+  dplyr::select(
+    Filenumber,
+    Diagnostic_test,
+    Samplenumber,
+    Country,
+    Lab_reference,
+    Sample_type,
+    Breed,
+    PM,
+    MH,
+    HS,
+    MB,
+    BRSV,
+    PI3,
+    BCV,
+    Date,
+    Postal_code,
+    Province,
+    Farm_ID
+  ) %>%
+  dplyr::distinct() %>%
+  dplyr::mutate(
+    Filenumber = sha256_hash(as.character(Filenumber)),
+    Farm_ID = sha256_hash(as.character(Samplenumber))
+  ) 
+```
+
+First we make sure that all column names are in the final format and understandable (in English):
+
+-   <small> Filenumber, Samplenumber, Date, Sample_type, Diagnostic_test, Farm_ID, Postal_code, Breed, Province
+
+-   The following abbreviations for the 7 most important pathogens involved in bovine respiratory disease are used: PM (*Pasteurella multocida*), MB (*Mycoplasmopsis bovis*, previously *Mycoplasma bovis*), MH (*Mannheimia haemolytica*), HS (*Histophilus somni*), BRSV (bovine respiratory syncytial virus), PI3 (parainfluenza-type 3), and BCV (bovine coronavirus)</small>
+
+Subsequently we mutate/add data to the final format:
+
+-   <small>Samplenumber: in case more than one sample is submitted to the lab under one filenumber (*e.g.* 001, 002 or 1, 2, ..)
+
+-   Date (DD-MM-YYYY): either date of sampling or creation date in lab. *The date of sampling is preferred, however, when this date is (often) lacking, it may be easier to take the creation date of the lab. This is only recommended when time between taking samples and creation date remains short (1-2 days)*
+
+-   Geolocation at the province level. Therefore, in this case we needed to separate the postal code (*e.g.* 2388) from the municipality/city to extract the province (*e.g.* Brussels)
+
+-   Country (*e.g.* Belgium) should be mentioned in a separate column
+
+-   Lab reference: a number (*e.g.* 3)
+
+<!-- -->
+
+-   Sample type: '*BAL*' (bronchoalveolar lavage), '*Swab*' (nasal swab, eye swab, deep nasopharyngeal swab, ... from a living animal), '*TTA*' (transtracheal aspirate/wash), '*Autopsy*' (all samples from carcasses) or '*Unknown*'
+
+-   Breed or production type: '*Dairy*', '*Beef*', '*Mixed'*,'*Veal*', '*Fattening* *calves*', '*Unknown*'
+
+-   Diagnostic test: '*Culture*', '*PCR*', '*NPS*' (nanopore sequencing) or '*Paired serum*'. *In this dataset the Diagnostic test has already been mentioned in the correct format* </small>
+
+Finally, the Filenumber and Farm_ID are anonymized by using the [SHA-256 hashing function](https://decide-project-eu.github.io/case-studies-website/tutorials/anonymisation.html).
+
+
+
+## Example of final format 
+
+[csv file](...)
+
+## Examples of complete R-scripts (and Python)
+
+-   Lab 1
+
+-   Lab 2
+
+-   Lab 3
+
+# Visualization: Tableau
+
+The Tableau workbook will become open source at the end of the project.
+
+# Data Transfer Agreement
+
+Please find an example of a data transfer agreement [here](..\DECIDE_barometerflow\case-studies-website\tutorials\Data_transfer_agreement_examplewebsite.pdf).
+
+# Want to contribute, contact us or give feedback?
+
+Please contact Jade Bokma: jade.bokma\@ugent.be
+
+# Pathogen-specific information
+
+## Bovine respiratory syncytial virus
 
 **Pathogen:** Bovine respiratory syncytial virus (BRSV, also Bovine orthopneumovirus, multiple subtypes, genus: Orthopneumovirus, family: Pneumoviridae)
 
@@ -149,19 +418,43 @@ language:
 
 **Infection route**: airborne³, aerosol, nasal secretions (direct contact), fomites
 
-**Vaccines:** both monovalent vaccines and multivalent vaccines (combined with bPI-3, BVDV, M. haemolytica), inactivated or live attenuated, parenteral or intranasal are available in Europe
+**Vaccines:** both monovalent vaccines and multivalent vaccines (combined with bPI-3, BVDV, _M. haemolytica_), inactivated or live attenuated, parenteral or intranasal are available in Europe
 
 **Eradication programs:** voluntary program in Norway
 
-\* List incomplete, availability of commercial tests can differ between countries
+<small>\* List incomplete, availability of commercial tests can differ between countries
 
 1\. Doyle D., Credille B., Lehenbauer T.W., Berghaus R., Aly S.S., Champagne J., Blanchard P., Crossley B., Berghaus L., Cochran S., Woolums A. 2017. Agreement among 4 sampling methods to identify respiratory pathogens in dairy calves with acute bovine respiratory disease. J Vet Intern Med 31, 954-959.
 
 2\. Makoschey B., Berge A.C. 2021. Review on bovine respiratory syncytial virus and bovine parainfluenza -- usual suspects in bovine respiratory disease -- a narrative review. BMC Veterinary Research 17, 261.
 
-3\. Mars M.H., Bruschke C.J.M., Van Oirschot J.T. 1999. Airborne transmission of BHV1, BRSV, and BVDV among cattle is possible under experimental conditions. Vet Microbiol 66, 197-207.
+3\. Mars M.H., Bruschke C.J.M., Van Oirschot J.T. 1999. Airborne transmission of BHV1, BRSV, and BVDV among cattle is possible under experimental conditions. Vet Microbiol 66, 197-207. </small>
 
-# Bovine coronavirus
+## Bovine parainfluenza-3 virus
+
+**Pathogen:** Bovine parainfluenza-3 virus (bPI-3, also bovine respirovirus 3, 3 genotypes (A, B, C) genus: Respirovirus, family: Paramyxoviridae)
+
+**Incubation period**: 2-6 days
+
+**Clinical relevance:** primary pathogen involved in bovine respiratory disease, predisposing for secondary bacterial infections
+
+**Clinical signs**: respiratory disease (coughing, nasal discharge, dyspnea, fever), presumably mild as single infection
+
+**Diagnostic sample**: respiratory tract (nasopharyngeal swab, bronchoalveolair lavage, transtracheal wash), necropsy
+
+**Carriers:** presumably not, subclinical infections likely most important for infection maintenance in the population
+
+**Diagnostic test**\*: Direct: PCR, nanopore sequencing, antigen ELISA. Indirect: paired serum samples for antibody ELISA1 (interpretation may be hampered by maternal immunity)
+
+**Infection route**: aerosols, nasal secretion (direct contact), fomites
+
+**Vaccines:** Several multivalent vaccines (BRSV, BVD, _M. haemolytica_), inactivated or live-attenuated, parenteral or intranasal are available in Europe
+
+**Eradication programs:** no
+
+<small>\* List incomplete, availability of commercial tests can differ between countries </small>
+
+## Bovine coronavirus
 
 **Pathogen:** Bovine coronavirus (BCoV, genus: Betacoronavirus, family: Coronaviridae)
 
@@ -183,10 +476,105 @@ language:
 
 **Eradication programs:** voluntary program in Norway
 
-\* List incomplete, availability of commercial tests can differ between countries
+<small>\* List incomplete, availability of commercial tests can differ between countries
 
 ¹   Decaro N., Campolo M., Desario C., Cirone F., D'abramo M., Lorusso E., Greco G., Mari V., Colaianni M.L., Elia G., Martella V., Buonavoglia C. 2008. Respiratory disease associated with bovine coronavirus infection in cattle herds in Southern Italy. J Vet Diagn Invest 20, 28-32.
 
 ²    Boileau M.J., Kapil S.2010. Bovine coronavirus associated syndromes. Vet Clin north Am Food Anim Pract 26, 123-146.
 
-³    Doyle D., Credille B., Lehenbauer T.W., Berghaus R., Aly S.S., Champagne J., Blanchard P., Crossley B., Berghaus L., Cochran S., Woolums A. 2017. Agreement among 4 sampling methods to identify respiratory pathogens in dairy calves with acute bovine respiratory disease. J Vet Intern Med 31, 954-959
+³    Doyle D., Credille B., Lehenbauer T.W., Berghaus R., Aly S.S., Champagne J., Blanchard P., Crossley B., Berghaus L., Cochran S., Woolums A. 2017. Agreement among 4 sampling methods to identify respiratory pathogens in dairy calves with acute bovine respiratory disease. J Vet Intern Med 31, 954-959. </small>
+
+## *Pasteurella multocida*
+
+**Clinical relevance:** *P. multocida* is an opportunistic bacterium and part of the common respiratory tract flora.¹ᐧ² Problems can occur during co-infection with viruses/Mycoplasma bovis or after extensive antimicrobial treatment.
+
+**Clinical signs:** respiratory disease (coughing, nasal discharge, dyspnea, fever), septicemia
+
+**Diagnostic sample:** respiratory tract (bronchoalveolair lavage, transtracheal wash), blood culture, peritoneal fluid, necropsy
+
+**Diagnostic test**\*: culture and antimicrobial susceptibility testing, PCR\*\*
+
+**Carriers:** yes
+
+**Infection route:** direct contact (nasal secretions), potentially close distance aerosol spread, potentially fomites
+
+**Vaccines:** Inactivated divalent vaccine (with Salmonella typhimurium) available in some EU countries
+
+<small>1. Lima S.F., Teixeria A.G.V., Higgins C.H., Lima S.F., Bicalho R.C. 2016. The upper respiratory tract microbiome and its potential role in bovine respiratory disease and otitis media. Sci Rep 6.\
+2. Gaeta N.C., Lima S.F., Teixeria A.G., Ganda E.K., Oikonomou G., Gregory L., Bicalho R.C. 2017. Deciphering upper respiratory tract microbiota complexity in healthy calves and calves that develop respiratory disease using shotgun metagenomics. J Dairy Sci 100, 1445-1458.</small>
+
+\*\* Detection of an opportunistic pathogen by PCR confirms it present in the animal/herd, but does not evidence involvement in disease. *P. multocida* is that prevalent that PCR analysis is virtually useless.
+
+## *Mannheimia haemolytica*
+
+**Pathogen:** *Mannheimia haemolytica* (member of the Pasteurellaceae family, two major genotypes (1 and 2))
+
+**Clinical relevance:** *M. haemolytica* is an opportunistic bacterium and part of the common respiratory tract flora.¹ᐧ² Problems can occur during co-infection with viruses/Mycoplasma bovis and potentially also after breaches in the innate immunity of the respiratory tract by other factors. Outbreaks of virulent *M. haemolytica* strains in adult dairy cattle with acute mortality are described.³ᐧ⁴  
+
+**Clinical signs**: respiratory disease (coughing, nasal discharge, dyspnea, fever), septicemia
+
+**Diagnostic sample**: respiratory tract (bronchoalveolair lavage, transtracheal wash), peritoneal fluid, necropsy
+
+**Diagnostic test**\*: culture and antimicrobial susceptibility testing; PCR\*\*
+
+**Carriers:** yes
+
+**Infection route:** direct contact (nasal secretions), potentially close distance aerosol spread, potentially fomites
+
+**Vaccines**: both inactivated monovalent and multivalent vaccines (with *H. somni*, PI-3 or BRSV) are available in Europe.
+
+<small> 1. Lima S.F., Teixeria A.G.V., Higgins C.H., Lima S.F., Bicalho R.C. 2016. The upper respiratory tract microbiome and its potential role in bovine respiratory disease and otitis media. Sci Rep 6.   
+
+2\. Gaeta N.C., Lima S.F., Teixeria A.G., Ganda E.K., Oikonomou G., Gregory L., Bicalho R.C. 2017. Deciphering upper respiratory tract microbiota complexity in healthy calves and calves that develop respiratory disease using shotgun metagenomics. J Dairy Sci 100, 1445-1458.
+
+3\. Dorso L., Rouault M., Barbotin C., Chartier C., Assié S. 2021. Infectious bovine respiratory disease in adult cattle: an extensive necropsic and etiological study. Animals (Basel) 11, 2280.
+
+4\. Mahu M., Valgaeren B., Pardon B., Deprez P., Haesebrouck F., Boyen F. 2015. Non-haemolytic Mannheimia haemolytica as a cause of pleuropneumonia and septicemia in a calf. Vet Microbiol 180, 157-160.
+
+\*\* Detection of an opportunistic pathogen by PCR confirms it present in the animal/herd, but does not evidence involvement in disease </small>
+
+## *Mycoplasma bovis*
+
+**Pathogen:** *Mycoplasma bovis*
+
+**Incubation period**: 2-10 days
+
+**Clinical relevance:** primary pathogen involved in bovine respiratory disease, mastitis, otitis and arthritis, often reported in co-infection with other viral or bacterial pathogens
+
+**Clinical signs**: respiratory disease (coughing, nasal discharge, dyspnea, fever), ear drop, swollen joints, mastitis, seromas and rarer presentations¹
+
+**Diagnostic sample**: respiratory tract (nasopharyngeal swab, bronchoalveolair lavage, transtracheal wash), milk, synovial fluid, necropsy
+
+**Carriers:** yes
+
+**Diagnostic test**\*: Direct: culture (special media and CO~2~ rich incubation needed), PCR, MALDI-TOF MS, nanopore sequencing. Indirect: paired serum samples for antibody ELISA (interpretation may be hampered by maternal immunity)
+
+**Infection route**: nasal secretions (direct contact), colostrum, milk, semen, fomites¹ᐧ² 
+
+**Vaccines:** Restrictedavailability of a monovalent registered vaccine and in some European countries autovaccines are allowed
+
+**Eradication programs:** voluntary program in Finland
+
+<small>1. Maunsell FP., Donovan G.A. 2009. Mycoplasma bovis infections in young calves. Vet Clin North Am Food Anim Pract 25, 139-177.
+
+2\. Haapala V., Pohjanvirta T., Vähänikkilä N., Halkilahti J., Simonen H., Pelkonen S., Soveri T., Simojoki H., Autio T. 2018. Semen as a source of Mycoplasma bovis mastitis in dairy herds. Vet Microbiol 216, 60-66.</small>
+
+## *Histophilus somni*
+
+**Pathogen:** *Histophilus somni* (member of the Pasteurellaceae family)
+
+**Clinical relevance:** opportunistic pathogen involved in respiratory disease, septicemia, otitis, polyserositis and thrombotic meningoencephalitis-myelitis
+
+**Clinical signs**: respiratory disease (coughing, nasal discharge, dyspnea, fever), central nervous signs (sleeper syndrome), swollen joints, ear drop and sudden death
+
+**Diagnostic sample**: respiratory tract (bronchoalveolair lavage, transtracheal wash)¹, blood culture, necropsy
+
+**Diagnostic test**\*: PCR\*\*, culture (CO~2~ rich incubation needed) and antimicrobial susceptibility testing
+
+**Carriers:** yes
+
+**Infection route:** direct contact (nasal secretions), urine, potentially fomites
+
+**Vaccines:** divalent inactivated vaccines ( *M. haemolytica*, *H. somni*) are available in Europe
+
+<small>1. Van Driessche L., Valgaeren B.R., Gille L., Boyen F., Ducatelle R., Haesebrouck F., Deprez P., Pardon B. 2017. A deep nasopharyngeal swab versus nonendoscopic bronchoalveolar lavage for isolation of bacterial pathogens from preweaned calves with respiratory disease. J Vet Intern Med 31, 946-953.</small>
