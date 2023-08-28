@@ -50,7 +50,7 @@ Within WP1 and WP3 we have been working to transform an existing tool called the
 ::: header-text
 ::: content-container
 ::: header-block
-Welcome to the website of the **Decide Project use cases**, a [Horizon 2020](https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-2020_en) project from the [European Commission](https://commission.europa.eu/index_en). This site and its content are being created and curated by the work package leaders and data leaders.
+Welcome to the website of the **DECIDE project use cases**. DECIDE is a five-year [Horizon 2020](https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-2020_en) project funded by the [European Commission](https://commission.europa.eu/index_en). This site and its content are being created and curated by the work package leaders and data leaders.
 :::
 :::
 :::
@@ -94,12 +94,11 @@ Welcome to the website of the **Decide Project use cases**, a [Horizon 2020](htt
 [LinkedIn](https://www.linkedin.com/company/decide-h2020/)\
 :::
 
-```{=html}
-<!-- ::: {.g-col-12 .g-col-md-12}
-### Our partners
-logos to go here
-::: -->
-```
+::: {.g-col-12 .g-col-md-12}
+### Our funder
+
+This project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No. 101000494.
+:::
 :::
 :::
 :::
