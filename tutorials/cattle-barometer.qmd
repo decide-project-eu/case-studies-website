@@ -263,7 +263,7 @@ barometer_wide <- barometer_groupby %>%
 
 ## Example with dummy file (WIDE data)
 
-Please find here a [dummy file](.....) which can help you understand the different steps we are taking in the next chunk. You can find the step-by-step explanation below the R chunk.
+Please find here a [dummy file](Dummyfile_widedata_1.xlsx) which can help you understand the different steps we are taking in the next chunk. You can find the step-by-step explanation below the R chunk.
 
 ```{r, eval = FALSE}
 
@@ -376,7 +376,7 @@ Finally, the Filenumber and Farm_ID are anonymized by using the [SHA-256 hashing
 
 ## Example of final format 
 
-[csv file](...)
+[csv file](Final_format_05072023.xlsx)
 
 ## Examples of complete R-scripts (and Python)
 
