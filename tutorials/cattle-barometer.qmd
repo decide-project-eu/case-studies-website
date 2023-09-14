@@ -376,7 +376,7 @@ Finally, the Filenumber and Farm_ID are anonymized by using the [SHA-256 hashing
 
 ## Example of final format 
 
-[csv file](Final_format_05072023.xlsx)
+[Final format](Final_format_05072023.xlsx)
 
 ## Examples of complete R-scripts (and Python)
 
@@ -392,7 +392,7 @@ The Tableau workbook will become open source at the end of the project.
 
 # Data Transfer Agreement
 
-Please find an example of a data transfer agreement [here](..\DECIDE_barometerflow\case-studies-website\tutorials\Data_transfer_agreement_examplewebsite.pdf).
+Please find an example of a data transfer agreement [here](Data_transfer_agreement_examplewebsite.pdf).
 
 # Want to contribute, contact us or give feedback?
 
