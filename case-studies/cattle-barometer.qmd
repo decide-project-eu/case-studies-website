@@ -18,6 +18,8 @@ This tool visualizes pathogen-specific lab results of field samples obtained fro
 
 The default settings show an overview of all the identified pathogens in different countries. The graphs represent the number of positive herds per month. When choosing the percentage, this is the proportion of positive herds (number of positive herds/total number of herds tested). More specific information can be obtained by applying filters, these can be added by clicking on the different items (pathogen, area, production type, sample, diagnostic test, ..). Clicking on the pathogen of interest will give additional information on the pathogen and its control and prevention. 
 
+Please take into consideration that the displayed results cannot be extrapolated to prevalence, as they are based on submissions of samples from clinically ill animals. 
+
 # Data 
 
 The available data per country and province depends on the number of samples submitted to the collaborating laboratories. Currently, the dashboard includes data from Belgium, The Netherlands, and Ireland, provided by [DGZ](https://www.dgz.be/), [ARSIA](https://www.arsia.be), [PathoSense](https://pathosense.com), [Royal GD](https://www.gdanimalhealth.com/), and [GOV (Department of Agriculture, Food and the Marine) Ireland](https://www.gov.ie/en/organisation/department-of-agriculture-food-and-the-marine/). The aim is to update the aggregated data continuously. 
