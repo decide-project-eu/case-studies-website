@@ -1,6 +1,6 @@
 [
   {
-    "listing": "/index.html",
+    "listing": "/latest-content.html",
     "items": [
       "/tutorials/anonymisation.html",
       "/tutorials/cattle-barometer.html",
@@ -9,7 +9,7 @@
     ]
   },
   {
-    "listing": "/latest-content.html",
+    "listing": "/index.html",
     "items": [
       "/tutorials/anonymisation.html",
       "/tutorials/cattle-barometer.html",

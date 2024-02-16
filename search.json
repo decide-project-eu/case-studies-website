@@ -1,24 +1,10 @@
 [
   {
-    "objectID": "feeds.html",
-    "href": "feeds.html",
-    "title": "RSS feeds",
+    "objectID": "tutorials/poultry-barometer.html",
+    "href": "tutorials/poultry-barometer.html",
+    "title": "Poultry Barometer",
     "section": "",
-    "text": "Latest content\nrealworlddatascience.net/latest-content.xml\n\n\n\nIdeas\nrealworlddatascience.net/ideas/index.xml\n\n\n\nViewpoints\nrealworlddatascience.net/viewpoints/index.xml"
-  },
-  {
-    "objectID": "latest-content.html",
-    "href": "latest-content.html",
-    "title": "Latest tutorials",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nAnonymisation\n\n\n\nWork Package 1\n\n\nTutorial\n\n\n\n\n\n\n\nSaba Noor, Miel Hostens, et al.\n\n\nJun 21, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCattle barometer\n\n\n\nCattle\n\n\nWork Package 1\n\n\nUse case\n\n\n\n\n\n\n\nJade Bokma, Saba Noor, Bart Pardon, Miel Hostens, et al.\n\n\nJun 21, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOntology\n\n\n\nWork package 1\n\n\nOntology building\n\n\nTutorial\n\n\n\n\n\n\n\nSaba Noor, Miel Hostens, et al.\n\n\nJun 21, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nPoultry Barometer\n\n\n\nPoultry\n\n\nWork Package 1\n\n\nUse case\n\n\n\n\n\n\n\nYara Slegers, Sjaak de Wit, Miel Hostens, et al.\n\n\nJun 26, 2022\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "ts-and-cs.html",
-    "href": "ts-and-cs.html",
-    "title": "Terms and conditions",
-    "section": "",
-    "text": "Coming soon"
+    "text": "Aim\nThe aim of the “Poultry Barometer” is to provide insight into the most prevalent Infectious Bronchitis Virus (IBV) strains in broiler chickens within specific regions and periods.\n\n\nBackground\nIBV causes infectious bronchitis (IB) in poultry. An infection can lead to respiratory signs, drop in production, and kidney damage. In the Netherlands, broilers are often vaccinated against IBV to limit the impact of disease. However, vaccines do not protect against all IBV strains, and new strain are regularly discovered. Insights into the most prevalent strains can help to better protect broiler flocks against IBV.\nFor more information on IBV, visit the GD website\n\n\nData\nCurrently, the dashboard only includes data from the Netherlands, provided by Royal GD. Royal GD performs PCR tests on submitted material to detect IBV. If the virus is detected, sequencing will determine the specific IBV genotype.\nOnly anonymous data is used to create the dashboard. After linking a farm to the correct province, farm identification is removed from the data. The dashboard shows only aggregated data."
   },
   {
     "objectID": "tutorials/anonymisation.html",
@@ -33,6 +19,20 @@
     "title": "Anonymisation",
     "section": "",
     "text": "For privacy and confidentiality of sensitive information, we explain the anonymization technique for both R and Python code. For this, the SHA256 algorithm is used because it does not allow reverse engineering, and the sensitive information could not be linked back to the specific entity or individual."
+  },
+  {
+    "objectID": "feeds.html",
+    "href": "feeds.html",
+    "title": "RSS feeds",
+    "section": "",
+    "text": "Latest content\nrealworlddatascience.net/latest-content.xml\n\n\n\nIdeas\nrealworlddatascience.net/ideas/index.xml\n\n\n\nViewpoints\nrealworlddatascience.net/viewpoints/index.xml"
+  },
+  {
+    "objectID": "ts-and-cs.html",
+    "href": "ts-and-cs.html",
+    "title": "Terms and conditions",
+    "section": "",
+    "text": "Coming soon"
   },
   {
     "objectID": "tutorials/cattle-barometer.html",
@@ -194,12 +194,5 @@
     "title": "Ontology",
     "section": "",
     "text": "We choose Tableau for the visualization method. It provides meaningful insights to explore the knowledge graph. For this, we need a working ODBC connection to a Virtuoso Instance and ODBC or JDBC Compliant version of Tableau or Tableau Server. For ODBC connection to virtuoso, the link is: Visualizing SPARQL Results in Tableau | by Daniel Heward-Mills | OpenLink Virtuoso Weblog | Medium"
-  },
-  {
-    "objectID": "tutorials/poultry-barometer.html",
-    "href": "tutorials/poultry-barometer.html",
-    "title": "Poultry Barometer",
-    "section": "",
-    "text": "Aim\nThe aim of the “Poultry Barometer” is to provide insight into the most prevalent Infectious Bronchitis Virus (IBV) strains in broiler chickens within specific regions and periods.\n\n\nBackground\nIBV causes infectious bronchitis (IB) in poultry. An infection can lead to respiratory signs, drop in production, and kidney damage. In the Netherlands, broilers are often vaccinated against IBV to limit the impact of disease. However, vaccines do not protect against all IBV strains, and new strain are regularly discovered. Insights into the most prevalent strains can help to better protect broiler flocks against IBV.\nFor more information on IBV, visit the GD website\n\n\nData\nCurrently, the dashboard only includes data from the Netherlands, provided by Royal GD. Royal GD performs PCR tests on submitted material to detect IBV. If the virus is detected, sequencing will determine the specific IBV genotype.\nOnly anonymous data is used to create the dashboard. After linking a farm to the correct province, farm identification is removed from the data. The dashboard shows only aggregated data."
   }
 ]
