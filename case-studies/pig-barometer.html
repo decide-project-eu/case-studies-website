@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Saba Noor, Miel Hostens, et al.">
-<meta name="dcterms.date" content="2023-06-21">
 
-<title>DECIDE Case Studies - Ontology</title>
+<title>DECIDE Case Studies - Pig barometer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -74,20 +72,14 @@ gtag('config', 'G-2804FN9QRK', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../decide.css">
-<meta property="og:title" content="DECIDE Case Studies - Ontology">
-<meta property="og:description" content="How to implement ontologies within your data pipeline">
-<meta property="og:image" content="https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies.webp">
+<meta property="og:title" content="DECIDE Case Studies - Pig barometer">
 <meta property="og:site-name" content="DECIDE Case Studies">
-<meta property="og:image:alt" content="Ontology tutorial">
-<meta name="twitter:title" content="DECIDE Case Studies - Ontology">
-<meta name="twitter:description" content="How to implement ontologies within your data pipeline">
-<meta name="twitter:image" content="https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies.webp">
+<meta name="twitter:title" content="DECIDE Case Studies - Pig barometer">
 <meta name="twitter:site" content="@decide_h2020">
-<meta name="twitter:image:alt" content="Ontology tutorial">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -173,139 +165,56 @@ gtag('config', 'G-2804FN9QRK', { 'anonymize_ip': true});
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default">
+  <div class="quarto-title-banner">
+    <div class="quarto-title column-body">
+      <h1 class="title">Pig barometer</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#system-model" id="toc-system-model" class="nav-link active" data-scroll-target="#system-model">System Model</a>
-  <ul class="collapse">
-  <li><a href="#step-1-data-acquisition-and-rdf-conversions" id="toc-step-1-data-acquisition-and-rdf-conversions" class="nav-link" data-scroll-target="#step-1-data-acquisition-and-rdf-conversions">Step 1: Data Acquisition and RDF conversions</a></li>
-  <li><a href="#step-2-species-specific-ontology-lho" id="toc-step-2-species-specific-ontology-lho" class="nav-link" data-scroll-target="#step-2-species-specific-ontology-lho">Step 2: Species-Specific Ontology (LHO)</a></li>
-  <li><a href="#step-3-rdf-data-and-ontology-integration-mapping" id="toc-step-3-rdf-data-and-ontology-integration-mapping" class="nav-link" data-scroll-target="#step-3-rdf-data-and-ontology-integration-mapping">Step 3: RDF Data and Ontology Integration (Mapping)</a></li>
-  <li><a href="#step-4-knowledge-graph-ontology-update" id="toc-step-4-knowledge-graph-ontology-update" class="nav-link" data-scroll-target="#step-4-knowledge-graph-ontology-update">Step 4: Knowledge graph (Ontology Update)</a></li>
-  <li><a href="#step-5-reasoning-and-query" id="toc-step-5-reasoning-and-query" class="nav-link" data-scroll-target="#step-5-reasoning-and-query">Step 5: Reasoning and Query</a></li>
-  <li><a href="#step-6-visualization-and-analysis" id="toc-step-6-visualization-and-analysis" class="nav-link" data-scroll-target="#step-6-visualization-and-analysis">Step 6: Visualization and Analysis</a></li>
-  </ul></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/decide-project-eu/case-studies-website/edit/main/tutorials/ontologies.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/decide-project-eu/case-studies-website/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
-    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Ontology</h1>
-<p class="subtitle lead">How to implement ontologies within your data pipeline</p>
-  <div class="quarto-categories">
-    <div class="quarto-category">Work package 1</div>
-    <div class="quarto-category">Ontology building</div>
-    <div class="quarto-category">Tutorial</div>
-  </div>
-  </div>
 
 
 
-<div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Saba Noor, Miel Hostens, et al. </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">June 21, 2023</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-</header>
-
-<section id="system-model" class="level1">
-<h1>System Model</h1>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="ontologies-figure-1.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure 1: Non-Ontology Based (Traditional One) generic framework of Farm Animal Data Management</figcaption>
-</figure>
-</div>
-<p>Non-ontology-based systems require rewriting the cleaning code each time new data arrives, making it time-consuming and tedious. These systems lack interoperability, flexibility, reusability, and accessibility, posing limitations in data integration, handling, and adaptability.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="ontologies-figure-2.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure 2: Ontology-Driven Knowledge-based framework of Farm Animal Data Management (ODKFADM)</figcaption>
-</figure>
-</div>
-<p>In this use case, we utilize the ODKFADM framework to evaluate cattle-related data (DGZ), It involves collecting raw data from different data sources i.e.&nbsp;DGZ, and including information about farm identification, geo-location, infectious diseases, PCR, and bacterial culture results. This framework enables effective analysis of the data, leading to insights into cattle health</p>
-<section id="step-1-data-acquisition-and-rdf-conversions" class="level2">
-<h2 class="anchored" data-anchor-id="step-1-data-acquisition-and-rdf-conversions">Step 1: Data Acquisition and RDF conversions</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="ontologies-figure-3.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure 3: Data Acquisition and RDF Conversions</figcaption>
-</figure>
-</div>
-<p>In Figure 3, we read heterogeneous raw data using pandas, and R data frames, and then convert them into RDF format.</p>
+<section id="aim" class="level1">
+<h1>AIM</h1>
+<p>This tool visualizes pathogen-specific lab results of field samples obtained from pigs over Europe. It shows the historical trend, dynamics and current presence of specific pathogens per area. It holds the potential for early warning and to support decision-making on farm to control infectious diseases, such as antimicrobial use, vaccination, and purchase of animals.</p>
 </section>
-<section id="step-2-species-specific-ontology-lho" class="level2">
-<h2 class="anchored" data-anchor-id="step-2-species-specific-ontology-lho">Step 2: Species-Specific Ontology (LHO)</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="ontologies-figure-4.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure 4: Graphical Representation of LHO</figcaption>
-</figure>
+<section id="how-to-use-the-barometer" class="level1">
+<h1>How to use the ‘barometer’</h1>
+<p>The default settings show an overview of all the identified pathogens in different countries. The graphs represent the number of positive herds per month. When choosing the percentage, this is the proportion of positive herds (number of positive herds/total number of herds tested). More specific information can be obtained by applying filters, these can be added by clicking on the different items (pathogen, area, production type, sample, diagnostic test, ..). Clicking on the pathogen of interest will give additional information on the pathogen and its control and prevention.</p>
+<p>Please take into consideration that the displayed results cannot be extrapolated to prevalence, as they are based on submissions of samples from clinically ill animals.</p>
+</section>
+<section id="data" class="level1">
+<h1>Data</h1>
+<p>The available data per country and province depends on the number of samples submitted to the collaborating laboratories.</p>
+<p>Only anonymous data is used to create this dashboard.</p>
+<div id="Tableau">
+
+<div class="tableauPlaceholder" id="viz1712281248257" style="position: relative"><noscript><a href="#"><img alt="Positive sample rate " src="https://public.tableau.com/static/images/Ve/Version0_3_17122811581730/Positivesamplerate/1_rss.png" style="border: none"></a></noscript><object class="tableauViz" style="display:none;"><param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F"> <param name="embed_code_version" value="3"> <param name="site_root" value=""><param name="name" value="Version0_3_17122811581730/Positivesamplerate"><param name="tabs" value="no"><param name="toolbar" value="yes"><param name="static_image" value="https://public.tableau.com/static/images/Ve/Version0_3_17122811581730/Positivesamplerate/1.png"> <param name="animate_transition" value="yes"><param name="display_static_image" value="yes"><param name="display_spinner" value="yes"><param name="display_overlay" value="yes"><param name="display_count" value="yes"><param name="language" value="en-US"></object></div>                <script type="text/javascript">                    var divElement = document.getElementById('viz1712281248257');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.4)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.4)+'px';} else { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.4)+'px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
 </div>
 </section>
-<section id="step-3-rdf-data-and-ontology-integration-mapping" class="level2">
-<h2 class="anchored" data-anchor-id="step-3-rdf-data-and-ontology-integration-mapping">Step 3: RDF Data and Ontology Integration (Mapping)</h2>
-<p>In this step we map the RDF data with LHO which enhances the reasoning and query capabilites</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="ontologies-figure-5.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure 5: RDF and Ontology Integration (Mapping)</figcaption>
-</figure>
-</div>
-<pre><code></code></pre>
-</section>
-<section id="step-4-knowledge-graph-ontology-update" class="level2">
-<h2 class="anchored" data-anchor-id="step-4-knowledge-graph-ontology-update">Step 4: Knowledge graph (Ontology Update)</h2>
-<p>Resulted into a knowledge graph</p>
-</section>
-<section id="step-5-reasoning-and-query" class="level2">
-<h2 class="anchored" data-anchor-id="step-5-reasoning-and-query">Step 5: Reasoning and Query</h2>
-<p>Figure 6 and 7 shows Query and query results that Filtering positive PathogenResults and MycoplasmaResults associated with CattleSample</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="ontologies-figure-6.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure 6: Filtering positive PathogenResults and MycoplasmaResults associated with CattleSample</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="ontologies-figure-7.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure 7: Query result</figcaption>
-</figure>
-</div>
-</section>
-<section id="step-6-visualization-and-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="step-6-visualization-and-analysis">Step 6: Visualization and Analysis</h2>
-<p>We choose Tableau for the visualization method. It provides meaningful insights to explore the knowledge graph. For this, we need a working ODBC connection to a Virtuoso Instance and ODBC or JDBC Compliant version of Tableau or Tableau Server. For ODBC connection to virtuoso, the link is: <a href="https://medium.com/virtuoso-blog/virtuoso-tableau-sparql-f9411852a87d">Visualizing SPARQL Results in Tableau | by Daniel Heward-Mills | OpenLink Virtuoso Weblog | Medium</a></p>
+<section id="want-to-contribute-contact-us-andor-give-feedback" class="level1">
+<h1>Want to contribute, contact us and/or give feedback?</h1>
+<p>Please contact Beatriz Garcia Morante: beatriz.garciam@irta.cat</p>
 
 
 </section>
-</section>
 
-</main> <!-- /main -->
+
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -564,7 +473,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </a>
   </li>  
 </ul>
-    </div>
+    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/decide-project-eu/case-studies-website/edit/main/case-studies/pig-barometer.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/decide-project-eu/case-studies-website/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
     <div class="nav-footer-right"><a href="../ts-and-cs.html">Terms &amp; Conditions</a></div>
   </div>
 </footer>
