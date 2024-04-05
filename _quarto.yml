@@ -23,6 +23,7 @@ website:
         menu:
           - case-studies/cattle-barometer.qmd
           - case-studies/poultry-barometer.qmd
+          - case-studies/pig-barometer.qmd
       - text: "Tutorials"
         menu:
           - tutorials/cattle-barometer.qmd
