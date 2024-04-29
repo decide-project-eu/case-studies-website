@@ -9,23 +9,21 @@ format:
     page-layout: custom
 ---
 
+# AIM
 
-# AIM 
-
-This tool visualizes pathogen-specific lab results of field samples obtained from cattle over Europe. It shows the historical trend, dynamics and current presence of specific pathogens per area. It holds the potential for early warning and to support decision-making on farm to control infectious diseases, such as antimicrobial use, vaccination, and purchase of animals. 
+This tool visualizes pathogen-specific lab results of field samples obtained from cattle over Europe. It shows the historical trend, dynamics and current presence of specific pathogens per area. It holds the potential for early warning and to support decision-making on farm to control infectious diseases, such as antimicrobial use, vaccination, and purchase of animals.
 
 # How to use the ‘barometer’
 
-The default settings show an overview of all the identified pathogens in different countries. The graphs represent the number of positive herds per month. When choosing the percentage, this is the proportion of positive herds (number of positive herds/total number of herds tested). More specific information can be obtained by applying filters, these can be added by clicking on the different items (pathogen, area, production type, sample, diagnostic test, ..). Clicking on the pathogen of interest will give additional information on the pathogen and its control and prevention. 
+The default settings show an overview of all the identified pathogens in different countries. The graphs represent the number of positive herds per month. When choosing the percentage, this is the proportion of positive herds (number of positive herds/total number of herds tested). More specific information can be obtained by applying filters, these can be added by clicking on the different items (pathogen, area, production type, sample, diagnostic test, ..). Clicking on the pathogen of interest will give additional information on the pathogen and its control and prevention.
 
-Please take into consideration that the displayed results cannot be extrapolated to prevalence, as they are based on submissions of samples from clinically ill animals. 
+Please take into consideration that the displayed results cannot be extrapolated to prevalence, as they are based on submissions of samples from clinically ill animals.
 
-# Data 
+# Data
 
-The available data per country and province depends on the number of samples submitted to the collaborating laboratories. Currently, the dashboard includes data from Belgium, The Netherlands, and Ireland, provided by [DGZ](https://www.dgz.be/), [ARSIA](https://www.arsia.be), [PathoSense](https://pathosense.com), [Royal GD](https://www.gdanimalhealth.com/), and [GOV (Department of Agriculture, Food and the Marine) Ireland](https://www.gov.ie/en/organisation/department-of-agriculture-food-and-the-marine/). The aim is to update the aggregated data continuously. 
+The available data per country and province depends on the number of samples submitted to the collaborating laboratories. Currently, the dashboard includes data from Belgium, The Netherlands, and Ireland, provided by [DGZ](https://www.dgz.be/), [ARSIA](https://www.arsia.be), [PathoSense](https://pathosense.com), [Royal GD](https://www.gdanimalhealth.com/), [GOV (Department of Agriculture, Food and the Marine) Ireland](https://www.gov.ie/en/organisation/department-of-agriculture-food-and-the-marine/), and [VigiGrippe](Vigigrippe_presentation.pdf). The aim is to update the aggregated data continuously.
 
-Only anonymous data is used to create this dashboard. 
-
+Only anonymous data is used to create this dashboard.
 
 ::: {#Tableau}
 ```{=html}
@@ -33,9 +31,6 @@ Only anonymous data is used to create this dashboard.
 ```
 :::
 
-
 # Want to contribute, contact us and/or give feedback?
 
-Please contact Jade Bokma: jade.bokma@ugent.be 
-
-
+Please contact Jade Bokma: jade.bokma\@ugent.be
