@@ -1,0 +1,20 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Public website for the Decide use c
+
+## How to build the website
+
+```{bash}
+quarto publish gh-pages --no-browser --no-prompt	
+```
