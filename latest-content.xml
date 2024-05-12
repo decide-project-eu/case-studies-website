@@ -16,107 +16,8 @@
 <height>44</height>
 <width>144</width>
 </image>
-<generator>quarto-1.4.553</generator>
-<lastBuildDate>Wed, 21 Jun 2023 04:00:00 GMT</lastBuildDate>
-<item>
-  <title>Anonymisation</title>
-  <dc:creator>Saba Noor, Miel Hostens, et al.</dc:creator>
-  <link>https://github.com/decide-project-eu/case-studies-website/tutorials/anonymisation.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<section id="anonymization" class="level2">
-<h2 class="anchored" data-anchor-id="anonymization">Anonymization</h2>
-<p>For privacy and confidentiality of sensitive information, we explain the anonymization technique for both R and Python code. For this, the SHA256 algorithm is used because it does not allow reverse engineering, and the sensitive information could not be linked back to the specific entity or individual.</p>
-</section>
-<section id="function-to-apply-sha-256-hashing-in-r" class="level1">
-<h1>Function to apply SHA-256 hashing in R</h1>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">require</span>(openssl)</span>
-<span id="cb1-2"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Function to apply SHA-256 hashing</span></span>
-<span id="cb1-3">sha256_hash <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">function</span>(data) {</span>
-<span id="cb1-4">  openssl<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">sha256</span>(data)</span>
-<span id="cb1-5">}</span>
-<span id="cb1-6"></span>
-<span id="cb1-7">dplyr<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">mutate</span>(</span>
-<span id="cb1-8">    <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">Filenumber=</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">sha256_hash</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">as.character</span>(Filenumber)),</span>
-<span id="cb1-9">    <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">Samplenumber=</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">sha256_hash</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">as.character</span>(Samplenumber))</span>
-<span id="cb1-10">)</span></code></pre></div>
-</div>
-</section>
-<section id="function-to-apply-sha-256-hashing-in-r-1" class="level1">
-<h1>Function to apply SHA-256 hashing in R</h1>
-<div class="cell" data-python.reticulate="false">
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">!</span> pip install openpyxl</span>
-<span id="cb2-2"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> hashlib</span>
-<span id="cb2-3"></span>
-<span id="cb2-4"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Generate anonymized values for file number and sample number</span></span>
-<span id="cb2-5">FileNumber <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> hashlib.sha256(<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">str</span>(FileNumber).encode()).hexdigest()</span>
-<span id="cb2-6">SampleNumber <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> hashlib.sha256(SampleNumber).encode()).hexdigest()</span>
-<span id="cb2-7"></span>
-<span id="cb2-8"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Add anonymized values to the RDF graph</span></span>
-<span id="cb2-9">g.add((Sample, onto.hasFileNumber, Literal(FileNumber, datatype<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>XSD.string)))</span>
-<span id="cb2-10">g.add((Sample, onto.hasSampleNumber, Literal(SampleNumber, datatype<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>XSD.string)))</span></code></pre></div>
-</div>
-
-
-</section>
-
- ]]></description>
-  <category>Work Package 1</category>
-  <category>Tutorial</category>
-  <guid>https://github.com/decide-project-eu/case-studies-website/tutorials/anonymisation.html</guid>
-  <pubDate>Wed, 21 Jun 2023 04:00:00 GMT</pubDate>
-  <media:content url="https://github.com/decide-project-eu/case-studies-website/tutorials/anonymisation.webp" medium="image" type="image/webp"/>
-</item>
+<generator>quarto-1.4.554</generator>
+<lastBuildDate>Wed, 21 Jun 2023 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Cattle barometer</title>
   <dc:creator>Jade Bokma, Saba Noor, Bart Pardon, Miel Hostens, et al.</dc:creator>
@@ -1617,7 +1518,7 @@ font-style: inherit;">as.character</span>(Samplenumber))</span>
   <category>Work Package 1</category>
   <category>Use case</category>
   <guid>https://github.com/decide-project-eu/case-studies-website/tutorials/cattle-barometer.html</guid>
-  <pubDate>Wed, 21 Jun 2023 04:00:00 GMT</pubDate>
+  <pubDate>Wed, 21 Jun 2023 00:00:00 GMT</pubDate>
   <media:content url="https://github.com/decide-project-eu/case-studies-website/tutorials/cattle-barometer-tutorial.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
@@ -1708,8 +1609,107 @@ font-style: inherit;">as.character</span>(Samplenumber))</span>
   <category>Ontology building</category>
   <category>Tutorial</category>
   <guid>https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies.html</guid>
-  <pubDate>Wed, 21 Jun 2023 04:00:00 GMT</pubDate>
+  <pubDate>Wed, 21 Jun 2023 00:00:00 GMT</pubDate>
   <media:content url="https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies.webp" medium="image" type="image/webp"/>
+</item>
+<item>
+  <title>Anonymisation</title>
+  <dc:creator>Saba Noor, Miel Hostens, et al.</dc:creator>
+  <link>https://github.com/decide-project-eu/case-studies-website/tutorials/anonymisation.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="anonymization" class="level2">
+<h2 class="anchored" data-anchor-id="anonymization">Anonymization</h2>
+<p>For privacy and confidentiality of sensitive information, we explain the anonymization technique for both R and Python code. For this, the SHA256 algorithm is used because it does not allow reverse engineering, and the sensitive information could not be linked back to the specific entity or individual.</p>
+</section>
+<section id="function-to-apply-sha-256-hashing-in-r" class="level1">
+<h1>Function to apply SHA-256 hashing in R</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">require</span>(openssl)</span>
+<span id="cb1-2"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Function to apply SHA-256 hashing</span></span>
+<span id="cb1-3">sha256_hash <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">function</span>(data) {</span>
+<span id="cb1-4">  openssl<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sha256</span>(data)</span>
+<span id="cb1-5">}</span>
+<span id="cb1-6"></span>
+<span id="cb1-7">dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(</span>
+<span id="cb1-8">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Filenumber=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sha256_hash</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.character</span>(Filenumber)),</span>
+<span id="cb1-9">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Samplenumber=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sha256_hash</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.character</span>(Samplenumber))</span>
+<span id="cb1-10">)</span></code></pre></div>
+</div>
+</section>
+<section id="function-to-apply-sha-256-hashing-in-r-1" class="level1">
+<h1>Function to apply SHA-256 hashing in R</h1>
+<div class="cell" data-python.reticulate="false">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!</span> pip install openpyxl</span>
+<span id="cb2-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> hashlib</span>
+<span id="cb2-3"></span>
+<span id="cb2-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Generate anonymized values for file number and sample number</span></span>
+<span id="cb2-5">FileNumber <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> hashlib.sha256(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">str</span>(FileNumber).encode()).hexdigest()</span>
+<span id="cb2-6">SampleNumber <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> hashlib.sha256(SampleNumber).encode()).hexdigest()</span>
+<span id="cb2-7"></span>
+<span id="cb2-8"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Add anonymized values to the RDF graph</span></span>
+<span id="cb2-9">g.add((Sample, onto.hasFileNumber, Literal(FileNumber, datatype<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>XSD.string)))</span>
+<span id="cb2-10">g.add((Sample, onto.hasSampleNumber, Literal(SampleNumber, datatype<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>XSD.string)))</span></code></pre></div>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <category>Work Package 1</category>
+  <category>Tutorial</category>
+  <guid>https://github.com/decide-project-eu/case-studies-website/tutorials/anonymisation.html</guid>
+  <pubDate>Wed, 21 Jun 2023 00:00:00 GMT</pubDate>
+  <media:content url="https://github.com/decide-project-eu/case-studies-website/tutorials/anonymisation.webp" medium="image" type="image/webp"/>
 </item>
 <item>
   <title>Poultry Barometer</title>
@@ -1742,7 +1742,7 @@ font-style: inherit;">as.character</span>(Samplenumber))</span>
   <category>Work Package 1</category>
   <category>Use case</category>
   <guid>https://github.com/decide-project-eu/case-studies-website/tutorials/poultry-barometer.html</guid>
-  <pubDate>Sun, 26 Jun 2022 04:00:00 GMT</pubDate>
+  <pubDate>Sun, 26 Jun 2022 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
