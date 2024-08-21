@@ -7,25 +7,53 @@
     "text": "Aim\nThe aim of the “Poultry Barometer” is to provide insight into the most prevalent Infectious Bronchitis Virus (IBV) strains in broiler chickens within specific regions and periods.\n\n\nBackground\nIBV causes infectious bronchitis (IB) in poultry. An infection can lead to respiratory signs, drop in production, and kidney damage. In the Netherlands, broilers are often vaccinated against IBV to limit the impact of disease. However, vaccines do not protect against all IBV strains, and new strain are regularly discovered. Insights into the most prevalent strains can help to better protect broiler flocks against IBV.\nFor more information on IBV, visit the GD website\n\n\nData\nCurrently, the dashboard only includes data from the Netherlands, provided by Royal GD. Royal GD performs PCR tests on submitted material to detect IBV. If the virus is detected, sequencing will determine the specific IBV genotype.\nOnly anonymous data is used to create the dashboard. After linking a farm to the correct province, farm identification is removed from the data. The dashboard shows only aggregated data."
   },
   {
-    "objectID": "tutorials/anonymisation.html",
-    "href": "tutorials/anonymisation.html",
-    "title": "Anonymisation",
+    "objectID": "tutorials/ontologies.html",
+    "href": "tutorials/ontologies.html",
+    "title": "Ontology",
     "section": "",
-    "text": "For privacy and confidentiality of sensitive information, we explain the anonymization technique for both R and Python code. For this, the SHA256 algorithm is used because it does not allow reverse engineering, and the sensitive information could not be linked back to the specific entity or individual."
+    "text": "Figure 1: Non-Ontology Based (Traditional One) generic framework of Farm Animal Data Management\n\n\nNon-ontology-based systems require rewriting the cleaning code each time new data arrives, making it time-consuming and tedious. These systems lack interoperability, flexibility, reusability, and accessibility, posing limitations in data integration, handling, and adaptability.\n\n\n\nFigure 2: Ontology-Driven Knowledge-based framework of Farm Animal Data Management (ODKFADM)\n\n\nIn this use case, we utilize the ODKFADM framework to evaluate cattle-related data (DGZ), It involves collecting raw data from different data sources i.e. DGZ, and including information about farm identification, geo-location, infectious diseases, PCR, and bacterial culture results. This framework enables effective analysis of the data, leading to insights into cattle health\n\n\n\n\n\nFigure 3: Data Acquisition and RDF Conversions\n\n\nIn Figure 3, we read heterogeneous raw data using pandas, and R data frames, and then convert them into RDF format.\n\n\n\n\n\n\nFigure 4: Graphical Representation of LHO\n\n\n\n\n\nIn this step we map the RDF data with LHO which enhances the reasoning and query capabilites\n\n\n\nFigure 5: RDF and Ontology Integration (Mapping)\n\n\n\n\n\n\nResulted into a knowledge graph\n\n\n\nFigure 6 and 7 shows Query and query results that Filtering positive PathogenResults and MycoplasmaResults associated with CattleSample\n\n\n\nFigure 6: Filtering positive PathogenResults and MycoplasmaResults associated with CattleSample\n\n\n\n\n\nFigure 7: Query result\n\n\n\n\n\nWe choose Tableau for the visualization method. It provides meaningful insights to explore the knowledge graph. For this, we need a working ODBC connection to a Virtuoso Instance and ODBC or JDBC Compliant version of Tableau or Tableau Server. For ODBC connection to virtuoso, the link is: Visualizing SPARQL Results in Tableau | by Daniel Heward-Mills | OpenLink Virtuoso Weblog | Medium"
   },
   {
-    "objectID": "tutorials/anonymisation.html#anonymization",
-    "href": "tutorials/anonymisation.html#anonymization",
-    "title": "Anonymisation",
+    "objectID": "tutorials/ontologies.html#step-1-data-acquisition-and-rdf-conversions",
+    "href": "tutorials/ontologies.html#step-1-data-acquisition-and-rdf-conversions",
+    "title": "Ontology",
     "section": "",
-    "text": "For privacy and confidentiality of sensitive information, we explain the anonymization technique for both R and Python code. For this, the SHA256 algorithm is used because it does not allow reverse engineering, and the sensitive information could not be linked back to the specific entity or individual."
+    "text": "Figure 3: Data Acquisition and RDF Conversions\n\n\nIn Figure 3, we read heterogeneous raw data using pandas, and R data frames, and then convert them into RDF format."
   },
   {
-    "objectID": "feeds.html",
-    "href": "feeds.html",
-    "title": "RSS feeds",
+    "objectID": "tutorials/ontologies.html#step-2-species-specific-ontology-lho",
+    "href": "tutorials/ontologies.html#step-2-species-specific-ontology-lho",
+    "title": "Ontology",
     "section": "",
-    "text": "Latest content\nrealworlddatascience.net/latest-content.xml\n\n\n\nIdeas\nrealworlddatascience.net/ideas/index.xml\n\n\n\nViewpoints\nrealworlddatascience.net/viewpoints/index.xml"
+    "text": "Figure 4: Graphical Representation of LHO"
+  },
+  {
+    "objectID": "tutorials/ontologies.html#step-3-rdf-data-and-ontology-integration-mapping",
+    "href": "tutorials/ontologies.html#step-3-rdf-data-and-ontology-integration-mapping",
+    "title": "Ontology",
+    "section": "",
+    "text": "In this step we map the RDF data with LHO which enhances the reasoning and query capabilites\n\n\n\nFigure 5: RDF and Ontology Integration (Mapping)"
+  },
+  {
+    "objectID": "tutorials/ontologies.html#step-4-knowledge-graph-ontology-update",
+    "href": "tutorials/ontologies.html#step-4-knowledge-graph-ontology-update",
+    "title": "Ontology",
+    "section": "",
+    "text": "Resulted into a knowledge graph"
+  },
+  {
+    "objectID": "tutorials/ontologies.html#step-5-reasoning-and-query",
+    "href": "tutorials/ontologies.html#step-5-reasoning-and-query",
+    "title": "Ontology",
+    "section": "",
+    "text": "Figure 6 and 7 shows Query and query results that Filtering positive PathogenResults and MycoplasmaResults associated with CattleSample\n\n\n\nFigure 6: Filtering positive PathogenResults and MycoplasmaResults associated with CattleSample\n\n\n\n\n\nFigure 7: Query result"
+  },
+  {
+    "objectID": "tutorials/ontologies.html#step-6-visualization-and-analysis",
+    "href": "tutorials/ontologies.html#step-6-visualization-and-analysis",
+    "title": "Ontology",
+    "section": "",
+    "text": "We choose Tableau for the visualization method. It provides meaningful insights to explore the knowledge graph. For this, we need a working ODBC connection to a Virtuoso Instance and ODBC or JDBC Compliant version of Tableau or Tableau Server. For ODBC connection to virtuoso, the link is: Visualizing SPARQL Results in Tableau | by Daniel Heward-Mills | OpenLink Virtuoso Weblog | Medium"
   },
   {
     "objectID": "ts-and-cs.html",
@@ -33,6 +61,13 @@
     "title": "Terms and conditions",
     "section": "",
     "text": "Coming soon"
+  },
+  {
+    "objectID": "feeds.html",
+    "href": "feeds.html",
+    "title": "RSS feeds",
+    "section": "",
+    "text": "Latest content\nrealworlddatascience.net/latest-content.xml\n\n\n\nIdeas\nrealworlddatascience.net/ideas/index.xml\n\n\n\nViewpoints\nrealworlddatascience.net/viewpoints/index.xml"
   },
   {
     "objectID": "tutorials/cattle-barometer.html",
@@ -147,52 +182,17 @@
     "text": "Histophilus somni\nPathogen: Histophilus somni (member of the Pasteurellaceae family)\nClinical relevance: opportunistic pathogen involved in respiratory disease, septicemia, otitis, polyserositis and thrombotic meningoencephalitis-myelitis\nClinical signs: respiratory disease (coughing, nasal discharge, dyspnea, fever), central nervous signs (sleeper syndrome), swollen joints, ear drop and sudden death\nDiagnostic sample: respiratory tract (bronchoalveolair lavage, transtracheal wash)¹, blood culture, necropsy\nDiagnostic test*: PCR**, culture (CO2 rich incubation needed) and antimicrobial susceptibility testing\nCarriers: yes\nInfection route: direct contact (nasal secretions), urine, potentially fomites\nVaccines: divalent inactivated vaccines ( M. haemolytica, H. somni) are available in Europe\n1. Van Driessche L., Valgaeren B.R., Gille L., Boyen F., Ducatelle R., Haesebrouck F., Deprez P., Pardon B. 2017. A deep nasopharyngeal swab versus nonendoscopic bronchoalveolar lavage for isolation of bacterial pathogens from preweaned calves with respiratory disease. J Vet Intern Med 31, 946-953."
   },
   {
-    "objectID": "tutorials/ontologies.html",
-    "href": "tutorials/ontologies.html",
-    "title": "Ontology",
+    "objectID": "tutorials/anonymisation.html",
+    "href": "tutorials/anonymisation.html",
+    "title": "Anonymisation",
     "section": "",
-    "text": "Figure 1: Non-Ontology Based (Traditional One) generic framework of Farm Animal Data Management\n\n\nNon-ontology-based systems require rewriting the cleaning code each time new data arrives, making it time-consuming and tedious. These systems lack interoperability, flexibility, reusability, and accessibility, posing limitations in data integration, handling, and adaptability.\n\n\n\nFigure 2: Ontology-Driven Knowledge-based framework of Farm Animal Data Management (ODKFADM)\n\n\nIn this use case, we utilize the ODKFADM framework to evaluate cattle-related data (DGZ), It involves collecting raw data from different data sources i.e. DGZ, and including information about farm identification, geo-location, infectious diseases, PCR, and bacterial culture results. This framework enables effective analysis of the data, leading to insights into cattle health\n\n\n\n\n\nFigure 3: Data Acquisition and RDF Conversions\n\n\nIn Figure 3, we read heterogeneous raw data using pandas, and R data frames, and then convert them into RDF format.\n\n\n\n\n\n\nFigure 4: Graphical Representation of LHO\n\n\n\n\n\nIn this step we map the RDF data with LHO which enhances the reasoning and query capabilites\n\n\n\nFigure 5: RDF and Ontology Integration (Mapping)\n\n\n\n\n\n\nResulted into a knowledge graph\n\n\n\nFigure 6 and 7 shows Query and query results that Filtering positive PathogenResults and MycoplasmaResults associated with CattleSample\n\n\n\nFigure 6: Filtering positive PathogenResults and MycoplasmaResults associated with CattleSample\n\n\n\n\n\nFigure 7: Query result\n\n\n\n\n\nWe choose Tableau for the visualization method. It provides meaningful insights to explore the knowledge graph. For this, we need a working ODBC connection to a Virtuoso Instance and ODBC or JDBC Compliant version of Tableau or Tableau Server. For ODBC connection to virtuoso, the link is: Visualizing SPARQL Results in Tableau | by Daniel Heward-Mills | OpenLink Virtuoso Weblog | Medium"
+    "text": "For privacy and confidentiality of sensitive information, we explain the anonymization technique for both R and Python code. For this, the SHA256 algorithm is used because it does not allow reverse engineering, and the sensitive information could not be linked back to the specific entity or individual."
   },
   {
-    "objectID": "tutorials/ontologies.html#step-1-data-acquisition-and-rdf-conversions",
-    "href": "tutorials/ontologies.html#step-1-data-acquisition-and-rdf-conversions",
-    "title": "Ontology",
+    "objectID": "tutorials/anonymisation.html#anonymization",
+    "href": "tutorials/anonymisation.html#anonymization",
+    "title": "Anonymisation",
     "section": "",
-    "text": "Figure 3: Data Acquisition and RDF Conversions\n\n\nIn Figure 3, we read heterogeneous raw data using pandas, and R data frames, and then convert them into RDF format."
-  },
-  {
-    "objectID": "tutorials/ontologies.html#step-2-species-specific-ontology-lho",
-    "href": "tutorials/ontologies.html#step-2-species-specific-ontology-lho",
-    "title": "Ontology",
-    "section": "",
-    "text": "Figure 4: Graphical Representation of LHO"
-  },
-  {
-    "objectID": "tutorials/ontologies.html#step-3-rdf-data-and-ontology-integration-mapping",
-    "href": "tutorials/ontologies.html#step-3-rdf-data-and-ontology-integration-mapping",
-    "title": "Ontology",
-    "section": "",
-    "text": "In this step we map the RDF data with LHO which enhances the reasoning and query capabilites\n\n\n\nFigure 5: RDF and Ontology Integration (Mapping)"
-  },
-  {
-    "objectID": "tutorials/ontologies.html#step-4-knowledge-graph-ontology-update",
-    "href": "tutorials/ontologies.html#step-4-knowledge-graph-ontology-update",
-    "title": "Ontology",
-    "section": "",
-    "text": "Resulted into a knowledge graph"
-  },
-  {
-    "objectID": "tutorials/ontologies.html#step-5-reasoning-and-query",
-    "href": "tutorials/ontologies.html#step-5-reasoning-and-query",
-    "title": "Ontology",
-    "section": "",
-    "text": "Figure 6 and 7 shows Query and query results that Filtering positive PathogenResults and MycoplasmaResults associated with CattleSample\n\n\n\nFigure 6: Filtering positive PathogenResults and MycoplasmaResults associated with CattleSample\n\n\n\n\n\nFigure 7: Query result"
-  },
-  {
-    "objectID": "tutorials/ontologies.html#step-6-visualization-and-analysis",
-    "href": "tutorials/ontologies.html#step-6-visualization-and-analysis",
-    "title": "Ontology",
-    "section": "",
-    "text": "We choose Tableau for the visualization method. It provides meaningful insights to explore the knowledge graph. For this, we need a working ODBC connection to a Virtuoso Instance and ODBC or JDBC Compliant version of Tableau or Tableau Server. For ODBC connection to virtuoso, the link is: Visualizing SPARQL Results in Tableau | by Daniel Heward-Mills | OpenLink Virtuoso Weblog | Medium"
+    "text": "For privacy and confidentiality of sensitive information, we explain the anonymization technique for both R and Python code. For this, the SHA256 algorithm is used because it does not allow reverse engineering, and the sensitive information could not be linked back to the specific entity or individual."
   }
 ]
