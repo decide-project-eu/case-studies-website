@@ -2,18 +2,18 @@
   {
     "listing": "/latest-content.html",
     "items": [
-      "/tutorials/ontologies.html",
-      "/tutorials/cattle-barometer.html",
       "/tutorials/anonymisation.html",
+      "/tutorials/cattle-barometer.html",
+      "/tutorials/ontologies.html",
       "/tutorials/poultry-barometer.html"
     ]
   },
   {
     "listing": "/index.html",
     "items": [
-      "/tutorials/ontologies.html",
-      "/tutorials/cattle-barometer.html",
       "/tutorials/anonymisation.html",
+      "/tutorials/cattle-barometer.html",
+      "/tutorials/ontologies.html",
       "/tutorials/poultry-barometer.html"
     ]
   }
