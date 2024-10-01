@@ -16,7 +16,7 @@
 <height>44</height>
 <width>144</width>
 </image>
-<generator>quarto-1.4.553</generator>
+<generator>quarto-1.5.57</generator>
 <lastBuildDate>Wed, 21 Jun 2023 04:00:00 GMT</lastBuildDate>
 <item>
   <title>Anonymisation</title>
@@ -44,6 +44,7 @@ font-style: inherit;"># Function to apply SHA-256 hashing</span></span>
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(data) {</span>
 <span id="cb1-4">  openssl<span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -219,11 +220,14 @@ font-style: inherit;">"tidyr"</span>)</span>
 <span id="cb3-3"></span>
 <span id="cb3-4"><span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">for</span> (pkg <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">in</span> package_list) {</span>
 <span id="cb3-5">  <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">if</span> (pkg <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">%in%</span> <span class="fu" style="color: #4758AB;
