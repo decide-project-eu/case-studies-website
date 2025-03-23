@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="A showcase for data science in action, brought to you by the Royal Statistical Society in partnership with the American Statistical Association.">
+<meta name="description" content="Animal data science in action, brought to you by the Decide project">
 
-<title>Real World Data Science</title>
+<title>Decide species cases – DECIDE Case Studies</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./images/rwds-favicon.png" rel="icon" type="image/png">
+<link href="./images/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-listing/list.min.js"></script>
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -39,12 +39,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-12b0da2894b6b1aa30872497df986a76.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/academicons-1.9.2/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/academicons-1.9.2/size.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -83,8 +81,7 @@ ul.task-list li input[type="checkbox"] {
 
     const options = {
       valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      page: 18,
-    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
+      
       searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
     };
 
@@ -101,129 +98,15 @@ ul.task-list li input[type="checkbox"] {
       window['quarto-listing-loaded']();
     }
   })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-case-studies .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-case-studies'] = new List('listing-case-studies', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-ideas .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      page: 18,
-    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-ideas'] = new List('listing-ideas', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-careers .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-careers'] = new List('listing-careers', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-viewpoints .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      page: 18,
-    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-viewpoints'] = new List('listing-viewpoints', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
   </script>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-1TTWB7YTR6"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-2804FN9QRK"></script>
 
 <script type="text/javascript">
 
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-1TTWB7YTR6', { 'anonymize_ip': true});
+gtag('config', 'G-2804FN9QRK', { 'anonymize_ip': true});
 </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -256,19 +139,15 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="rwds.css">
-<meta property="og:title" content="Real World Data Science">
-<meta property="og:description" content="A showcase for data science in action, brought to you by the Royal Statistical Society in partnership with the American Statistical Association.">
-<meta property="og:image" content="https://realworlddatascience.net/images/rwds-logo-150px.png">
-<meta property="og:site_name" content="Real World Data Science">
-<meta property="og:image:height" content="150">
-<meta property="og:image:width" content="259">
-<meta name="twitter:title" content="Real World Data Science">
-<meta name="twitter:description" content="A showcase for data science in action, brought to you by the Royal Statistical Society in partnership with the American Statistical Association.">
-<meta name="twitter:image" content="https://realworlddatascience.net/images/rwds-logo-150px.png">
-<meta name="twitter:site" content="@rwdatasci">
-<meta name="twitter:image-height" content="150">
-<meta name="twitter:image-width" content="259">
+<link rel="stylesheet" href="decide.css">
+<meta property="og:title" content="Decide species cases">
+<meta property="og:description" content="Animal data science in action, brought to you by the Decide project">
+<meta property="og:image" content="https://github.com/decide-project-eu/case-studies-website/images/rwds-logo-150px.png">
+<meta property="og:site_name" content="DECIDE Case Studies">
+<meta name="twitter:title" content="Decide species cases">
+<meta name="twitter:description" content="Animal data science in action, brought to you by the Decide project">
+<meta name="twitter:image" content="https://github.com/decide-project-eu/case-studies-website/images/rwds-logo-150px.png">
+<meta name="twitter:site" content="@decide_h2020">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -280,7 +159,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/rwds-logo-150px.png" alt="Real World Data Science brand" class="navbar-logo">
+    <img src="./images/DECIDE_logo_RGB-1.png" alt="Decide brand" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -289,41 +168,63 @@ window.Quarto = {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./case-studies/index.html"> 
-<span class="menu-text">Case studies</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./ideas/index.html"> 
-<span class="menu-text">Ideas</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./careers/index.html"> 
-<span class="menu-text">Careers</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./viewpoints/index.html"> 
-<span class="menu-text">Viewpoints</span></a>
-  </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about-rwds" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">About RWDS</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-case-studies" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Case studies</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-about-rwds">    
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-case-studies">    
         <li>
-    <a class="dropdown-item" href="./about-rwds.html">
- <span class="dropdown-text">Who we are</span></a>
+    <a class="dropdown-item" href="./case-studies/cattle-barometer.html">
+ <span class="dropdown-text">Cattle barometer</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./contributor-docs/call-for-contributions.html">
- <span class="dropdown-text">How to contribute</span></a>
+    <a class="dropdown-item" href="./case-studies/poultry-barometer.html">
+ <span class="dropdown-text">Poultry barometer</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./CODE_OF_CONDUCT.html">
- <span class="dropdown-text">Code of conduct</span></a>
+    <a class="dropdown-item" href="./case-studies/pig-barometer.html">
+ <span class="dropdown-text">Pig barometer</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tutorials" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tutorials</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-tutorials">    
+        <li>
+    <a class="dropdown-item" href="./tutorials/cattle-barometer.html">
+ <span class="dropdown-text">Cattle barometer</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./contact.html">
+    <a class="dropdown-item" href="./tutorials/anonymisation.html">
+ <span class="dropdown-text">Anonymisation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./tutorials/ontologies.html">
+ <span class="dropdown-text">Ontology</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./tutorials/poultry-barometer.html">
+ <span class="dropdown-text">Poultry Barometer</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-network" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Network</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-network">    
+        <li>
+    <a class="dropdown-item" href="https://decideproject.eu/network/">
+ <span class="dropdown-text">overview</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://decideproject.eu/partners/">
+ <span class="dropdown-text">Partners</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://decideproject.eu/contact/">
  <span class="dropdown-text">Contact us</span></a>
   </li>  
     </ul>
@@ -346,482 +247,104 @@ window.Quarto = {
 
 <div class="content-container">
 <div class="top-story purple-background">
-<p><a href="./case-studies/posts/2024/11/22/development-plan-2.html"></a></p><a href="./case-studies/posts/2024/11/22/development-plan-2.html">
 <div class="grid">
-<section id="defining-purposes-and-uses-to-support-the-development-of-statistical-products-in-a-21st-century-census-curated-data-enterprise-environment" class="g-col-12 g-col-lg-4 top-story-text">
-<h2>Defining Purposes and Uses to Support the Development of Statistical Products in a 21<sup>st</sup> Century Census Curated Data Enterprise Environment</h2>
-<p>Learn about researchers’ plans to develop the Curated Data Enterprise through a use case research program.</p>
+<section id="how-the-cattle-barometer-was-transformed-to-fit-multiple-labs-across-europe-in-the-decide-project" class="g-col-12 g-col-lg-4 top-story-text">
+<h2>How the cattle barometer was transformed to fit multiple labs across Europe in the DECIDE project!</h2>
+<p>Within WP1 and WP3 we have been working to transform an existing tool called the Griepbarometer developed in Flanders, Belgium into a international tool applicable across Europe, fit to several diagnostic laboratories.</p>
 </section>
 <div class="g-col-12 g-col-lg-8 top-story-img">
-<p><img src="case-studies/posts/2024/11/22/images/figure-1.png" class="img-fluid"></p>
+<p><img src="images/prototype_dgz.jpg" class="img-fluid" width="669"></p>
 </div>
 </div>
-</a><p><a href="./case-studies/posts/2024/11/22/development-plan-2.html"></a></p>
+<p></p>
 </div>
 </div>
+<!-- ::: {.header-banner .header-image}
+![](images/nasa-Q1p7bh3SHj8-unsplash-crop.png)
+::: -->
 <div class="header-text">
 <div class="content-container">
 <div class="header-block">
-<p>Welcome to <strong>Real World Data Science</strong>, a new project from the <a href="https://rss.org.uk/">Royal Statistical Society</a>, in partnership with the <a href="https://www.amstat.org/">American Statistical Association</a>. We bring together data science students, practitioners, leaders, and educators to share knowledge, learn from, and be inspired by real-world applications of data science.</p>
+<p>Welcome to the website of the <strong>DECIDE project use cases</strong>. DECIDE is a five-year <a href="https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-2020_en">Horizon 2020</a> project funded by the <a href="https://commission.europa.eu/index_en">European Commission</a>. This site and its content are being created and curated by the work package leaders and data leaders.</p>
 </div>
 </div>
 </div>
 <div class="content-container">
 <div class="listing-block">
 <p><a href="./latest-content.html"></a></p><a href="./latest-content.html">
-<h2 id="latest-content">Latest content</h2>
+<h2 id="tutorials">Tutorials</h2>
 </a><p><a href="./latest-content.html"></a></p>
 <div id="listing-latest-content" class="quarto-listing quarto-listing-container-grid">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="QUklMkNEYXRhJTIwU2NpZW5jZSUyQ01hY2hpbmUlMjBsZWFybmluZyUyQ0RlZXAlMjBsZWFybmluZyUyQ0Vjb25vbWV0cmljcw==" data-listing-date-sort="1738713600000" data-listing-file-modified-sort="1742765485421" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="546">
-<a href="./ideas/datasciencebites/posts/2025/02/05/DSAI-journal.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="0" data-categories="Work Package 1,Tutorial" data-listing-date-sort="1687320000000" data-listing-file-modified-sort="1687861821000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="116">
+<a href="./tutorials/anonymisation.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="./ideas/datasciencebites/posts/2025/02/05/images/RSS-DS-AI-cover.jpg" class="thumbnail-image card-img" style="height: 150px;" alt="An image of the cover of the RSS Data Science and Artificial Intelligence">
+<img loading="lazy" src="./tutorials/anonymisation.webp" class="thumbnail-image card-img" style="height: 150px;" alt="Anonymisation tuturial">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-<em>RSS: Data Science and Artificial Intelligence - showcase your research</em>
+Anonymisation
 </h5>
 <div class="card-text listing-description">
-<em>RSS: Data Science and Artificial Intelligence</em> is now open to submissions. It offers an exciting venue for your work in these disciplines with a broad reach across…
+For privacy and confidentiality of sensitive information, we explain the anonymization technique for both R and Python code. For this, the SHA256 algorithm is used because…
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
-
+Saba Noor, Miel Hostens, et al.
 </div>
 <div class="listing-date">
-Feb 5, 2025
+Jun 21, 2023
 </div>
 </div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="UHVibGljJTIwUG9saWN5JTJDRGF0YSUyMEFuYWx5c2lzJTJDRGF0YSUyMEludGVncmF0aW9uJTJDQ3VyYXRpb24lMkNTdGF0aXN0aWNhbCUyMFByb2R1Y3Rz" data-listing-date-sort="1731974400000" data-listing-file-modified-sort="1742765485402" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="27" data-listing-word-count-sort="5359">
-<a href="./case-studies/posts/2024/11/19/use-case-2.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="1" data-categories="Cattle,Work Package 1,Use case" data-listing-date-sort="1687320000000" data-listing-file-modified-sort="1724676891360" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4083">
+<a href="./tutorials/cattle-barometer.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="./case-studies/posts/2024/11/19/images/nurse-thumbnail.jpg" class="thumbnail-image card-img" style="height: 150px;" alt="A nurse assisting an older man to get up from bed in hospital">
+<img loading="lazy" src="./tutorials/cattle-barometer-tutorial.png" class="thumbnail-image card-img" style="height: 150px;" alt="Barometer tuturial">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-Translating the Curated Data Model into Practice - Climate resiliency of skilled nursing facilities
+Cattle barometer
 </h5>
 <div class="card-text listing-description">
-<p>How does the Curated Data Enterprise Framework work? Take a look at our demonstration use case on the resilience of skilled nursing facilities.</p>
+This tool visualizes pathogen-specific lab results of field samples obtained from cattle over Europe. It shows the historical trend, dynamics and current presence of…
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
-Vicki Lancaster, Stephanie Shipp, Sallie Keller, Henning Mortveit, Samarth Swarup, Aaron Schroeder, and Dawen Xie <br> University of Virginia, Biocomplexity Institute
+Jade Bokma, Saba Noor, Bart Pardon, Miel Hostens, et al.
 </div>
 <div class="listing-date">
-Nov 19, 2024
+Jun 21, 2023
 </div>
 </div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="UHVibGljJTIwUG9saWN5JTJDRGF0YSUyMEFuYWx5c2lzJTJDRGF0YSUyMEludGVncmF0aW9uJTJDQ3VyYXRpb24lMkNTdGF0aXN0aWNhbCUyMFByb2R1Y3Rz" data-listing-date-sort="1731024000000" data-listing-file-modified-sort="1742765485361" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="19" data-listing-word-count-sort="3678">
-<a href="./case-studies/posts/2024/11/08/what-is-CDE-2.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="2" data-categories="Work package 1,Ontology building,Tutorial" data-listing-date-sort="1687320000000" data-listing-file-modified-sort="1687861791000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="299">
+<a href="./tutorials/ontologies.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="./case-studies/posts/2024/11/08/images/screen.thumbnail.jpg" class="thumbnail-image card-img" style="height: 150px;" alt="A young woman working at a laptop">
+<img loading="lazy" src="./tutorials/ontologies.webp" class="thumbnail-image card-img" style="height: 150px;" alt="Ontology tutorial">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-Advancing Data Science in Official Statistics – What is the Curated Data Enterprise?
+Ontology
 </h5>
 <div class="card-text listing-description">
-The US Census Bureau faces the challenge of addressing complex questions requiring novel datasets and sources to answer. Official statistical agencies and public- and…
+Non-ontology-based systems require rewriting the cleaning code each time new data arrives, making it time-consuming and tedious. These systems lack interoperability…
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
-Sallie Keller, Stephanie Shipp, Vicki Lancaster, and Joseph Salvo <br> University of Virginia
+Saba Noor, Miel Hostens, et al.
 </div>
 <div class="listing-date">
-Nov 8, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-</div>
-</div>
-<div class="pullout-text">
-<div class="pullout-container">
-<div class="pullout-block black-background">
-<p><img src="images/quote-purple.png" class="img-fluid" width="100"></p>
-<h2 id="is-data-science-a-new-and-exciting-set-of-skills-necessary-for-analyzing-21st-century-data-or-is-it-as-some-have-claimed-a-rebranding-of-statistics-which-has-carefully-developed-time-honored-methods-for-data-analysis-over-the-past-century-in-this-article-we-use-two-popular-data-science-algorithms-to-examine-the-difference-between-data-science-statistics-and-other-occupations.">Is data science a new and exciting set of skills, necessary for analyzing 21st century data? Or is it (as some have claimed) a rebranding of statistics, which has carefully developed time-honored methods for data analysis over the past century? In this article, we use two popular data science algorithms to examine the difference between data science, statistics, and other occupations.</h2>
-<p>Jonathan Auerbach, David Kepplinger, and Nicholas Rios ask, ‘What is data science?’</p>
-<div class="button">
-<p><a href="./ideas/posts/2024/02/19/what-is-data-science.html">Read their analysis</a></p>
-</div>
-</div>
-</div>
-</div>
-<div class="content-container">
-<div class="listing-block">
-<p><a href="./viewpoints/index.html"></a></p><a href="./viewpoints/index.html">
-<h2 id="viewpoints">Viewpoints</h2>
-</a><p><a href="./viewpoints/index.html"></a></p>
-<div id="listing-viewpoints" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="QUklMkNEYXRhJTJDTWFjaGluZSUyMGxlYXJuaW5nJTJDTmF0dXJhbCUyMGxhbmd1YWdlJTIwcHJvY2Vzc2luZw==" data-listing-date-sort="1710115200000" data-listing-file-modified-sort="1742765485690" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2139">
-<a href="./viewpoints/interviews/posts/2024/03/11/democratizing-data.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./viewpoints/interviews/posts/2024/03/11/images/julia-lane-thumb.png" class="thumbnail-image card-img" style="height: 150px;" alt="Photo of Julia Lane, professor at the NYU Wagner Graduate School of Public Service and visiting fellow at RTI International.">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Democratizing Data: Using natural language processing and machine learning to capture dataset usage
-</h5>
-<div class="card-text listing-description">
-Real World Data Science speaks with Julia Lane, professor at the NYU Wagner Graduate School of Public Service and visiting fellow at RTI International, about an initiative…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Brian Tarran
-</div>
-<div class="listing-date">
-Mar 11, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="QUklMkNMYXJnZSUyMGxhbmd1YWdlJTIwbW9kZWxzJTJDUHVibGljJTIwcG9saWN5JTJDUmlzayUyQ1JlZ3VsYXRpb24=" data-listing-date-sort="1707350400000" data-listing-file-modified-sort="1742765485671" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1244">
-<a href="./viewpoints/editors-blog/posts/2024/02/08/llms-whitepaper-response.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./viewpoints/editors-blog/posts/2024/02/08/images/parliament-and-thames.png" class="thumbnail-image card-img" style="height: 150px;" alt="Photo of the UK Houses of Parliament at dusk, taken from across the River Thames.">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-£10m for UK regulators to ‘jumpstart’ AI capabilities, as government commits to white paper approach
-</h5>
-<div class="card-text listing-description">
-It’s been a busy seven days for AI news in the UK as two major government reports were published, millions of pounds of new investments were announced, and warnings rang out…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Brian Tarran
-</div>
-<div class="listing-date">
-Feb 8, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="QUklMjBldGhpY3MlMkNMYXJnZSUyMGxhbmd1YWdlJTIwbW9kZWxzJTJDTW9uaXRvcmluZyUyQ1B1YmxpYyUyMHBvbGljeSUyQ1Jpc2s=" data-listing-date-sort="1705881600000" data-listing-file-modified-sort="1742765485669" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="469">
-<a href="./viewpoints/editors-blog/posts/2024/01/22/gen-ai-framework.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./viewpoints/editors-blog/posts/2024/01/22/images/uk-parliament.png" class="thumbnail-image card-img" style="height: 150px;" alt="Long exposure photo of the UK Houses of Parliament and Portcullis House, taken from across the River Thames.">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-UK government sets out 10 principles for use of generative AI
-</h5>
-<div class="card-text listing-description">
-<p>Government says staff need to understand what generative AI is, its limitations, and how to deploy the technology lawfully, ethically and securely.</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Brian Tarran
-</div>
-<div class="listing-date">
-Jan 22, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-</div>
-</div>
-<div class="content-container">
-<div class="listing-block">
-<p><a href="./case-studies/index.html"></a></p><a href="./case-studies/index.html">
-<h2 id="case-studies">Case Studies</h2>
-</a><p><a href="./case-studies/index.html"></a></p>
-<div id="listing-case-studies" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="SGVhbHRoJTIwYW5kJTIwd2VsbGJlaW5nJTJDRm9yZWNhc3Rpbmc=" data-listing-date-sort="1715126400000" data-listing-file-modified-sort="1742765485309" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2346">
-<a href="./case-studies/posts/2024/05/08/dpm.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./case-studies/posts/2024/05/08/images/doctor-patient-thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="A doctor takes a blood pressure reading from a patient.">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Forecasting the Health Needs of a Changing Population
-</h5>
-<div class="card-text listing-description">
-Taking NHS usage of the 1 million people in and around Bristol, then combining with population forecasts into a modelling framework has created a sophisticated but…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Luke Shaw (BNSSG ICB), Rich Wood (BNSSG ICB, University of Bath), Christos Vasilakis (University of Bath), Zehra Onen Dumlu (University of Bath)
-</div>
-<div class="listing-date">
-May 8, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="Q3JpbWUlMjBhbmQlMjBqdXN0aWNlJTJDRGF0YSUyMHF1YWxpdHklMkNEYXRhJTIwbGlua2FnZQ==" data-listing-date-sort="1700611200000" data-listing-file-modified-sort="1742765485308" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1883">
-<a href="./case-studies/posts/2023/11/22/splink.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./case-studies/posts/2023/11/22/images/possessed-photography-NwpSBZMhc-M-unsplash.png" class="thumbnail-image card-img" style="height: 150px;" alt="Photo of yellow chain links by Possessed Photography on Unsplash.">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Deduplicating and linking large datasets using Splink
-</h5>
-<div class="card-text listing-description">
-<p>Robin Linacre introduces an open source tool, developed by the UK Ministry of Justice, which uses probabilistic record linkage to improve the quality of justice system data.</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Robin Linacre
-</div>
-<div class="listing-date">
-Nov 22, 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="Q3JpbWUlMjBhbmQlMjBqdXN0aWNlJTJDUHVibGljJTIwcG9saWN5JTJDRGF0YSUyMHF1YWxpdHklMkNEYXRhJTIwYW5hbHlzaXMlMkNNb25pdG9yaW5n" data-listing-date-sort="1700092800000" data-listing-file-modified-sort="1742765485306" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="25" data-listing-word-count-sort="4963">
-<a href="./case-studies/posts/2023/11/16/learning-from-failure.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./case-studies/posts/2023/11/16/images/bodycam-monitor.png" class="thumbnail-image card-img" style="height: 150px;" alt="Computer monitor displaying bodycam recordings, primary colours, digital art. Created using Bing Image Creator.">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Learning from failure: ‘Red flags’ in body-worn camera data
-</h5>
-<div class="card-text listing-description">
-When body-worn cameras were rolled out to juvenile correctional officers in Texas in 2018, senior leaders hoped proactive analysis of camera metadata could be used to…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Noah Wright
-</div>
-<div class="listing-date">
-Nov 16, 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-</div>
-</div>
-<div class="pullout-text">
-<div class="pullout-container">
-<div class="pullout-block black-background">
-<p><img src="images/quote-purple.png" class="img-fluid" width="100"></p>
-<h2 id="generative-ai-is-based-on-neural-networks-which-are-so-called-black-boxes.-this-makes-it-difficult-or-impossible-to-explain-the-inner-workings-of-the-model-which-has-potential-implications-if-in-the-future-you-are-challenged-to-justify-decisioning-or-guidance-based-on-the-model.">Generative AI is based on neural networks, which are so-called ‘black boxes’. This makes it difficult or impossible to explain the inner workings of the model which has potential implications if in the future you are challenged to justify decisioning or guidance based on the model.</h2>
-<p>Excerpt from the UK government’s framework for the use of generative AI</p>
-<div class="button">
-<p><a href="./viewpoints/editors-blog/posts/2024/01/22/gen-ai-framework.html">Read our key takeaways</a></p>
-</div>
-</div>
-</div>
-</div>
-<div class="content-container">
-<div class="listing-block">
-<p><a href="./ideas/index.html"></a></p><a href="./ideas/index.html">
-<h2 id="ideas">Ideas</h2>
-</a><p><a href="./ideas/index.html"></a></p>
-<div id="listing-ideas" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="QUklMkNEYXRhJTIwU2NpZW5jZSUyQ01hY2hpbmUlMjBsZWFybmluZyUyQ0RlZXAlMjBsZWFybmluZyUyQ0Vjb25vbWV0cmljcw==" data-listing-date-sort="1738713600000" data-listing-file-modified-sort="1742765485421" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="546">
-<a href="./ideas/datasciencebites/posts/2025/02/05/DSAI-journal.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./ideas/datasciencebites/posts/2025/02/05/images/RSS-DS-AI-cover.jpg" class="thumbnail-image card-img" style="height: 150px;" alt="An image of the cover of the RSS Data Science and Artificial Intelligence">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-<em>RSS: Data Science and Artificial Intelligence - showcase your research</em>
-</h5>
-<div class="card-text listing-description">
-<em>RSS: Data Science and Artificial Intelligence</em> is now open to submissions. It offers an exciting venue for your work in these disciplines with a broad reach across…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-
-</div>
-<div class="listing-date">
-Feb 5, 2025
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="Rm9yZWNhc3RpbmclMkNNYWNoaW5lJTIwbGVhcm5pbmc=" data-listing-date-sort="1719273600000" data-listing-file-modified-sort="1742765485421" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1027">
-<a href="./ideas/datasciencebites/posts/2024/6/25/nowcasting-3step.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./ideas/datasciencebites/posts/2024/6/25/images/GDPshutterstock_2302082265-991.jpg" class="thumbnail-image card-img" style="height: 150px;" alt="Growth of GDP with statistical graph, 3d rendering. Digital drawing. Credit: Shutterstock, Vink Fan">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Nowcasting upgrade for better real time estimation of GDP and inflation
-</h5>
-<div class="card-text listing-description">
-Atmajitsinh Gohil describes a recently devised 3 step framework that improves the accuracy of nowcasting.
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Atmajitsinh Gohil
-</div>
-<div class="listing-date">
-Jun 25, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="QUklMkNBSSUyMGV0aGljcyUyQ1JlZ3VsYXRpb24=" data-listing-date-sort="1718064000000" data-listing-file-modified-sort="1742765485501" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="19" data-listing-word-count-sort="3724">
-<a href="./ideas/posts/2024/06/11/ai-series-7.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./ideas/posts/2024/06/11/images/shutterstock_2436413315.jpg" class="thumbnail-image card-img" style="height: 150px;" alt="Themis, goddess of justice. External governance is required to ensure the outcomes of AI deployment are safe and just. Credit Shutterstock, Michal Bednarek">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-AI series: Ensuring new AI technologies help everyone thrive
-</h5>
-<div class="card-text listing-description">
-This AI article series has highlighted a number of areas where AI can offer genuine benefits, as well as flagging how best to dodge the pitfalls and cultivate models and…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Anna Demming
-</div>
-<div class="listing-date">
-Jun 11, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-</div>
-</div>
-<div class="content-container">
-<div class="listing-block">
-<p><a href="./careers/index.html"></a></p><a href="./careers/index.html">
-<h2 id="careers">Careers</h2>
-</a><p><a href="./careers/index.html"></a></p>
-<div id="listing-careers" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="QUklMkNEYXRhJTJDU2tpbGxzJTJDUHVibGljJTIwc2VjdG9y" data-listing-date-sort="1711497600000" data-listing-file-modified-sort="1742765485265" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="126">
-<a href="./careers/posts/2024/03/27/pholborn-interview.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./careers/posts/2024/03/27/images/pholborn-laptop.png" class="thumbnail-image card-img" style="height: 150px;" alt="Screengrab of video showing Jonathan Gillard and Penny Holborn in conversation.">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Data science and AI in the public sector: An interview with ONS’s Penny Holborn
-</h5>
-<div class="card-text listing-description">
-Penny Holborn, head of faculty for the Office for National Statistics Data Science Campus, talks to Jonathan Gillard about keeping up with new developments, the value of…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Jonathan Gillard
-</div>
-<div class="listing-date">
-Mar 27, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="QUklMkNDb21tdW5pY2F0aW9uJTJDU2tpbGxzJTJDRmluYW5jaWFsJTIwc2VydmljZXM=" data-listing-date-sort="1710979200000" data-listing-file-modified-sort="1742765485264" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="125">
-<a href="./careers/posts/2024/03/21/mjones-interview.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./careers/posts/2024/03/21/images/mjones-laptop.png" class="thumbnail-image card-img" style="height: 150px;" alt="Screengrab of video interview showing Matthew Jones on the left and Jonathan Gillard on the right. Screengrab is overlaid on a laptop background.">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Data science and AI in financial services: An interview with Nationwide’s Matthew Jones
-</h5>
-<div class="card-text listing-description">
-Matthew Jones, head of decision science and analytical innovation at building society Nationwide, talks career path, data science tools and skills, and the role of AI in…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Jonathan Gillard
-</div>
-<div class="listing-date">
-Mar 21, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="TGVhZGVyc2hpcCUyQ01hbmFnZW1lbnQlMkNDb21tdW5pY2F0aW9u" data-listing-date-sort="1696377600000" data-listing-file-modified-sort="1742765485256" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="22" data-listing-word-count-sort="4338">
-<a href="./careers/career-profiles/posts/2023/10/04/niclas-thomas.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./careers/career-profiles/posts/2023/10/04/images/niclas-thomas.png" class="thumbnail-image card-img" style="height: 150px;" alt="Photo of Niclas Thomas.">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-‘I fell in love with math, really, and fell into data science because of that’
-</h5>
-<div class="card-text listing-description">
-A passion for solving mathematical problems led Niclas Thomas to a PhD in machine learning and then a career in data science in the retail sphere. Now head of data science…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Brian Tarran
-</div>
-<div class="listing-date">
-Oct 4, 2023
+Jun 21, 2023
 </div>
 </div>
 </div>
@@ -839,50 +362,27 @@ No matching items
 <div class="footer-container black-background">
 <div class="footer-block">
 <div class="grid">
-<section id="published-by" class="g-col-12 g-col-md-2">
+<section id="published-by" class="g-col-12 g-col-md-6">
 <h3>Published by</h3>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><a href="https://rss.org.uk/"><img src="images/rss-footer-new.png" class="img-fluid quarto-figure quarto-figure-left figure-img"></a></p>
-</figure>
-</div>
+<p><a href="https://rss.org.uk/"><img src="images/DECIDE_logo_RGB-1.png" class="img-fluid" width="400"></a></p>
 </section>
-<section id="our-partners" class="g-col-12 g-col-md-2">
-<h3>Our partners</h3>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><a href="https://www.amstat.org/"><img src="images/asa-footer-new.png" class="img-fluid quarto-figure quarto-figure-left figure-img"></a></p>
-</figure>
-</div>
-</section>
-<section id="with-support-from" class="g-col-12 g-col-md-2">
-<h3>With support from</h3>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><a href="https://www.turing.ac.uk/"><img src="images/ati-footer-new.png" class="img-fluid quarto-figure quarto-figure-left figure-img"></a></p>
-</figure>
-</div>
-</section>
-<div class="g-col-12 g-col-md-2">
-
-</div>
 <section id="about-us" class="g-col-12 g-col-md-2">
 <h3>About us</h3>
-<p><a href="./about-rwds.html">Our aims</a><br>
-<a href="./viewpoints/editors-blog/posts/2022/10/18/meet-the-team.html">Our team</a><br>
-<a href="./rwds-partners.html">Partners and funders</a><br>
-<a href="./contact.html">Contact us</a></p>
+<p><a href="https://decideproject.eu/">The project</a><br>
+<a href="https://decideproject.eu/partners/">Partners and funders</a><br>
+<a href="https://decideproject.eu/contact/">Contact us</a></p>
 </section>
-<section id="contribute" class="g-col-12 g-col-md-2">
-<h3>Contribute</h3>
-<p><a href="./contributor-docs/call-for-contributions.html">Call for contributions</a><br>
-<a href="./contributor-docs/contributor-guidelines.html">Contributor guidelines</a><br>
-<a href="./contributor-docs/style-guide.html">Style guide</a></p>
+<section id="follow-us" class="g-col-12 g-col-md-2">
+<h3>Follow us</h3>
+<p><a href="https://github.com/decide-project-eu/">GitHub</a><br>
+<a href="https://twitter.com/decide_h2020">Twitter</a><br>
+<a href="https://www.linkedin.com/company/decide-h2020/">LinkedIn</a><br>
+</p>
 </section>
-<!-- ::: {.g-col-12 .g-col-md-12}
-### Our partners
-logos to go here
-::: -->
+<section id="our-funder" class="g-col-12 g-col-md-12">
+<h3>Our funder</h3>
+<p>This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No.&nbsp;101000494.</p>
+</section>
 </div>
 </div>
 </div>
@@ -974,6 +474,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -982,7 +484,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/realworlddatascience\.net\/");
+      var filterRegex = new RegExp("https:\/\/github\.com\/decide-project-eu\/case-studies-website");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -1084,6 +586,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
+      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -1313,47 +816,30 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p><a href="./LICENCE.html">Copyright © 2024 Royal Statistical Society</a></p>
+<p>Copyright © 2023 <a href="https://https://decideproject.eu/">DECIDE PROJECT</a></p>
 </div>   
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/realworlddatascience">
+    <a class="nav-link" href="https://github.com/decide-project-eu/">
       <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
     </a>
   </li>  
-    <li class="nav-item">
-    <a class="nav-link" href="https://zenodo.org/communities/realworlddatascience">
-<p><i class="ai  ai-zenodo ai-2xl"></i></p>
-</a>
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/decide_h2020">
+      <i class="bi bi-twitter" role="img" aria-label="Twitter">
+</i> 
+    </a>
   </li>  
     <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/showcase/rss-real-world-data-science">
+    <a class="nav-link" href="https://www.linkedin.com/company/decide-h2020/">
       <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
 </i> 
     </a>
   </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/rwdatasci">
-      <i class="bi bi-twitter-x" role="img" aria-label="Twitter/X">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://fosstodon.org/@rwdatasci">
-      <i class="bi bi-mastodon" role="img" aria-label="Mastodon">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="./feeds.html">
-      <i class="bi bi-rss" role="img" aria-label="RWDS rss">
-</i> 
-    </a>
-  </li>  
 </ul>
-    </div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/decide-project-eu/case-studies-website/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/decide-project-eu/case-studies-website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p><a href="./ts-and-cs.html">Terms &amp; Conditions</a></p>
 </div>
