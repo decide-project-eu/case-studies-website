@@ -1,33 +1,5 @@
 [
   {
-    "objectID": "tutorials/poultry-barometer.html",
-    "href": "tutorials/poultry-barometer.html",
-    "title": "Poultry Barometer",
-    "section": "",
-    "text": "Aim\nThe aim of the “Poultry Barometer” is to provide insight into the most prevalent Infectious Bronchitis Virus (IBV) strains in broiler chickens within specific regions and periods.\n\n\nBackground\nIBV causes infectious bronchitis (IB) in poultry. An infection can lead to respiratory signs, drop in production, and kidney damage. In the Netherlands, broilers are often vaccinated against IBV to limit the impact of disease. However, vaccines do not protect against all IBV strains, and new strain are regularly discovered. Insights into the most prevalent strains can help to better protect broiler flocks against IBV.\nFor more information on IBV, visit the GD website\n\n\nData\nCurrently, the dashboard only includes data from the Netherlands, provided by Royal GD. Royal GD performs PCR tests on submitted material to detect IBV. If the virus is detected, sequencing will determine the specific IBV genotype.\nOnly anonymous data is used to create the dashboard. After linking a farm to the correct province, farm identification is removed from the data. The dashboard shows only aggregated data."
-  },
-  {
-    "objectID": "tutorials/anonymisation.html",
-    "href": "tutorials/anonymisation.html",
-    "title": "Anonymisation",
-    "section": "",
-    "text": "For privacy and confidentiality of sensitive information, we explain the anonymization technique for both R and Python code. For this, the SHA256 algorithm is used because it does not allow reverse engineering, and the sensitive information could not be linked back to the specific entity or individual."
-  },
-  {
-    "objectID": "tutorials/anonymisation.html#anonymization",
-    "href": "tutorials/anonymisation.html#anonymization",
-    "title": "Anonymisation",
-    "section": "",
-    "text": "For privacy and confidentiality of sensitive information, we explain the anonymization technique for both R and Python code. For this, the SHA256 algorithm is used because it does not allow reverse engineering, and the sensitive information could not be linked back to the specific entity or individual."
-  },
-  {
-    "objectID": "ts-and-cs.html",
-    "href": "ts-and-cs.html",
-    "title": "Terms and conditions",
-    "section": "",
-    "text": "Coming soon"
-  },
-  {
     "objectID": "tutorials/cattle-barometer.html",
     "href": "tutorials/cattle-barometer.html",
     "title": "Cattle barometer",
@@ -138,6 +110,34 @@
     "title": "Cattle barometer",
     "section": "Histophilus somni",
     "text": "Histophilus somni\nPathogen: Histophilus somni (member of the Pasteurellaceae family)\nClinical relevance: opportunistic pathogen involved in respiratory disease, septicemia, otitis, polyserositis and thrombotic meningoencephalitis-myelitis\nClinical signs: respiratory disease (coughing, nasal discharge, dyspnea, fever), central nervous signs (sleeper syndrome), swollen joints, ear drop and sudden death\nDiagnostic sample: respiratory tract (bronchoalveolair lavage, transtracheal wash)¹, blood culture, necropsy\nDiagnostic test*: PCR**, culture (CO2 rich incubation needed) and antimicrobial susceptibility testing\nCarriers: yes\nInfection route: direct contact (nasal secretions), urine, potentially fomites\nVaccines: divalent inactivated vaccines ( M. haemolytica, H. somni) are available in Europe\n1. Van Driessche L., Valgaeren B.R., Gille L., Boyen F., Ducatelle R., Haesebrouck F., Deprez P., Pardon B. 2017. A deep nasopharyngeal swab versus nonendoscopic bronchoalveolar lavage for isolation of bacterial pathogens from preweaned calves with respiratory disease. J Vet Intern Med 31, 946-953."
+  },
+  {
+    "objectID": "tutorials/anonymisation.html",
+    "href": "tutorials/anonymisation.html",
+    "title": "Anonymisation",
+    "section": "",
+    "text": "For privacy and confidentiality of sensitive information, we explain the anonymization technique for both R and Python code. For this, the SHA256 algorithm is used because it does not allow reverse engineering, and the sensitive information could not be linked back to the specific entity or individual."
+  },
+  {
+    "objectID": "tutorials/anonymisation.html#anonymization",
+    "href": "tutorials/anonymisation.html#anonymization",
+    "title": "Anonymisation",
+    "section": "",
+    "text": "For privacy and confidentiality of sensitive information, we explain the anonymization technique for both R and Python code. For this, the SHA256 algorithm is used because it does not allow reverse engineering, and the sensitive information could not be linked back to the specific entity or individual."
+  },
+  {
+    "objectID": "ts-and-cs.html",
+    "href": "ts-and-cs.html",
+    "title": "Terms and conditions",
+    "section": "",
+    "text": "Coming soon"
+  },
+  {
+    "objectID": "tutorials/poultry-barometer.html",
+    "href": "tutorials/poultry-barometer.html",
+    "title": "Poultry Barometer",
+    "section": "",
+    "text": "Aim\nThe aim of the “Poultry Barometer” is to provide insight into the most prevalent Infectious Bronchitis Virus (IBV) strains in broiler chickens within specific regions and periods.\n\n\nBackground\nIBV causes infectious bronchitis (IB) in poultry. An infection can lead to respiratory signs, drop in production, and kidney damage. In the Netherlands, broilers are often vaccinated against IBV to limit the impact of disease. However, vaccines do not protect against all IBV strains, and new strain are regularly discovered. Insights into the most prevalent strains can help to better protect broiler flocks against IBV.\nFor more information on IBV, visit the GD website\n\n\nData\nCurrently, the dashboard only includes data from the Netherlands, provided by Royal GD. Royal GD performs PCR tests on submitted material to detect IBV. If the virus is detected, sequencing will determine the specific IBV genotype.\nOnly anonymous data is used to create the dashboard. After linking a farm to the correct province, farm identification is removed from the data. The dashboard shows only aggregated data."
   },
   {
     "objectID": "tutorials/ontologies.html",

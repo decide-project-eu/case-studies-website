@@ -16,8 +16,8 @@
 <height>44</height>
 <width>144</width>
 </image>
-<generator>quarto-1.5.57</generator>
-<lastBuildDate>Wed, 21 Jun 2023 04:00:00 GMT</lastBuildDate>
+<generator>quarto-1.6.42</generator>
+<lastBuildDate>Wed, 21 Jun 2023 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Anonymisation</title>
   <dc:creator>Saba Noor, Miel Hostens, et al.</dc:creator>
@@ -115,8 +115,99 @@ font-style: inherit;">=</span>XSD.string)))</span></code></pre></div>
   <category>Work Package 1</category>
   <category>Tutorial</category>
   <guid>https://github.com/decide-project-eu/case-studies-website/tutorials/anonymisation.html</guid>
-  <pubDate>Wed, 21 Jun 2023 04:00:00 GMT</pubDate>
+  <pubDate>Wed, 21 Jun 2023 00:00:00 GMT</pubDate>
   <media:content url="https://github.com/decide-project-eu/case-studies-website/tutorials/anonymisation.webp" medium="image" type="image/webp"/>
+</item>
+<item>
+  <title>Ontology</title>
+  <dc:creator>Saba Noor, Miel Hostens, et al.</dc:creator>
+  <link>https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="system-model" class="level1">
+<h1>System Model</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies-figure-1.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 1: Non-Ontology Based (Traditional One) generic framework of Farm Animal Data Management</figcaption>
+</figure>
+</div>
+<p>Non-ontology-based systems require rewriting the cleaning code each time new data arrives, making it time-consuming and tedious. These systems lack interoperability, flexibility, reusability, and accessibility, posing limitations in data integration, handling, and adaptability.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies-figure-2.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 2: Ontology-Driven Knowledge-based framework of Farm Animal Data Management (ODKFADM)</figcaption>
+</figure>
+</div>
+<p>In this use case, we utilize the ODKFADM framework to evaluate cattle-related data (DGZ), It involves collecting raw data from different data sources i.e.&nbsp;DGZ, and including information about farm identification, geo-location, infectious diseases, PCR, and bacterial culture results. This framework enables effective analysis of the data, leading to insights into cattle health</p>
+<section id="step-1-data-acquisition-and-rdf-conversions" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-data-acquisition-and-rdf-conversions">Step 1: Data Acquisition and RDF conversions</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies-figure-3.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 3: Data Acquisition and RDF Conversions</figcaption>
+</figure>
+</div>
+<p>In Figure 3, we read heterogeneous raw data using pandas, and R data frames, and then convert them into RDF format.</p>
+</section>
+<section id="step-2-species-specific-ontology-lho" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-species-specific-ontology-lho">Step 2: Species-Specific Ontology (LHO)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies-figure-4.jpg" class="img-fluid figure-img"></p>
+<figcaption>Figure 4: Graphical Representation of LHO</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-3-rdf-data-and-ontology-integration-mapping" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-rdf-data-and-ontology-integration-mapping">Step 3: RDF Data and Ontology Integration (Mapping)</h2>
+<p>In this step we map the RDF data with LHO which enhances the reasoning and query capabilites</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies-figure-5.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 5: RDF and Ontology Integration (Mapping)</figcaption>
+</figure>
+</div>
+<pre><code></code></pre>
+</section>
+<section id="step-4-knowledge-graph-ontology-update" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-knowledge-graph-ontology-update">Step 4: Knowledge graph (Ontology Update)</h2>
+<p>Resulted into a knowledge graph</p>
+</section>
+<section id="step-5-reasoning-and-query" class="level2">
+<h2 class="anchored" data-anchor-id="step-5-reasoning-and-query">Step 5: Reasoning and Query</h2>
+<p>Figure 6 and 7 shows Query and query results that Filtering positive PathogenResults and MycoplasmaResults associated with CattleSample</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies-figure-6.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 6: Filtering positive PathogenResults and MycoplasmaResults associated with CattleSample</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies-figure-7.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 7: Query result</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-6-visualization-and-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="step-6-visualization-and-analysis">Step 6: Visualization and Analysis</h2>
+<p>We choose Tableau for the visualization method. It provides meaningful insights to explore the knowledge graph. For this, we need a working ODBC connection to a Virtuoso Instance and ODBC or JDBC Compliant version of Tableau or Tableau Server. For ODBC connection to virtuoso, the link is: <a href="https://medium.com/virtuoso-blog/virtuoso-tableau-sparql-f9411852a87d">Visualizing SPARQL Results in Tableau | by Daniel Heward-Mills | OpenLink Virtuoso Weblog | Medium</a></p>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>Work package 1</category>
+  <category>Ontology building</category>
+  <category>Tutorial</category>
+  <guid>https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies.html</guid>
+  <pubDate>Wed, 21 Jun 2023 00:00:00 GMT</pubDate>
+  <media:content url="https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies.webp" medium="image" type="image/webp"/>
 </item>
 <item>
   <title>Cattle barometer</title>
@@ -1621,99 +1712,8 @@ font-style: inherit;">as.character</span>(Samplenumber))</span>
   <category>Work Package 1</category>
   <category>Use case</category>
   <guid>https://github.com/decide-project-eu/case-studies-website/tutorials/cattle-barometer.html</guid>
-  <pubDate>Wed, 21 Jun 2023 04:00:00 GMT</pubDate>
+  <pubDate>Wed, 21 Jun 2023 00:00:00 GMT</pubDate>
   <media:content url="https://github.com/decide-project-eu/case-studies-website/tutorials/cattle-barometer-tutorial.png" medium="image" type="image/png" height="144" width="144"/>
-</item>
-<item>
-  <title>Ontology</title>
-  <dc:creator>Saba Noor, Miel Hostens, et al.</dc:creator>
-  <link>https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<section id="system-model" class="level1">
-<h1>System Model</h1>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies-figure-1.png" class="img-fluid figure-img"></p>
-<figcaption>Figure 1: Non-Ontology Based (Traditional One) generic framework of Farm Animal Data Management</figcaption>
-</figure>
-</div>
-<p>Non-ontology-based systems require rewriting the cleaning code each time new data arrives, making it time-consuming and tedious. These systems lack interoperability, flexibility, reusability, and accessibility, posing limitations in data integration, handling, and adaptability.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies-figure-2.png" class="img-fluid figure-img"></p>
-<figcaption>Figure 2: Ontology-Driven Knowledge-based framework of Farm Animal Data Management (ODKFADM)</figcaption>
-</figure>
-</div>
-<p>In this use case, we utilize the ODKFADM framework to evaluate cattle-related data (DGZ), It involves collecting raw data from different data sources i.e.&nbsp;DGZ, and including information about farm identification, geo-location, infectious diseases, PCR, and bacterial culture results. This framework enables effective analysis of the data, leading to insights into cattle health</p>
-<section id="step-1-data-acquisition-and-rdf-conversions" class="level2">
-<h2 class="anchored" data-anchor-id="step-1-data-acquisition-and-rdf-conversions">Step 1: Data Acquisition and RDF conversions</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies-figure-3.png" class="img-fluid figure-img"></p>
-<figcaption>Figure 3: Data Acquisition and RDF Conversions</figcaption>
-</figure>
-</div>
-<p>In Figure 3, we read heterogeneous raw data using pandas, and R data frames, and then convert them into RDF format.</p>
-</section>
-<section id="step-2-species-specific-ontology-lho" class="level2">
-<h2 class="anchored" data-anchor-id="step-2-species-specific-ontology-lho">Step 2: Species-Specific Ontology (LHO)</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies-figure-4.jpg" class="img-fluid figure-img"></p>
-<figcaption>Figure 4: Graphical Representation of LHO</figcaption>
-</figure>
-</div>
-</section>
-<section id="step-3-rdf-data-and-ontology-integration-mapping" class="level2">
-<h2 class="anchored" data-anchor-id="step-3-rdf-data-and-ontology-integration-mapping">Step 3: RDF Data and Ontology Integration (Mapping)</h2>
-<p>In this step we map the RDF data with LHO which enhances the reasoning and query capabilites</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies-figure-5.png" class="img-fluid figure-img"></p>
-<figcaption>Figure 5: RDF and Ontology Integration (Mapping)</figcaption>
-</figure>
-</div>
-<pre><code></code></pre>
-</section>
-<section id="step-4-knowledge-graph-ontology-update" class="level2">
-<h2 class="anchored" data-anchor-id="step-4-knowledge-graph-ontology-update">Step 4: Knowledge graph (Ontology Update)</h2>
-<p>Resulted into a knowledge graph</p>
-</section>
-<section id="step-5-reasoning-and-query" class="level2">
-<h2 class="anchored" data-anchor-id="step-5-reasoning-and-query">Step 5: Reasoning and Query</h2>
-<p>Figure 6 and 7 shows Query and query results that Filtering positive PathogenResults and MycoplasmaResults associated with CattleSample</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies-figure-6.png" class="img-fluid figure-img"></p>
-<figcaption>Figure 6: Filtering positive PathogenResults and MycoplasmaResults associated with CattleSample</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies-figure-7.png" class="img-fluid figure-img"></p>
-<figcaption>Figure 7: Query result</figcaption>
-</figure>
-</div>
-</section>
-<section id="step-6-visualization-and-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="step-6-visualization-and-analysis">Step 6: Visualization and Analysis</h2>
-<p>We choose Tableau for the visualization method. It provides meaningful insights to explore the knowledge graph. For this, we need a working ODBC connection to a Virtuoso Instance and ODBC or JDBC Compliant version of Tableau or Tableau Server. For ODBC connection to virtuoso, the link is: <a href="https://medium.com/virtuoso-blog/virtuoso-tableau-sparql-f9411852a87d">Visualizing SPARQL Results in Tableau | by Daniel Heward-Mills | OpenLink Virtuoso Weblog | Medium</a></p>
-
-
-</section>
-</section>
-
- ]]></description>
-  <category>Work package 1</category>
-  <category>Ontology building</category>
-  <category>Tutorial</category>
-  <guid>https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies.html</guid>
-  <pubDate>Wed, 21 Jun 2023 04:00:00 GMT</pubDate>
-  <media:content url="https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies.webp" medium="image" type="image/webp"/>
 </item>
 <item>
   <title>Poultry Barometer</title>
@@ -1746,7 +1746,7 @@ font-style: inherit;">as.character</span>(Samplenumber))</span>
   <category>Work Package 1</category>
   <category>Use case</category>
   <guid>https://github.com/decide-project-eu/case-studies-website/tutorials/poultry-barometer.html</guid>
-  <pubDate>Sun, 26 Jun 2022 04:00:00 GMT</pubDate>
+  <pubDate>Sun, 26 Jun 2022 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
