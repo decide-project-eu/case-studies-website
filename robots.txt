@@ -1,1 +1,1 @@
-Sitemap: https://github.com/decide-project-eu/case-studies-website/sitemap.xml
+Sitemap: https://realworlddatascience.net/sitemap.xml
