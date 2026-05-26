@@ -16,108 +16,8 @@
 <height>44</height>
 <width>144</width>
 </image>
-<generator>quarto-1.6.42</generator>
-<lastBuildDate>Wed, 21 Jun 2023 04:00:00 GMT</lastBuildDate>
-<item>
-  <title>Anonymisation</title>
-  <dc:creator>Saba Noor, Miel Hostens, et al.</dc:creator>
-  <link>https://github.com/decide-project-eu/case-studies-website/tutorials/anonymisation.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<section id="anonymization" class="level2">
-<h2 class="anchored" data-anchor-id="anonymization">Anonymization</h2>
-<p>For privacy and confidentiality of sensitive information, we explain the anonymization technique for both R and Python code. For this, the SHA256 algorithm is used because it does not allow reverse engineering, and the sensitive information could not be linked back to the specific entity or individual.</p>
-</section>
-<section id="function-to-apply-sha-256-hashing-in-r" class="level1">
-<h1>Function to apply SHA-256 hashing in R</h1>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">require</span>(openssl)</span>
-<span id="cb1-2"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Function to apply SHA-256 hashing</span></span>
-<span id="cb1-3">sha256_hash <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">function</span>(data) {</span>
-<span id="cb1-4">  openssl<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">sha256</span>(data)</span>
-<span id="cb1-5">}</span>
-<span id="cb1-6"></span>
-<span id="cb1-7">dplyr<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">mutate</span>(</span>
-<span id="cb1-8">    <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">Filenumber=</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">sha256_hash</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">as.character</span>(Filenumber)),</span>
-<span id="cb1-9">    <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">Samplenumber=</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">sha256_hash</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">as.character</span>(Samplenumber))</span>
-<span id="cb1-10">)</span></code></pre></div>
-</div>
-</section>
-<section id="function-to-apply-sha-256-hashing-in-r-1" class="level1">
-<h1>Function to apply SHA-256 hashing in R</h1>
-<div class="cell" data-python.reticulate="false">
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">!</span> pip install openpyxl</span>
-<span id="cb2-2"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> hashlib</span>
-<span id="cb2-3"></span>
-<span id="cb2-4"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Generate anonymized values for file number and sample number</span></span>
-<span id="cb2-5">FileNumber <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> hashlib.sha256(<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">str</span>(FileNumber).encode()).hexdigest()</span>
-<span id="cb2-6">SampleNumber <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> hashlib.sha256(SampleNumber).encode()).hexdigest()</span>
-<span id="cb2-7"></span>
-<span id="cb2-8"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Add anonymized values to the RDF graph</span></span>
-<span id="cb2-9">g.add((Sample, onto.hasFileNumber, Literal(FileNumber, datatype<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>XSD.string)))</span>
-<span id="cb2-10">g.add((Sample, onto.hasSampleNumber, Literal(SampleNumber, datatype<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>XSD.string)))</span></code></pre></div>
-</div>
-
-
-</section>
-
- ]]></description>
-  <category>Work Package 1</category>
-  <category>Tutorial</category>
-  <guid>https://github.com/decide-project-eu/case-studies-website/tutorials/anonymisation.html</guid>
-  <pubDate>Wed, 21 Jun 2023 04:00:00 GMT</pubDate>
-  <media:content url="https://github.com/decide-project-eu/case-studies-website/tutorials/anonymisation.webp" medium="image" type="image/webp"/>
-</item>
+<generator>quarto-1.9.38</generator>
+<lastBuildDate>Wed, 21 Jun 2023 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Cattle barometer</title>
   <dc:creator>Jade Bokma, Saba Noor, Bart Pardon, Miel Hostens, et al.</dc:creator>
@@ -162,7 +62,7 @@ font-style: inherit;">=</span>XSD.string)))</span></code></pre></div>
 <h2 class="anchored" data-anchor-id="load-your-data-and-libraries">Load your data and libraries</h2>
 <p>For example an excel or csv file:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">barometer_dt_raw_2021 <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">barometer_dt_raw_2021 <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> readxl<span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -177,19 +77,19 @@ font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">read.csv</span>(<span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"../Data/Lab4.csv"</span>)</span></code></pre></div>
+font-style: inherit;">"../Data/Lab4.csv"</span>)</span></code></pre></div></div>
 </div>
 <p>When you add separate files, combine them:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">barometer_dt_combined <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">barometer_dt_combined <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">rbind</span>(barometer_dt_raw_2021, barometer_dt_raw_2022)</span></code></pre></div>
+font-style: inherit;">rbind</span>(barometer_dt_raw_2021, barometer_dt_raw_2022)</span></code></pre></div></div>
 </div>
 <p>Load the necessary libraries, which depends on your data(file) and script:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">package_list <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">package_list <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -247,14 +147,14 @@ font-style: inherit;">character.only =</span> <span class="cn" style="color: #8f
 background-color: null;
 font-style: inherit;">TRUE</span>)}</span>
 <span id="cb3-7"></span>
-<span id="cb3-8">}</span></code></pre></div>
+<span id="cb3-8">}</span></code></pre></div></div>
 </div>
 </section>
 <section id="start-wrangling-your-data" class="level2">
 <h2 class="anchored" data-anchor-id="start-wrangling-your-data">Start wrangling your data</h2>
 <p>It may be necessary to filter some of your data:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">barometer_dt_filter <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">barometer_dt_filter <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> barometer_dt_combined <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -357,11 +257,11 @@ background-color: null;
 font-style: inherit;">"PCR BoCoV"</span>, <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Mycoplasma bovis (PCR)"</span>)</span>
-<span id="cb4-14">) </span></code></pre></div>
+<span id="cb4-14">) </span></code></pre></div></div>
 </div>
 <p>Or add rows for pathogens when all results are reported in one field (<em>e.g.</em> sequencing data):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">barometer_dt <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">barometer_dt <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> barometer_dt_raw <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -462,11 +362,11 @@ background-color: null;
 font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>),</span>
-<span id="cb5-10">  )</span></code></pre></div>
+<span id="cb5-10">  )</span></code></pre></div></div>
 </div>
 <p>Or add rows for culture results:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">barometer_dt<span class="sc" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">barometer_dt<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">$</span>HS <span class="ot" style="color: #003B4F;
 background-color: null;
@@ -570,11 +470,11 @@ background-color: null;
 font-style: inherit;">$</span>Pathogen_culture,</span>
 <span id="cb6-15">         barometer_dt_culture_wide<span class="sc" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">$</span>Pathogen)</span></code></pre></div>
+font-style: inherit;">$</span>Pathogen)</span></code></pre></div></div>
 </div>
 <p>Or need an intermediate table for culture results:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">df_samples <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">df_samples <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -632,11 +532,11 @@ font-style: inherit;">"Histophilus somni"</span>, </span>
 <span id="cb7-6">                            <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'Mycoplasma bovis'</span>)</span>
-<span id="cb7-7">)</span></code></pre></div>
+<span id="cb7-7">)</span></code></pre></div></div>
 </div>
 <p>Or need to create binary results for PCR &amp; culture</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1">barometer_results <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1">barometer_results <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> barometer_dt_culture_wide <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -856,11 +756,11 @@ font-style: inherit;">~</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span></span>
 <span id="cb8-32">        ),</span>
-<span id="cb8-33">    )</span></code></pre></div>
+<span id="cb8-33">    )</span></code></pre></div></div>
 </div>
 <p>Or need to merge files:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1">barometer <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1">barometer <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span></span>
 <span id="cb9-2">  barometer_dt <span class="sc" style="color: #5E5E5E;
@@ -928,14 +828,14 @@ font-style: inherit;">'Parameter_code'</span>,</span>
 <span id="cb9-10">                                  <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'Pathogen_identification'</span>)</span>
-<span id="cb9-11">  ) </span></code></pre></div>
+<span id="cb9-11">  ) </span></code></pre></div></div>
 </div>
 </section>
 <section id="reaching-the-final-format" class="level2">
 <h2 class="anchored" data-anchor-id="reaching-the-final-format">Reaching the final format</h2>
 <p>Floor date to the 1<sup>st</sup> of the month:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1">barometer_dt<span class="sc" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1">barometer_dt<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">$</span>Floored_date <span class="ot" style="color: #003B4F;
 background-color: null;
@@ -947,11 +847,11 @@ font-style: inherit;">floor_date</span>(barometer_dt<span class="sc" style="colo
 background-color: null;
 font-style: inherit;">$</span>Date, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"month"</span>)</span></code></pre></div>
+font-style: inherit;">"month"</span>)</span></code></pre></div></div>
 </div>
 <p>Aggregate data on farm_ID and month (WIDE):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1">barometer_groupby <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1">barometer_groupby <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> barometer_dt <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -967,11 +867,11 @@ font-style: inherit;">summarise</span>(<span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">across</span>(<span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">c</span>(PM, MH, HS, MB, BRSV, PI3, BCV), max))</span></code></pre></div>
+font-style: inherit;">c</span>(PM, MH, HS, MB, BRSV, PI3, BCV), max))</span></code></pre></div></div>
 </div>
 <p>Convert to <em>long</em> version:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1">barometer_long <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1">barometer_long <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> barometer_groupby <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -1010,11 +910,11 @@ background-color: null;
 font-style: inherit;">values_to =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'Result'</span>,</span>
-<span id="cb12-6">  )</span></code></pre></div>
+<span id="cb12-6">  )</span></code></pre></div></div>
 </div>
 <p>Save file to csv:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><span class="fu" style="color: #4758AB;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">write.csv</span>(barometer_long, <span class="st" style="color: #20794D;
 background-color: null;
@@ -1022,11 +922,11 @@ font-style: inherit;">"../Data/dummyfile"</span>, <span class="at" style="color:
 background-color: null;
 font-style: inherit;">row.names=</span><span class="cn" style="color: #8f5902;
 background-color: null;
-font-style: inherit;">TRUE</span>)</span></code></pre></div>
+font-style: inherit;">TRUE</span>)</span></code></pre></div></div>
 </div>
 <p><em>In case you want to convert to the <em>wide</em> version:</em></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1">barometer_wide <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1">barometer_wide <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> barometer_groupby <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -1041,14 +941,14 @@ font-style: inherit;">names_from =</span> <span class="fu" style="color: #4758AB
 background-color: null;
 font-style: inherit;">c</span>(Pathogen), <span class="at" style="color: #657422;
 background-color: null;
-font-style: inherit;">values_from =</span> Result) </span></code></pre></div>
+font-style: inherit;">values_from =</span> Result) </span></code></pre></div></div>
 </div>
 </section>
 <section id="example-with-dummy-file-wide-data" class="level2">
 <h2 class="anchored" data-anchor-id="example-with-dummy-file-wide-data">Example with dummy file (WIDE data)</h2>
 <p>Please find here a <a href="Dummyfile_widedata_1.xlsx">dummy file</a> which can help you understand the different steps we are taking in the next chunk. You can find the step-by-step explanation below the R chunk.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1">barometer_dt <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1">barometer_dt <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> barometer_dt_raw <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -1458,7 +1358,7 @@ background-color: null;
 font-style: inherit;">sha256_hash</span>(<span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">as.character</span>(Samplenumber))</span>
-<span id="cb15-75">  ) </span></code></pre></div>
+<span id="cb15-75">  ) </span></code></pre></div></div>
 </div>
 <p>First we make sure that all column names are in the final format and understandable (in English):</p>
 <ul>
@@ -1621,8 +1521,108 @@ font-style: inherit;">as.character</span>(Samplenumber))</span>
   <category>Work Package 1</category>
   <category>Use case</category>
   <guid>https://github.com/decide-project-eu/case-studies-website/tutorials/cattle-barometer.html</guid>
-  <pubDate>Wed, 21 Jun 2023 04:00:00 GMT</pubDate>
+  <pubDate>Wed, 21 Jun 2023 00:00:00 GMT</pubDate>
   <media:content url="https://github.com/decide-project-eu/case-studies-website/tutorials/cattle-barometer-tutorial.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>Anonymisation</title>
+  <dc:creator>Saba Noor, Miel Hostens, et al.</dc:creator>
+  <link>https://github.com/decide-project-eu/case-studies-website/tutorials/anonymisation.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="anonymization" class="level2">
+<h2 class="anchored" data-anchor-id="anonymization">Anonymization</h2>
+<p>For privacy and confidentiality of sensitive information, we explain the anonymization technique for both R and Python code. For this, the SHA256 algorithm is used because it does not allow reverse engineering, and the sensitive information could not be linked back to the specific entity or individual.</p>
+</section>
+<section id="function-to-apply-sha-256-hashing-in-r" class="level1">
+<h1>Function to apply SHA-256 hashing in R</h1>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">require</span>(openssl)</span>
+<span id="cb1-2"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Function to apply SHA-256 hashing</span></span>
+<span id="cb1-3">sha256_hash <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">function</span>(data) {</span>
+<span id="cb1-4">  openssl<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sha256</span>(data)</span>
+<span id="cb1-5">}</span>
+<span id="cb1-6"></span>
+<span id="cb1-7">dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(</span>
+<span id="cb1-8">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Filenumber=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sha256_hash</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.character</span>(Filenumber)),</span>
+<span id="cb1-9">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Samplenumber=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sha256_hash</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.character</span>(Samplenumber))</span>
+<span id="cb1-10">)</span></code></pre></div></div>
+</div>
+</section>
+<section id="function-to-apply-sha-256-hashing-in-r-1" class="level1">
+<h1>Function to apply SHA-256 hashing in R</h1>
+<div class="cell" data-python.reticulate="false">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!</span> pip install openpyxl</span>
+<span id="cb2-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> hashlib</span>
+<span id="cb2-3"></span>
+<span id="cb2-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Generate anonymized values for file number and sample number</span></span>
+<span id="cb2-5">FileNumber <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> hashlib.sha256(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">str</span>(FileNumber).encode()).hexdigest()</span>
+<span id="cb2-6">SampleNumber <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> hashlib.sha256(SampleNumber).encode()).hexdigest()</span>
+<span id="cb2-7"></span>
+<span id="cb2-8"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Add anonymized values to the RDF graph</span></span>
+<span id="cb2-9">g.add((Sample, onto.hasFileNumber, Literal(FileNumber, datatype<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>XSD.string)))</span>
+<span id="cb2-10">g.add((Sample, onto.hasSampleNumber, Literal(SampleNumber, datatype<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>XSD.string)))</span></code></pre></div></div>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <category>Work Package 1</category>
+  <category>Tutorial</category>
+  <guid>https://github.com/decide-project-eu/case-studies-website/tutorials/anonymisation.html</guid>
+  <pubDate>Wed, 21 Jun 2023 00:00:00 GMT</pubDate>
+  <media:content url="https://github.com/decide-project-eu/case-studies-website/tutorials/anonymisation.webp" medium="image" type="image/webp"/>
 </item>
 <item>
   <title>Ontology</title>
@@ -1712,7 +1712,7 @@ font-style: inherit;">as.character</span>(Samplenumber))</span>
   <category>Ontology building</category>
   <category>Tutorial</category>
   <guid>https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies.html</guid>
-  <pubDate>Wed, 21 Jun 2023 04:00:00 GMT</pubDate>
+  <pubDate>Wed, 21 Jun 2023 00:00:00 GMT</pubDate>
   <media:content url="https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies.webp" medium="image" type="image/webp"/>
 </item>
 <item>
@@ -1746,7 +1746,7 @@ font-style: inherit;">as.character</span>(Samplenumber))</span>
   <category>Work Package 1</category>
   <category>Use case</category>
   <guid>https://github.com/decide-project-eu/case-studies-website/tutorials/poultry-barometer.html</guid>
-  <pubDate>Sun, 26 Jun 2022 04:00:00 GMT</pubDate>
+  <pubDate>Sun, 26 Jun 2022 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
