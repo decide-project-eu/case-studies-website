@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -42,10 +45,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4e810f301b33ab13c7f8e2ad1387f136.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-bbefccd1ac294906dcade0b908e00c80.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -113,7 +116,7 @@ gtag('config', 'G-2804FN9QRK', { 'anonymize_ip': true});
 </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -145,14 +148,18 @@ window.Quarto = {
 <link rel="stylesheet" href="decide.css">
 <link rel="alternate" type="application/rss+xml" title="DECIDE Case Studies" href="latest-content.xml" data-external="1"><meta property="og:title" content="Latest tutorials | Decide project">
 <meta property="og:description" content="An overview of use cases for the Decide project">
-<meta property="og:image" content="https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies.webp">
+<meta property="og:image" content="https://github.com/decide-project-eu/case-studies-website/tutorials/cattle-barometer-tutorial.png">
 <meta property="og:site_name" content="DECIDE Case Studies">
-<meta property="og:image:alt" content="Ontology tutorial">
+<meta property="og:image:alt" content="Barometer tuturial">
+<meta property="og:image:height" content="800">
+<meta property="og:image:width" content="800">
 <meta name="twitter:title" content="Latest tutorials | Decide project">
 <meta name="twitter:description" content="An overview of use cases for the Decide project">
-<meta name="twitter:image" content="https://github.com/decide-project-eu/case-studies-website/tutorials/ontologies.webp">
+<meta name="twitter:image" content="https://github.com/decide-project-eu/case-studies-website/tutorials/cattle-barometer-tutorial.png">
 <meta name="twitter:site" content="@decide_h2020">
-<meta name="twitter:image:alt" content="Ontology tutorial">
+<meta name="twitter:image:alt" content="Barometer tuturial">
+<meta name="twitter:image-height" content="800">
+<meta name="twitter:image-width" content="800">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -265,7 +272,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Q2F0dGxl">Cattle <span class="quarto-category-count">(1)</span></div><div class="category" data-category="T250b2xvZ3klMjBidWlsZGluZw==">Ontology building <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UG91bHRyeQ==">Poultry <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VHV0b3JpYWw=">Tutorial <span class="quarto-category-count">(2)</span></div><div class="category" data-category="VXNlJTIwY2FzZQ==">Use case <span class="quarto-category-count">(2)</span></div><div class="category" data-category="V29yayUyMHBhY2thZ2UlMjAx">Work package 1 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="V29yayUyMFBhY2thZ2UlMjAx">Work Package 1 <span class="quarto-category-count">(3)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Q2F0dGxl">Cattle <span class="quarto-category-count">(1)</span></div><div class="category" data-category="T250b2xvZ3klMjBidWlsZGluZw==">Ontology building <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UG91bHRyeQ==">Poultry <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VHV0b3JpYWw=">Tutorial <span class="quarto-category-count">(2)</span></div><div class="category" data-category="VXNlJTIwY2FzZQ==">Use case <span class="quarto-category-count">(2)</span></div><div class="category" data-category="V29yayUyMFBhY2thZ2UlMjAx">Work Package 1 <span class="quarto-category-count">(3)</span></div><div class="category" data-category="V29yayUyMHBhY2thZ2UlMjAx">Work package 1 <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -304,40 +311,7 @@ window.Quarto = {
     </div>
 </div>
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="V29yayUyMHBhY2thZ2UlMjAxJTJDT250b2xvZ3klMjBidWlsZGluZyUyQ1R1dG9yaWFs" data-listing-date-sort="1687305600000" data-listing-file-modified-sort="1780992039835" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="299">
-<a href="./tutorials/ontologies.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./tutorials/ontologies.webp" class="thumbnail-image card-img" style="height: 150px;" alt="Ontology tutorial">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Ontology
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('V29yayUyMHBhY2thZ2UlMjAx'); return false;">Work package 1</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('T250b2xvZ3klMjBidWlsZGluZw=='); return false;">Ontology building</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('VHV0b3JpYWw='); return false;">Tutorial</div>
-
-</div>
-<div class="card-text listing-description delink">
-Non-ontology-based systems require rewriting the cleaning code each time new data arrives, making it time-consuming and tedious. These systems lack interoperability…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Saba Noor, Miel Hostens, et al.
-</div>
-<div class="listing-date">
-Jun 21, 2023
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="Q2F0dGxlJTJDV29yayUyMFBhY2thZ2UlMjAxJTJDVXNlJTIwY2FzZQ==" data-listing-date-sort="1687305600000" data-listing-file-modified-sort="1780992039830" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4083">
+<div class="g-col-1" data-index="0" data-categories="Q2F0dGxlJTJDV29yayUyMFBhY2thZ2UlMjAxJTJDVXNlJTIwY2FzZQ==" data-listing-date-sort="1687305600000" data-listing-file-modified-sort="1791274153131" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4083">
 <a href="./tutorials/cattle-barometer.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -370,7 +344,7 @@ Jun 21, 2023
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="V29yayUyMFBhY2thZ2UlMjAxJTJDVHV0b3JpYWw=" data-listing-date-sort="1687305600000" data-listing-file-modified-sort="1780992039828" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="116">
+<div class="g-col-1" data-index="1" data-categories="V29yayUyMFBhY2thZ2UlMjAxJTJDVHV0b3JpYWw=" data-listing-date-sort="1687305600000" data-listing-file-modified-sort="1791274153127" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="116">
 <a href="./tutorials/anonymisation.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -401,7 +375,40 @@ Jun 21, 2023
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="3" data-categories="UG91bHRyeSUyQ1dvcmslMjBQYWNrYWdlJTIwMSUyQ1VzZSUyMGNhc2U=" data-listing-date-sort="1656201600000" data-listing-file-modified-sort="1780992039835" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="165">
+<div class="g-col-1" data-index="2" data-categories="V29yayUyMHBhY2thZ2UlMjAxJTJDT250b2xvZ3klMjBidWlsZGluZyUyQ1R1dG9yaWFs" data-listing-date-sort="1687305600000" data-listing-file-modified-sort="1791274153135" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="299">
+<a href="./tutorials/ontologies.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./tutorials/ontologies.webp" class="thumbnail-image card-img" style="height: 150px;" alt="Ontology tutorial">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Ontology
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('V29yayUyMHBhY2thZ2UlMjAx'); return false;">Work package 1</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('T250b2xvZ3klMjBidWlsZGluZw=='); return false;">Ontology building</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('VHV0b3JpYWw='); return false;">Tutorial</div>
+
+</div>
+<div class="card-text listing-description delink">
+Non-ontology-based systems require rewriting the cleaning code each time new data arrives, making it time-consuming and tedious. These systems lack interoperability…
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Saba Noor, Miel Hostens, et al.
+</div>
+<div class="listing-date">
+Jun 21, 2023
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="3" data-categories="UG91bHRyeSUyQ1dvcmslMjBQYWNrYWdlJTIwMSUyQ1VzZSUyMGNhc2U=" data-listing-date-sort="1656201600000" data-listing-file-modified-sort="1791274153136" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="165">
 <a href="./tutorials/poultry-barometer.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
