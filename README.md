@@ -17,3 +17,7 @@ If checkout error
 ```         
 git worktree prune
 ```
+
+## To publish papers
+https://link.springer.com/article/10.1186/s13620-026-00356-0
+https://biblio.ugent.be/publication/01JB4AJ4WCTQK85038GAQEEPFH
